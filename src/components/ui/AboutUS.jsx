@@ -34,7 +34,7 @@ const AboutUS = () => {
                 <div className="w-full md:w-6/12 pr-0 md:pl-10 ">
                     <div className="flex items-center gap-2">
                         <hr className="w-6 h-1 bg-primary border-0" />
-                        <h1 className="text-white font-semibold text-xl">Our Services</h1>
+                        <h1 className="text-white font-semibold text-xl">About Us</h1>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-bold text-white mt-2">
                         We’re <span className="text-primary">Awards Winning</span>
