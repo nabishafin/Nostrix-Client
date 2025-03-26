@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dancing {
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+
+}
