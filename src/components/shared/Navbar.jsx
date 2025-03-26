@@ -17,7 +17,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className='bg-black py-3 sticky top-0 backdrop:blur-sm'>
+        <div className='bg-black py-3 sticky top-0 backdrop:blur-sm z-10'>
             <div className="navbar bg-black sticky top-0 z-50  mx-auto w-10/12 ">
                 <div className="navbar-start">
                     <img className="h-9 md:h-10 pl-0 " src={logo} alt="Logo" />
