@@ -7,18 +7,19 @@ const AboutUS = () => {
         <section className="py-20 bg-black mt-16 text-white">
             <div className="w-10/12 mx-auto flex flex-col md:flex-row py-10 gap-6">
                 {/* Video Section */}
-                <div className="w-full md:w-6/12 relative border-2 border-black rounded-3xl mb-10 md:mb-0">
+                <div className="w-full md:w-6/12 relative border-2 border-black rounded-3xl mb-10 md:mb-0 ">
                     <div className="absolute top-0 left-0 w-full h-full bg-black flex items-center justify-center">
                         {/* Embed YouTube Video */}
                         <iframe
                             width="100%"
                             height="100%"
-                            src="https://www.youtube.com/embed/RIqg49pEdAo?si=nclRseItac0k89fh"
+                            src="https://www.youtube.com/embed/d8wDCPs68jc?si=otbw6YI7OtPnVDwr"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen
                             className="rounded-lg"
+
                         ></iframe>
                     </div>
                     <div className="absolute bottom-0 left-0 w-64 bg-primary p-4 flex items-center border-[10px] border-black rounded-tr-3xl">
@@ -42,7 +43,7 @@ const AboutUS = () => {
                     <h1 className="text-3xl md:text-5xl font-bold text-white mt-2">
                         Digital Agency
                     </h1>
-                    <p className="mt-5 text-base md:text-lg">
+                    <p className="mt-5 text-base md:text-lg pr-0 md:pr-10">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
 
