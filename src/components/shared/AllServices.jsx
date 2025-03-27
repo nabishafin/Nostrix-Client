@@ -30,9 +30,11 @@ const AllServices = () => {
                         </div>
 
                         {/* Learn More Button */}
-                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
+                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex  md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
                             Learn More
-                            <p className='mt-[6px] md:mt-[7px]'><FaArrowRight className='bg-black md:p-2 rounded-full text-primary' /></p>
+                            <p className='mt-1'>
+                                <FaArrowRight size={35} className="bg-black p-2 rounded-full text-primary" />
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -88,9 +90,11 @@ const AllServices = () => {
                         </div>
 
                         {/* Learn More Button */}
-                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
+                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex  md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
                             Learn More
-                            <p className='mt-[6px] md:mt-[7px]'><FaArrowRight className='bg-black md:p-2 rounded-full text-primary' /></p>
+                            <p className='mt-1'>
+                                <FaArrowRight size={35} className="bg-black p-2 rounded-full text-primary" />
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -145,9 +149,11 @@ const AllServices = () => {
                         </div>
 
                         {/* Learn More Button */}
-                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
+                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex  md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
                             Learn More
-                            <p className='mt-[6px] md:mt-[7px]'><FaArrowRight className='bg-black md:p-2 rounded-full text-primary' /></p>
+                            <p className='mt-1'>
+                                <FaArrowRight size={35} className="bg-black p-2 rounded-full text-primary" />
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -204,9 +210,11 @@ const AllServices = () => {
                         </div>
 
                         {/* Learn More Button */}
-                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
+                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex  md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
                             Learn More
-                            <p className='mt-[6px] md:mt-[7px]'><FaArrowRight className='bg-black md:p-2 rounded-full text-primary' /></p>
+                            <p className='mt-1'>
+                                <FaArrowRight size={35} className="bg-black p-2 rounded-full text-primary" />
+                            </p>
                         </div>
                     </div>
                 </div>

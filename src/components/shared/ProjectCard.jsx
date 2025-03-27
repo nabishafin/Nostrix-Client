@@ -17,11 +17,11 @@ const ProjectCard = ({ data }) => {
             whileHover="hover"
         >
             <div className="bg-black text-white border-2 border-gray-700 rounded-lg p-4">
-                <div className="bg-gray-200 h-48 rounded-lg">
+                <div className="bg-gray-200  rounded-lg">
                     {data.image && (
                         <img
                             src={data.image}
-                            className="h-full w-full object-cover rounded-lg"
+                            className="h-72 w-full object-cover rounded-lg"
                             alt={data.title}
                         />
                     )}

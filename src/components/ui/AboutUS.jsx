@@ -1,38 +1,25 @@
 import React from 'react';
 import { FaArrowRight, FaCheck } from 'react-icons/fa';
-
+import img from '../../assets/bp.jpg';
 
 const AboutUS = () => {
     return (
-        <section className="py-20 bg-black mt-16 text-white">
-            <div className="w-10/12 mx-auto flex flex-col md:flex-row py-10 gap-6">
-                {/* Video Section */}
-                <div className="w-full md:w-6/12 relative border-2 border-black rounded-3xl mb-10 md:mb-0 ">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black flex items-center justify-center">
-                        {/* Embed YouTube Video */}
-                        <iframe
-                            width="100%"
-                            height="100%"
-                            src="https://www.youtube.com/embed/d8wDCPs68jc?si=otbw6YI7OtPnVDwr"
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            className="rounded-lg"
-
-                        ></iframe>
-                    </div>
-                    <div className="absolute bottom-0 left-0 w-64 bg-primary p-4 flex items-center border-t-[10px] border-r-[10px] border-black rounded-tr-3xl">
-                        <div className="text-5xl font-bold text-black mr-2">18</div>
-                        <div>
-                            <p className="text-3xl font-semibold text-black">Years</p>
-                            <p className="text-base text-black">of Experience</p>
-                        </div>
+        <section className="py-10 bg-black mt-16 text-white">
+            <div className="w-10/12 mx-auto flex flex-col md:flex-row py-10 gap-6 items-center justify-center">
+                {/* Image Section */}
+                <div className="w-full md:w-6/12 border-2 border-black">
+                    <div className="w-full h-full bg-black flex items-center justify-center">
+                        <img
+                            src={img}
+                            className="w-full object-cover" // Ensure image covers the area
+                            style={{ aspectRatio: '16 / 10' }} // Maintain 16:9 aspect ratio (or adjust as needed)
+                            alt=""
+                        />
                     </div>
                 </div>
 
                 {/* Content Section */}
-                <div className="w-full md:w-6/12 pr-0 md:pl-10 ">
+                <div className="w-full md:w-6/12 pr-0 md:pl-10">
                     <div className="flex items-center gap-2">
                         <hr className="w-6 h-1 bg-primary border-0" />
                         <h1 className="text-white font-semibold text-xl">About Us</h1>
@@ -44,7 +31,9 @@ const AboutUS = () => {
                         Digital Agency
                     </h1>
                     <p className="mt-5 text-base md:text-lg pr-0 md:pr-10">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        we proudly introduce ourselves as an award-winning digital agency with a passion for delivering top-quality services. Our team is made up of talented professionals who are experts in their fields. Want to learn more about what we do? Click the "Learn More" button to get all the details!
+
+
                     </p>
 
                     <div className="mt-5">
@@ -62,7 +51,7 @@ const AboutUS = () => {
                         </div>
                     </div>
 
-                    <div className="flex gap-5 text-black mt-5 items-center">
+                    <div className="flex gap-16 text-black mt-5 items-center ">
                         <div className="flex gap-2 items-center text-xl text-white pr-2 rounded-3xl bg-white">
                             <p className="text-xl text-white px-3 py-2 rounded-3xl bg-primary">Learn More</p>
                             <p>
@@ -76,7 +65,6 @@ const AboutUS = () => {
                 </div>
             </div>
         </section>
-
     );
 };
 
