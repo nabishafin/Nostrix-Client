@@ -1,18 +1,20 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import { motion } from 'framer-motion';  // Import motion from framer-motion
 
 const AllServices = () => {
     return (
         <div>
-            <div className="collapse bg-base-200  border-base-300 px-4 sm:px-6 md:px-10 mt-10 rounded-3xl py-4 mx-auto border">
+            {/* Service 1 - Website Development */}
+            <div className="collapse bg-base-200 border-base-300 px-4 sm:px-6 md:px-10 mt-10 rounded-3xl py-4 mx-auto border transition-transform transform hover:scale-105">
                 <input type="checkbox" name="my-accordion-1" />
-                <div className="collapse-title  font-semibold  ">
-                    <div className='flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-10 justify-between '>
+                <div className="collapse-title font-semibold">
+                    <div className='flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-10 justify-between'>
                         {/* Number */}
                         <h1 className='font-bold text-2xl sm:text-3xl md:text-4xl'>01</h1>
 
                         {/* Title and Tags */}
-                        <div className='text-center flex-1  sm:w-full'>
+                        <div className='text-center flex-1'>
                             <div className='font-bold text-2xl sm:text-3xl md:text-4xl'>Website Development</div>
                             <div className='mt-3'>
                                 <div className='flex flex-wrap gap-2 justify-center mt-4'>
@@ -35,8 +37,14 @@ const AllServices = () => {
                     </div>
                 </div>
 
-                {/* Collapsible Content */}
-                <div className="collapse-content">
+                {/* Collapsible Content with animation */}
+                <motion.div
+                    className="collapse-content"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
                     <div className='text-center mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-72 mt-6'>
                         <p className='text-sm sm:text-base md:text-lg mr-0 md:mr-56'>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iure eaque ipsum, doloribus ea dicta, porro iste nesciunt, magni officiis molestiae. Architecto unde quibusdam molestias repellendus vero, commodi alias pariatur iusto sapiente harum odit laborum corporis voluptatibus voluptas nesciunt quidem?
@@ -51,13 +59,12 @@ const AllServices = () => {
                             />
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
-
-            {/* part-2 Ui Ux */}
-            <div className="collapse bg-base-200 border border-base-300 px-4 sm:px-6 md:px-10 mt-10 rounded-3xl py-4">
-                <input type="checkbox" name="my-accordion-1" />
+            {/* Service 2 - UX/UI Design */}
+            <div className="collapse bg-base-200 border-base-300 px-4 sm:px-6 md:px-10 mt-10 rounded-3xl py-4 mx-auto border transition-transform transform hover:scale-105">
+                <input type="checkbox" name="my-accordion-2" />
                 <div className="collapse-title font-semibold">
                     <div className='flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-10 justify-between'>
                         {/* Number */}
@@ -88,8 +95,14 @@ const AllServices = () => {
                     </div>
                 </div>
 
-                {/* Collapsible Content */}
-                <div className="collapse-content">
+                {/* Collapsible Content with animation */}
+                <motion.div
+                    className="collapse-content"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
                     <div className='text-center mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-72 mt-6'>
                         <p className='text-sm sm:text-base md:text-lg mr-0 md:mr-56'>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iure eaque ipsum, doloribus ea dicta, porro iste nesciunt, magni officiis molestiae. Architecto unde quibusdam molestias repellendus vero, commodi alias pariatur iusto sapiente harum odit laborum corporis voluptatibus voluptas nesciunt quidem?
@@ -100,17 +113,15 @@ const AllServices = () => {
                             <img
                                 className='w-full h-full object-cover rounded-lg shadow-lg'
                                 src="/src/assets/webdevelopment.jpg"
-                                alt="Web Development"
+                                alt="UX/UI Design"
                             />
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
-
-
-            {/* Part-3 Graphics */}
-            <div className="collapse bg-base-200 border border-base-300 px-4 sm:px-6 md:px-10 mt-10 rounded-3xl py-4">
-                <input type="checkbox" name="my-accordion-1" />
+            {/* Service 3 - Graphics Design */}
+            <div className="collapse bg-base-200 border-base-300 px-4 sm:px-6 md:px-10 mt-10 rounded-3xl py-4 mx-auto border transition-transform transform hover:scale-105">
+                <input type="checkbox" name="my-accordion-3" />
                 <div className="collapse-title font-semibold">
                     <div className='flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-10 justify-between'>
                         {/* Number */}
@@ -141,8 +152,14 @@ const AllServices = () => {
                     </div>
                 </div>
 
-                {/* Collapsible Content */}
-                <div className="collapse-content">
+                {/* Collapsible Content with animation */}
+                <motion.div
+                    className="collapse-content"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
                     <div className='text-center mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-72 mt-6'>
                         <p className='text-sm sm:text-base md:text-lg mr-0 md:mr-56'>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iure eaque ipsum, doloribus ea dicta, porro iste nesciunt, magni officiis molestiae. Architecto unde quibusdam molestias repellendus vero, commodi alias pariatur iusto sapiente harum odit laborum corporis voluptatibus voluptas nesciunt quidem?
@@ -153,16 +170,17 @@ const AllServices = () => {
                             <img
                                 className='w-full h-full object-cover rounded-lg shadow-lg'
                                 src="/src/assets/webdevelopment.jpg"
-                                alt="Web Development"
+                                alt="Graphics Design"
                             />
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
-            {/* Digital Marketing */}
-            <div className="collapse bg-base-200 border border-base-300 px-4 sm:px-6 md:px-10 mt-10 rounded-3xl py-4">
-                <input type="checkbox" name="my-accordion-1" />
+
+            {/* Service 4 - Digital Marketing */}
+            <div className="collapse bg-base-200 border-base-300 px-4 sm:px-6 md:px-10 mt-10 rounded-3xl py-4 mx-auto border transition-transform transform hover:scale-105">
+                <input type="checkbox" name="my-accordion-4" />
                 <div className="collapse-title font-semibold">
                     <div className='flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-10 justify-between'>
                         {/* Number */}
@@ -173,14 +191,14 @@ const AllServices = () => {
                             <div className='font-bold text-2xl sm:text-3xl md:text-4xl'>Digital Marketing</div>
                             <div className='mt-3'>
                                 <div className='flex flex-wrap gap-2 justify-center mt-4'>
-                                    <span className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg bg-white px-4 text-black w-full md:w-auto'>Search Engine Optimization</span>
-                                    <span className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg bg-white px-4 text-black w-full md:w-auto'>Email Marketing</span>
-                                    <span className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg bg-white px-4 text-black w-full md:w-auto'>Email Marketing</span>
-
+                                    <span className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg bg-white px-4 text-black w-full md:w-auto'>SEO</span>
+                                    <span className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg bg-white px-4 text-black w-full md:w-auto'>PPC Advertising</span>
+                                    <span className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg bg-white px-4 text-black w-full md:w-auto'>Content Marketing</span>
                                 </div>
                                 <div className='flex flex-wrap gap-2 mt-3 justify-center'>
+                                    <span className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg bg-white px-4 text-black w-full md:w-auto'>Email Marketing</span>
                                     <span className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg bg-white px-4 text-black w-full md:w-auto'>Social Media Marketing</span>
-                                    <span className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg bg-white px-4 text-black w-full md:w-auto'>Affiliate Marketing</span>
+                                    <span className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg bg-white px-4 text-black w-full md:w-auto'>Conversion Rate Optimization</span>
                                 </div>
                             </div>
                         </div>
@@ -193,8 +211,14 @@ const AllServices = () => {
                     </div>
                 </div>
 
-                {/* Collapsible Content */}
-                <div className="collapse-content">
+                {/* Collapsible Content with animation */}
+                <motion.div
+                    className="collapse-content"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
                     <div className='text-center mx-4 sm:mx-8 md:mx-16 lg:mx-32 xl:mx-72 mt-6'>
                         <p className='text-sm sm:text-base md:text-lg mr-0 md:mr-56'>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iure eaque ipsum, doloribus ea dicta, porro iste nesciunt, magni officiis molestiae. Architecto unde quibusdam molestias repellendus vero, commodi alias pariatur iusto sapiente harum odit laborum corporis voluptatibus voluptas nesciunt quidem?
@@ -205,14 +229,15 @@ const AllServices = () => {
                             <img
                                 className='w-full h-full object-cover rounded-lg shadow-lg'
                                 src="/src/assets/webdevelopment.jpg"
-                                alt="Web Development"
+                                alt="Digital Marketing"
                             />
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
+
         </div>
     );
-};
+}
 
 export default AllServices;

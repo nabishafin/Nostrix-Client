@@ -22,7 +22,7 @@ const AboutUS = () => {
 
                         ></iframe>
                     </div>
-                    <div className="absolute bottom-0 left-0 w-64 bg-primary p-4 flex items-center border-[10px] border-black rounded-tr-3xl">
+                    <div className="absolute bottom-0 left-0 w-64 bg-primary p-4 flex items-center border-t-[10px] border-r-[10px] border-black rounded-tr-3xl">
                         <div className="text-5xl font-bold text-black mr-2">18</div>
                         <div>
                             <p className="text-3xl font-semibold text-black">Years</p>
