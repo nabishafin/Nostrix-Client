@@ -5,6 +5,7 @@ import AboutUS from '../../components/ui/AboutUS';
 import WorkProcess from '../../components/ui/WorkProcess';
 import WorkPortfolio from '../../components/ui/WorkPortfolio';
 import Testimonials from '../../components/ui/Testimonials';
+import NewsBlogs from '../../components/ui/NewsBlogs';
 
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
             <WorkProcess />
             <WorkPortfolio />
             <Testimonials />
+            <NewsBlogs />
         </div>
     );
 };
