@@ -6,6 +6,8 @@ import WorkProcess from '../../components/ui/WorkProcess';
 import WorkPortfolio from '../../components/ui/WorkPortfolio';
 import Testimonials from '../../components/ui/Testimonials';
 import NewsBlogs from '../../components/ui/NewsBlogs';
+import Faq from '../../components/ui/Faq';
+import ContactUs from '../../components/ui/ContactUs';
 
 
 const Home = () => {
@@ -18,6 +20,8 @@ const Home = () => {
             <WorkPortfolio />
             <Testimonials />
             <NewsBlogs />
+            <Faq />
+            <ContactUs />
         </div>
     );
 };

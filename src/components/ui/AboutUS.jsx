@@ -7,13 +7,12 @@ const AboutUS = () => {
         <section className="py-10 bg-black mt-16 text-white">
             <div className="w-10/12 mx-auto flex flex-col md:flex-row py-10 gap-6 items-center justify-center">
                 {/* Image Section */}
-                <div className="w-full md:w-6/12 border-2 border-black">
-                    <div className="w-full h-full bg-black flex items-center justify-center">
+                <div className="w-full md:w-6/12 border-2 border-black overflow-hidden">
+                    <div className="w-full h-full">
                         <img
                             src={img}
-                            className="w-full object-cover" // Ensure image covers the area
-                            style={{ aspectRatio: '16 / 10' }} // Maintain 16:9 aspect ratio (or adjust as needed)
-                            alt=""
+                            className="w-full h-full object-cover object-center"
+                            alt="About Us"
                         />
                     </div>
                 </div>
@@ -31,9 +30,7 @@ const AboutUS = () => {
                         Digital Agency
                     </h1>
                     <p className="mt-5 text-base md:text-lg pr-0 md:pr-10">
-                        we proudly introduce ourselves as an award-winning digital agency with a passion for delivering top-quality services. Our team is made up of talented professionals who are experts in their fields. Want to learn more about what we do? Click the "Learn More" button to get all the details!
-
-
+                        We proudly introduce ourselves as an award-winning digital agency with a passion for delivering top-quality services. Our team is made up of talented professionals who are experts in their fields. Want to learn more about what we do? Click the "Learn More" button to get all the details!
                     </p>
 
                     <div className="mt-5">
@@ -51,15 +48,15 @@ const AboutUS = () => {
                         </div>
                     </div>
 
-                    <div className="flex gap-16 text-black mt-5 items-center ">
+                    <div className="flex gap-16 text-black mt-5 items-center">
                         <div className="flex gap-2 items-center text-xl text-white pr-2 rounded-3xl bg-white">
                             <p className="text-xl text-white px-3 py-2 rounded-3xl bg-primary">Learn More</p>
                             <p>
                                 <FaArrowRight size={40} className="bg-black p-2 rounded-full text-primary" />
                             </p>
                         </div>
-                        <div className='text-white hidden md:block '>
-                            <p className='text-4xl dancing '>Nabi Shafin</p>
+                        <div className="text-white hidden md:block">
+                            <p className="text-4xl dancing">Nabi Shafin</p>
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from './Button';
 import logo from '../../assets/logo.svg';
-import { div } from 'framer-motion/client';
+
 
 const Navbar = () => {
     const links = (
