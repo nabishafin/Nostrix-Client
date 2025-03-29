@@ -7,3 +7,18 @@
     font-optical-sizing: auto;
 
 }
+
+.rotating-image {
+    animation: rotate360 5s linear infinite;
+    /* 5 seconds for a full rotation */
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

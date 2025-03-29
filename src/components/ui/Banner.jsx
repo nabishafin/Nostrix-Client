@@ -1,6 +1,5 @@
 import React from 'react';
 import Marque from '../shared/Marque';
-import circle from '../../assets/Frame 1171276207.png'
 
 const Banner = () => {
     const services = ['Website Development', 'UX/UI Design', 'Graphic Design', 'Digital Marketing', 'Mobile Application Development'];
@@ -28,8 +27,9 @@ const Banner = () => {
                             <div className='hidden md:block w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full bg-primary absolute'></div>
                             {/* circle-2 */}
                             <div className='hidden md:block z-1 relative md:ml-20 lg:ml-40' style={{ position: 'relative', width: '155px', height: '155px' }}>
-                                <img className='w-[155px]' src={circle} alt="" />
+                                <img className='w-[155px] rotating-image' src="/src/assets/Frame 1171276207.png" alt="" />
                             </div>
+
                         </div>
                     </div>
                 </div>

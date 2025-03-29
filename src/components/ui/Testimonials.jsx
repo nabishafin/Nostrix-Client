@@ -1,7 +1,7 @@
 import React from 'react';
 import Heading from '../shared/Heading';
 import { FaStar } from 'react-icons/fa';
-import pic from '../../assets/Client.jpg';
+import pic from '../../assets/profile-s.jfif';
 import semiclone from '../../assets/semi-clone.png'
 
 const Testimonials = () => {
@@ -24,7 +24,7 @@ const Testimonials = () => {
                         </div>
                         <img
                             src={semiclone}
-                            className='absolute  top-2 right-20 md:right-40 w-12 md:w-16'
+                            className='absolute  top-4 right-20 md:right-44 w-12 md:w-16'
                             alt=""
                         />
                     </div>

@@ -2,13 +2,13 @@ import { FaArrowRight } from "react-icons/fa";
 import React from 'react';
 import Marque from '../shared/Marque';
 import ProjectCard from "../shared/ProjectCard";
-import pic1 from "../../assets/cooing page.jpg"
-import pic2 from "../../assets/bp.jpg"
+import pic1 from "../../assets/cooing page.jpg";
+import pic2 from "../../assets/bp.jpg";
 
 const NewsBlogs = () => {
     return (
         <div>
-            <section className='bg-black p-4 md:p-0 '>
+            <section className='bg-black p-4 md:p-0'>
                 <div>
                     <Marque />
                 </div>
@@ -29,10 +29,9 @@ const NewsBlogs = () => {
                         </div>
                     </div>
 
-
                     <div className='grid grid-cols-1 md:grid-cols-4 gap-8 mt-8'>
                         {/* card-1 */}
-                        <div className="bg-black text-white rounded-2xl py-4">
+                        <div className="bg-black text-white rounded-2xl py-4 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105">
                             {/* Image Section */}
                             <div className="bg-gray-100 rounded-xl h-48 flex items-center justify-center overflow-hidden">
                                 <img src={pic1} alt="Image description" className="w-full h-full object-cover" />
@@ -54,11 +53,11 @@ const NewsBlogs = () => {
                             <a href="#" className="text-primary mt-4 block">Read More</a>
                         </div>
 
-                        {/* card-2*/}
-                        <div className="bg-black text-white rounded-2xl py-4">
+                        {/* card-2 */}
+                        <div className="bg-black text-white rounded-2xl py-4 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105">
                             {/* Image Section */}
                             <div className="bg-gray-100 rounded-xl h-48 flex items-center justify-center overflow-hidden">
-                                <img src="your-image-url.jpg" alt="Image description" className="w-full h-full object-cover" />
+                                <img src={pic2} alt="Image description" className="w-full h-full object-cover" />
                             </div>
 
                             {/* Tags and Date Section */}
@@ -78,7 +77,7 @@ const NewsBlogs = () => {
                         </div>
 
                         {/* card-3 */}
-                        <div className="bg-black text-white rounded-2xl py-4">
+                        <div className="bg-black text-white rounded-2xl py-4 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105">
                             {/* Image Section */}
                             <div className="bg-gray-100 rounded-xl h-48 flex items-center justify-center overflow-hidden">
                                 <img src="your-image-url.jpg" alt="Image description" className="w-full h-full object-cover" />
@@ -101,7 +100,7 @@ const NewsBlogs = () => {
                         </div>
 
                         {/* card-4 */}
-                        <div className="bg-black text-white rounded-2xl py-4">
+                        <div className="bg-black text-white rounded-2xl py-4 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105">
                             {/* Image Section */}
                             <div className="bg-gray-100 rounded-xl h-48 flex items-center justify-center overflow-hidden">
                                 <img src="your-image-url.jpg" alt="Image description" className="w-full h-full object-cover" />
@@ -135,7 +134,3 @@ const NewsBlogs = () => {
 };
 
 export default NewsBlogs;
-
-
-
-

@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaYoutube } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaYoutube, FaArrowRight } from 'react-icons/fa';
 import circle from '../../assets/Frame 1171276207.png';
-import Marque from '../shared/Marque';
+
 
 const ContactUs = () => {
     return (
@@ -25,9 +25,13 @@ const ContactUs = () => {
                             <input type="text" placeholder="Subject *" className='bg-gray-800 p-2 rounded text-white col-span-2' />
                             <textarea placeholder="Message *" className='bg-gray-800 p-2 rounded text-white col-span-2' rows="4"></textarea>
                         </div>
-                        <button className='bg-primary text-black font-semibold px-6 py-2 rounded mt-4 flex items-center gap-2'>
-                            Send Message <span className='text-white'>+</span>
+                        <button className="hidden md:flex gap-2 items-center text-lg md:text-xl mt-3 text-white pr-2 rounded-3xl bg-white w-auto">
+                            <p className="text-lg md:text-xl text-white px-3 py-2 rounded-3xl bg-primary"> Send Message </p>
+                            <p>
+                                <FaArrowRight size={30} className="bg-black p-2 rounded-full text-primary" />
+                            </p>
                         </button>
+
                     </div>
 
                     {/* Address & Contact Section */}
@@ -56,15 +60,15 @@ const ContactUs = () => {
                 {/* Circle Logo */}
                 <div className='hidden md:block absolute top-16 right-0'>
                     {/* circle-1 */}
-                    <div className='hidden md:block w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full bg-primary absolute'></div>
+                    <div className='hidden md:block mr-8 w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full bg-primary absolute'></div>
                     {/* circle-2 */}
                     <div className='hidden md:block z-1 relative md:ml-20 lg:mr-36' style={{ position: 'relative', width: '155px', height: '155px' }}>
-                        <img className='w-[155px]' src={circle} alt="Circle Logo" />
+                        <img className='w-[155px] rotating-image' src={circle} alt="Circle Logo" />
                     </div>
                 </div>
 
             </div>
-            <Marque />
+
         </section>
     );
 };
