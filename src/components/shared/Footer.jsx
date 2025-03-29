@@ -1,15 +1,17 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaGlobe, FaArrowRight } from 'react-icons/fa'; // Import icons
 import logo from '../../assets/logo.svg';
+import { section } from 'framer-motion/client';
 import Marque from './Marque';
-import { div } from 'framer-motion/client';
 
 const Footer = () => {
     return (
-        <section className='  mt-10 md:mt-60'>
-            <Marque />
-            <footer className="bg-black text-white px-6  py-12">
-                <div className="container mx-auto w-10/12">
+        <section className='mt-10 md:mt-60'>
+            <div>
+                <Marque />
+            </div>
+            <footer className="bg-black text-white py-10">
+                <div className="w-10/12 mx-auto ">
                     {/* Top Section */}
                     <div className="flex flex-col md:flex-row justify-between items-center mb-10">
                         <h2 className="text-3xl font-bold text-center md:text-left">Let's Connect there</h2>
@@ -24,7 +26,7 @@ const Footer = () => {
                     {/* Main Content Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                         {/* Digital Agency Section */}
-                        <div>
+                        <div className="min-w-[250px]">
                             <div className="flex items-center mb-4">
                                 <img src={logo} alt="Logo" className="h-16" />
                             </div>
@@ -40,7 +42,7 @@ const Footer = () => {
                         </div>
 
                         {/* Navigation Section */}
-                        <div className='ml-0 md:ml-40'>
+                        <div className='min-w-[250px] ml-0 md:ml-40'>
                             <h4 className="text-lg font-semibold mb-4 text-primary">Navigation</h4>
                             <ul className="space-y-2">
                                 <li><a href="#" className="text-gray-400 hover:text-white">Home</a></li>
@@ -53,7 +55,7 @@ const Footer = () => {
                         </div>
 
                         {/* Contact Section */}
-                        <div>
+                        <div className="min-w-[250px]">
                             <h4 className="text-lg font-semibold mb-4 text-primary">Contact</h4>
                             <ul className="space-y-2">
                                 <li><a href="#" className="text-gray-400 hover:text-white">+0123-456-789</a></li>
@@ -64,7 +66,7 @@ const Footer = () => {
                         </div>
 
                         {/* Get the latest information Section */}
-                        <div>
+                        <div className="min-w-[250px]">
                             <h4 className="text-lg font-semibold mb-4">Get the latest information</h4>
                             <div className="flex flex-col md:flex-row items-center">
                                 <input
@@ -92,7 +94,6 @@ const Footer = () => {
                 </div>
             </footer>
         </section>
-
     );
 };
 
