@@ -5,7 +5,7 @@ import { FaStarOfLife } from 'react-icons/fa';
 const Marque = () => {
     return (
         <div>
-            <div className=' bg-primary py-4 font-bold mt-4'>
+            <div className=' bg-primary py-4 font-bold '>
                 <Marquee>
                     <p className='text-black mx-10'>Website Design</p>
                     <div>

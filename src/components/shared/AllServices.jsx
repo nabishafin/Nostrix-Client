@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';  // Import motion from framer-motion
+import ButtonPrimary from './ButtonPrimary';
 
 const AllServices = () => {
     return (
@@ -30,12 +31,7 @@ const AllServices = () => {
                         </div>
 
                         {/* Learn More Button */}
-                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex  md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
-                            Learn More
-                            <p className='mt-1'>
-                                <FaArrowRight size={35} className="bg-black p-2 rounded-full text-primary" />
-                            </p>
-                        </div>
+                        <ButtonPrimary text={'Learn More'} />
                     </div>
                 </div>
 
@@ -53,7 +49,7 @@ const AllServices = () => {
                         </p>
                     </div>
                     <div className='flex justify-center items-center mt-6'>
-                        <div className='w-full sm:w-11/12 md:w-8/12 lg:w-6/12 h-48 sm:h-64 md:h-80 m-0 md:mr-60'>
+                        <div className='w-full sm:w-11/12 md:w-8/12 lg:w-6/12 h-48 sm:h-64 md:h-80 m-0 md:mr-52'>
                             <img
                                 className='w-full h-full object-cover rounded-lg shadow-lg'
                                 src="/src/assets/webdevelopment.jpg"
@@ -90,12 +86,7 @@ const AllServices = () => {
                         </div>
 
                         {/* Learn More Button */}
-                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex  md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
-                            Learn More
-                            <p className='mt-1'>
-                                <FaArrowRight size={35} className="bg-black p-2 rounded-full text-primary" />
-                            </p>
-                        </div>
+                        <ButtonPrimary text={'Learn More'} />
                     </div>
                 </div>
 
@@ -113,7 +104,7 @@ const AllServices = () => {
                         </p>
                     </div>
                     <div className='flex justify-center items-center mt-6'>
-                        <div className='w-full sm:w-11/12 md:w-8/12 lg:w-6/12 h-48 sm:h-64 md:h-80 m-0 md:mr-60'>
+                        <div className='w-full sm:w-11/12 md:w-8/12 lg:w-6/12 h-48 sm:h-64 md:h-80 m-0 md:mr-52'>
                             <img
                                 className='w-full h-full object-cover rounded-lg shadow-lg'
                                 src="/src/assets/webdevelopment.jpg"
@@ -149,12 +140,7 @@ const AllServices = () => {
                         </div>
 
                         {/* Learn More Button */}
-                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex  md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
-                            Learn More
-                            <p className='mt-1'>
-                                <FaArrowRight size={35} className="bg-black p-2 rounded-full text-primary" />
-                            </p>
-                        </div>
+                        <ButtonPrimary text={'Learn More'} />
                     </div>
                 </div>
 
@@ -172,7 +158,7 @@ const AllServices = () => {
                         </p>
                     </div>
                     <div className='flex justify-center items-center mt-6'>
-                        <div className='w-full sm:w-11/12 md:w-8/12 lg:w-6/12 h-48 sm:h-64 md:h-80 m-0 md:mr-60'>
+                        <div className='w-full sm:w-11/12 md:w-8/12 lg:w-6/12 h-48 sm:h-64 md:h-80 m-0 md:mr-52'>
                             <img
                                 className='w-full h-full object-cover rounded-lg shadow-lg'
                                 src="/src/assets/webdevelopment.jpg"
@@ -210,12 +196,7 @@ const AllServices = () => {
                         </div>
 
                         {/* Learn More Button */}
-                        <div className='font-bold text-2xl sm:text-3xl md:text-4xl flex  md:gap-3 gap-2 cursor-pointer hover:text-primary transition-colors'>
-                            Learn More
-                            <p className='mt-1'>
-                                <FaArrowRight size={35} className="bg-black p-2 rounded-full text-primary" />
-                            </p>
-                        </div>
+                        <ButtonPrimary text={'Learn More'} />
                     </div>
                 </div>
 
@@ -233,7 +214,7 @@ const AllServices = () => {
                         </p>
                     </div>
                     <div className='flex justify-center items-center mt-6'>
-                        <div className='w-full sm:w-11/12 md:w-8/12 lg:w-6/12 h-48 sm:h-64 md:h-80 m-0 md:mr-60'>
+                        <div className='w-full sm:w-11/12 md:w-8/12 lg:w-6/12 h-48 sm:h-64 md:h-80 m-0 md:mr-52'>
                             <img
                                 className='w-full h-full object-cover rounded-lg shadow-lg'
                                 src="/src/assets/webdevelopment.jpg"

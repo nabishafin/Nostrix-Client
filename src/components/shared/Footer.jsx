@@ -6,7 +6,7 @@ import Marque from './Marque';
 
 const Footer = () => {
     return (
-        <section className='mt-10 md:mt-60'>
+        <section className='mt-10 md:mt-40'>
             <div>
                 <Marque />
             </div>

@@ -10,7 +10,7 @@ const Heading = ({ title, subtitle }) => {
             </div>
 
             {/* Subtitle Section */}
-            <h1 className='text-3xl md:text-5xl font-bold text-black text-center mt-2'>
+            <h1 className='text-3xl md:text-5xl font-bold text-black text-center mt-1'>
                 {subtitle}
             </h1>
         </div>

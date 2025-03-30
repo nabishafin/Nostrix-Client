@@ -2,7 +2,7 @@ import React from 'react';
 import Marque from '../shared/Marque';
 
 const Banner = () => {
-    const services = ['Website Development', 'UX/UI Design', 'Graphic Design', 'Digital Marketing', 'Mobile Application Development'];
+    const services = ['Website Development', 'UX/UI Design', 'Graphic Design', 'Digital Marketing', 'Mobile Development'];
 
     return (
         <section className='bg-black'>
@@ -38,7 +38,7 @@ const Banner = () => {
                 <div className='mt-10 text-white flex flex-col md:flex-row'>
                     <div className='w-full md:w-6/12 grid grid-cols-1 md:grid-cols-3 gap-2 pr-0 md:pr-2'>
                         {services.map((service) => (
-                            <p className='p-2 border-l-2 border-r-2 text-center rounded-lg backdrop-blur-3xl opacity-70 shadow-lg border-primary bg-slate-950' key={service}>
+                            <p className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg border-primary bg-slate-950' key={service}>
                                 {service}
                             </p>
                         ))}
