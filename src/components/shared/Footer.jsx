@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaGlobe, FaArrowRight } from 'react-icons/fa'; // Import icons
 import logo from '../../assets/logo.svg';
-import { section } from 'framer-motion/client';
 import Marque from './Marque';
 
 const Footer = () => {
@@ -11,10 +10,10 @@ const Footer = () => {
                 <Marque />
             </div>
             <footer className="bg-black text-white py-10">
-                <div className="w-10/12 mx-auto ">
+                <div className="md:w-10/12 px-4 md:px-0 mx-auto ">
                     {/* Top Section */}
                     <div className="flex flex-col md:flex-row justify-between items-center mb-10">
-                        <h2 className="text-3xl font-bold text-center md:text-left">Let's Connect there</h2>
+                        <h2 className="text-3xl font-bold text-center md:text-left">Let's <span className='text-primary'>Connect</span> there</h2>
                         <div className="flex justify-center md:justify-start gap-2 items-center text-lg md:text-xl mt-4 md:mt-0 text-white pr-2 rounded-3xl bg-white">
                             <p className="text-lg md:text-xl text-white px-3 py-2 rounded-3xl bg-primary">Contact Us Now</p>
                             <p>

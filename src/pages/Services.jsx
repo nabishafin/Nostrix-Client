@@ -18,13 +18,16 @@ const Services = () => {
                 />
                 <Marque></Marque>
             </div>
-            <div className='w-10/12 mx-auto'>
+            <div className=' w-auto px-4 md:w-10/12 mx-auto'>
                 <Heading
                     title={'Our Services'}
                     subtitle={'Discover Our Digital Solutions'}
                 ></Heading>
                 <p className='text-center mt-2'>Unlock the power of innovation with our cutting-edge digital solutions designed to enhance your business efficiency, streamline operations, and drive growth. Whether you're looking to optimize workflows, improve customer engagement, or transform your digital presence, we offer customized solutions tailored to meet your unique needs.</p>
-                <AllServices />
+
+                <div className='mx-auto   mt-6'>
+                    <AllServices />
+                </div>
             </div>
             <ContactUs />
             <div className=''>

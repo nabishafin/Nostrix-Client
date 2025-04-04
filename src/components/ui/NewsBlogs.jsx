@@ -8,11 +8,11 @@ import pic2 from "../../assets/bp.jpg";
 const NewsBlogs = () => {
     return (
         <div>
-            <section className='bg-black p-4 md:p-0'>
+            <section className='bg-black  md:p-0'>
                 <div>
                     <Marque />
                 </div>
-                <div className='w-full md:w-10/12 mx-auto py-12 md:py-20'>
+                <div className='w-full md:w-10/12 mx-auto py-12 md:py-20 px-4 md:px-0'>
                     <div className='flex items-center gap-2'>
                         <hr className='w-6 h-1 bg-primary border-0' />
                         <h1 className='text-white font-semibold text-lg md:text-xl'> News & Blogs</h1>

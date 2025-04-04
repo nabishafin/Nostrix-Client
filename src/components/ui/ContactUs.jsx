@@ -6,7 +6,7 @@ import circle from '../../assets/Frame 1171276207.png';
 const ContactUs = () => {
     return (
         <section className='bg-black mt-10 md:mt-20 relative '>
-            <div className='w-10/12 mx-auto py-20'>
+            <div className='md:w-10/12 px-4 mx-auto py-20'>
                 <div className='flex items-center gap-2'>
                     <hr className='w-6 h-1 bg-primary border-0' />
                     <h1 className='text-white font-semibold text-lg md:text-xl'>Contact Us</h1>
@@ -58,7 +58,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* Circle Logo */}
-                <div className='hidden md:block absolute top-16 right-0'>
+                <div className='hidden md:block absolute top-16 right-7'>
                     {/* circle-1 */}
                     <div className='hidden md:block mr-8 w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full bg-primary absolute'></div>
                     {/* circle-2 */}

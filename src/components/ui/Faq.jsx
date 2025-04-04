@@ -42,7 +42,7 @@ const FaqAccordion = () => {
                 subtitle={'Questions? Look here.'}
             >
             </Heading>
-            <div className="w-10/12 mx-auto mt-10">
+            <div className=" md:w-10/12 px-4 md:px-0 mx-auto mt-10">
                 {accordionData.map((item, index) => (
                     <div key={index} className={`border rounded-lg overflow-hidden mt-4  ${activeAccordion === index ? 'bg-primary' : 'bg-white'}`}>
                         <button
