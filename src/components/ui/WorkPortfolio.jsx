@@ -53,6 +53,9 @@ const WorkPortfolio = () => {
                             <ProjectCard
                                 key={data.id}
                                 data={data}
+                                bgcolor={'bg-black'}
+                                textColor="text-white"
+
                             ></ProjectCard>)
                     }
                 </div>

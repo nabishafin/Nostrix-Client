@@ -2,7 +2,7 @@ import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
-const ProjectCard = ({ data }) => {
+const ProjectCard = ({ data, bgcolor, textColor, categorybg }) => {
     console.log(data);
 
     const cardVariants = {
@@ -16,8 +16,10 @@ const ProjectCard = ({ data }) => {
             initial="initial"
             whileHover="hover"
         >
-            <div className="bg-black text-white border-2 border-gray-700 rounded-lg p-4">
-                <div className="bg-gray-200  rounded-lg">
+            <div
+                className={`${textColor} shadow-2xl  border-gray-700 rounded-lg p-4 ${bgcolor}  border border-gray-200`}
+            >
+                <div className="bg-gray-200 rounded-lg">
                     {data.image && (
                         <img
                             src={data.image}
@@ -30,7 +32,7 @@ const ProjectCard = ({ data }) => {
                     {data.tags.map((tag, index) => (
                         <div
                             key={index}
-                            className="px-2 py-1  border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg border-primary bg-slate-950"
+                            className={`px-2 py-1  border-l-2 border-r-2 text-center rounded-3xl  shadow-lg border-primary  ${categorybg}`}
                         >
                             {tag}
                         </div>
@@ -38,7 +40,7 @@ const ProjectCard = ({ data }) => {
                 </div>
                 <div className="flex justify-between items-center mt-2">
                     <div>
-                        <h2 className="text-2xl font-semibold mt-4">{data.title}</h2>
+                        <h2 className="text-2xl font-semibold mt-1">{data.title}</h2>
                         <p className="mt-1">{data.description}</p>
                     </div>
                     <div className="flex justify-end mt-4">
