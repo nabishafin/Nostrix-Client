@@ -30,7 +30,7 @@ const ProjectCard = ({ data }) => {
                     {data.tags.map((tag, index) => (
                         <div
                             key={index}
-                            className="p-2 border-l-2 border-r-2 text-center rounded-lg backdrop-blur-3xl opacity-70 shadow-lg border-primary bg-slate-950"
+                            className="px-2 py-1  border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg border-primary bg-slate-950"
                         >
                             {tag}
                         </div>
