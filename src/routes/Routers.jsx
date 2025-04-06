@@ -5,6 +5,7 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/home/Home";
 import Services from "../pages/service/Services";
 import Projects from "../pages/projects/Projects";
+import Blogs from "../pages/blogs/Blogs";
 
 
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: "/projects",
                 element: < Projects />,
+            },
+            {
+                path: "/blogs",
+                element: < Blogs />,
             },
         ],
     },

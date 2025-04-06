@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Unveiling the Secrets of Successful Mobile App Development",
+        "category": "Mobile App Development",
+        "date": "March 2023",
+        "description": "Discover the key strategies and techniques to build a successful mobile application that resonates with users and achieves your business goals.",
+        "link": "#",
+        "image": "https://i.ibb.co.com/B2GhjfYy/cooing-page.jpg"
+    },
+    {
+        "title": "From Pixels to Perfection: The Website Development Process Unveiled",
+        "category": "Web Development",
+        "date": "April 2023",
+        "description": "Explore the step-by-step process of creating a website from initial design to final launch, ensuring a seamless user experience and optimal performance.",
+        "link": "#",
+        "image": "https://example.com/images/website-development.jpg"
+    },
+    {
+        "title": "The Evolution of UX/UI: Trends Shaping the Future of Design",
+        "category": "UX/UI Design",
+        "date": "May 2023",
+        "description": "Stay ahead of the curve with the latest trends and innovations in UX/UI design that are transforming digital products and user interactions.",
+        "link": "#",
+        "image": "https://example.com/images/ux-ui-design.jpg"
+    },
+    {
+        "title": "Color Theory in Logo Design: Choosing the Right Palette",
+        "category": "Logo Design",
+        "date": "June 2023",
+        "description": "Learn how to effectively use color psychology and theory to create a logo that conveys the right message and enhances brand recognition.",
+        "link": "#",
+        "image": "https://example.com/images/logo-design.jpg"
+    },
+    {
+        "title": "Keyword Research 101: Finding the Right Keywords for Your Outreach",
+        "category": "Digital Marketing",
+        "date": "July 2023",
+        "description": "Master the art of keyword research to drive organic traffic and improve your website's search engine ranking, attracting the right audience to your content.",
+        "link": "#",
+        "image": "https://example.com/images/keyword-research.jpg"
+    }
+]
