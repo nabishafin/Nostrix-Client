@@ -56,7 +56,7 @@ const Projects = () => {
                             datas.map((data, index) => (
                                 <ProjectCard
                                     key={index}
-                                    bgcolor="bg-[#2424241A]"
+                                    bgcolor="bg-base-200"
                                     data={data}
                                     textColor="text-black"
                                     categorybg="bg-[#20D374]"
