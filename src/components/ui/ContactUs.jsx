@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaYoutube, FaArrowRight } from 'react-icons/fa';
-import circle from '../../assets/Frame 1171276207.png';
+
 
 
 const ContactUs = () => {
@@ -63,7 +63,7 @@ const ContactUs = () => {
                     <div className='hidden md:block mr-8 w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full bg-primary absolute'></div>
                     {/* circle-2 */}
                     <div className='hidden md:block z-1 relative md:ml-20 lg:mr-36' style={{ position: 'relative', width: '155px', height: '155px' }}>
-                        <img className='w-[155px] rotating-image' src={circle} alt="Circle Logo" />
+                        <img className='w-[155px] rotating-image backdrop-blur-2xl rounded-full' src="/src/assets/HireUs png.png" alt="" />
                     </div>
                 </div>
 

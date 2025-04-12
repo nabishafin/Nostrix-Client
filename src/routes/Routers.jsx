@@ -6,6 +6,7 @@ import Home from "../pages/home/Home";
 import Services from "../pages/service/Services";
 import Projects from "../pages/projects/Projects";
 import Blogs from "../pages/blogs/Blogs";
+import AboutPage from "../pages/about/AboutPage";
 
 
 
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
             {
                 path: "/blogs",
                 element: < Blogs />,
+            },
+            {
+                path: "/aboutus",
+                element: < AboutPage />,
             },
         ],
     },

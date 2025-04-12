@@ -2,7 +2,7 @@ import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
-const ProjectCard = ({ data, bgcolor, textColor, categorybg }) => {
+const ProjectCard = ({ data, bgcolor, textColor, categorybg, border, borderColor }) => {
     console.log(data);
 
     const cardVariants = {
@@ -17,13 +17,13 @@ const ProjectCard = ({ data, bgcolor, textColor, categorybg }) => {
             whileHover="hover"
         >
             <div
-                className={`${textColor} border-gray-700 rounded-lg p-4 ${bgcolor} border border-gray-200 `} // Fixed height
+                className={`${textColor} border-gray-700 rounded-lg p-4 ${bgcolor} border ${border} ${borderColor} `} // Fixed height
             >
                 <div className="bg-gray-200 rounded-lg">
                     {data.image && (
                         <img
                             src={data.image}
-                            className="h-52 w-full object-cover rounded-lg"
+                            className="h-80 w-full object-cover rounded-lg"
                             alt={data.title}
                         />
                     )}

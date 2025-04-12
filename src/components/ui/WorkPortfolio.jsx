@@ -56,6 +56,7 @@ const WorkPortfolio = () => {
                                 bgcolor={'bg-black'}
                                 textColor="text-white"
 
+
                             ></ProjectCard>)
                     }
                 </div>

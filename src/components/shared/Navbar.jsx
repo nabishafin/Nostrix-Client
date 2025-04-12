@@ -55,7 +55,7 @@ const Navbar = () => {
             </li>
             <li>
                 <Link
-                    to="/about-us"
+                    to="/aboutus"
                     className={activeLink === '/about-us' ? 'text-primary' : 'text-white'}
                     onClick={() => setActiveLink('/about-us')}
                 >

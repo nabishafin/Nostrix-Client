@@ -60,6 +60,7 @@ const Projects = () => {
                                     data={data}
                                     textColor="text-black"
                                     categorybg="bg-[#20D374]"
+                                    borderColor={'border-white'}
                                 />
                             ))
                         ) : (
