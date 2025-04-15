@@ -30,7 +30,11 @@ const Services = () => {
                     <AllServices />
                 </div>
             </div>
-            <ContactUs />
+            <ContactUs
+                bg={'bg-black'}
+                textColor={'text-white'}
+                bginput={'bg-gray-800'}
+            />
             <div className=''>
                 <Testimonials />
             </div>

@@ -24,6 +24,7 @@ const Home = () => {
             <ContactUs
                 bg={'bg-black'}
                 textColor={'text-white'}
+                bginput={'bg-gray-800'}
             />
         </div>
     );

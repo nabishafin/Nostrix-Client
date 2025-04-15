@@ -117,7 +117,13 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className="hidden md:block">
-                        <Button text={"Let’s Talk"} />
+                        <a
+                            href="https://wa.me/8801758056337?text=Hi%20there%2C%20I%20would%20like%20to%20talk%20to%20you"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <Button text={"Let’s Talk"} />
+                        </a>
                     </div>
                 </div>
             </div>

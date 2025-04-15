@@ -1,5 +1,9 @@
 import React from 'react';
 import Marque from '../shared/Marque';
+import star from '../../assets/star.png'
+import BannerImg from '../../assets/office.avif'
+import hireusImg from '../../assets/HireUs png.png'
+
 
 const Banner = () => {
     const services = ['Website Development', 'UX/UI Design', 'Graphic Design', 'Digital Marketing', 'Mobile Development'];
@@ -22,12 +26,12 @@ const Banner = () => {
                         </div>
 
                         {/* Right Circle Section */}
-                        <div className='w-full md:w-6/12 flex justify-center items-center mt-8 md:mt-0'>
+                        <div className='w-full md:w-6/12 flex justify-end items-center mt-8 md:mt-0'>
                             {/* circle-1 */}
-                            <div className='hidden md:block w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full bg-primary absolute'></div>
+                            <div className='hidden md:block mr-[80px] w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full bg-primary absolute'></div>
                             {/* circle-2 */}
                             <div className='hidden md:block z-1 relative md:ml-20 lg:ml-40' style={{ position: 'relative', width: '150px', height: '150px' }}>
-                                <img className='w-[155px] rotating-image backdrop-blur-2xl rounded-full' src="/src/assets/HireUs png.png" alt="" />
+                                <img className='w-[155px] rotating-image backdrop-blur-2xl rounded-full' src={hireusImg} alt="" />
                             </div>
 
                         </div>
@@ -53,7 +57,7 @@ const Banner = () => {
 
                 {/* Stats and Review Section */}
                 <div className='py-16 relative flex flex-col md:flex-row gap-6'>
-                    <div className="h-60 md:h-auto w-full md:w-9/12 rounded-lg p-4 flex flex-col md:flex-row border-2" style={{ backgroundImage: "url('https://i.ibb.co.com/Cs56GFNm/office.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}>
+                    <div className="h-60 md:h-auto w-full md:w-9/12 rounded-lg p-4 flex flex-col md:flex-row border-2" style={{ backgroundImage: `url('${BannerImg}')`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
                         {/* Left Section (Empty for now) */}
                         <div className="flex-grow"></div>
 
@@ -105,7 +109,7 @@ const Banner = () => {
 
                 {/* Star Image */}
                 <div className='absolute -mt-80 -ml-16 hidden md:block'>
-                    <img src="/src/assets/star.png" alt="Star" />
+                    <img src={star} alt="Star" />
                 </div>
             </div>
             {/* marquee  */}
