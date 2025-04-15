@@ -1,33 +1,12 @@
 import React from 'react';
 import PageBanner from '../../components/shared/PageBanner';
-import { FaArrowRight, FaCheck } from 'react-icons/fa';
+import { FaArrowRight, FaCheck, FaFacebook, FaInstagram, FaInstagramSquare, FaPinterest, FaTwitter } from 'react-icons/fa';
 import img from '../../assets/bp.jpg';
 import WorkProcess from '../../components/ui/WorkProcess';
 import Marque from '../../components/shared/Marque';
 
 const AboutPage = () => {
-    const teamMembers = [
-        {
-            name: 'Jenny Alexander',
-            role: 'CEO, Digital Agency',
-            imgUrl: 'https://i.ibb.co/Qv7ftZ7B/service.png',
-        },
-        {
-            name: 'John Doe',
-            role: 'Creative Director',
-            imgUrl: 'https://i.ibb.co/Qv7ftZ7B/service.png',
-        },
-        {
-            name: 'Sarah Smith',
-            role: 'Lead Developer',
-            imgUrl: 'https://i.ibb.co/Qv7ftZ7B/service.png',
-        },
-        {
-            name: 'David Johnson',
-            role: 'Project Manager',
-            imgUrl: 'https://i.ibb.co/Qv7ftZ7B/service.png',
-        },
-    ];
+
 
     return (
         <div>
@@ -94,10 +73,11 @@ const AboutPage = () => {
             {/* ..................... */}
             <WorkProcess />
             {/* .......................... */}
-            <section className="bg-black p-4 md:p-0">
-                <div>
-                    <Marque />
-                </div>
+            <div>
+                <Marque />
+            </div>
+            {/* Team Member container */}
+            <section className="bg-black p-4 md:p-0 mb-64" >
                 <div className="w-full md:w-10/12 mx-auto py-12 md:py-20">
                     <div className="flex items-center gap-2">
                         <hr className="w-6 h-1 bg-primary border-0" />
@@ -105,7 +85,7 @@ const AboutPage = () => {
                     </div>
                     <h1 className="text-2xl md:text-3xl mt-1 text-white font-bold">Meet Our</h1>
                     <div className="flex justify-between items-center mt-6">
-                        <p className="text-3xl md:text-4xl font-bold text-primary">Meet Our Professionals Team</p>
+                        <p className="text-3xl md:text-5xl font-bold text-primary">Meet Our Professionals Team</p>
                         {/* The button is hidden on mobile and shown on medium screens and up */}
                         <div className="hidden md:flex gap-2 items-center text-lg md:text-xl mt-1 text-white pr-2 rounded-3xl bg-white">
                             <p className="text-lg md:text-xl text-white px-3 py-2 rounded-3xl bg-primary">Learn More</p>
@@ -114,11 +94,90 @@ const AboutPage = () => {
                             </p>
                         </div>
                     </div>
+                    {/* Card section */}
+                    <div className=' grid grid-cols-1 md:grid-cols-3 gap-4 mt-10'>
+                        {/* card-1 */}
+                        <div className="flex flex-col items-center justify-center ">
+                            <div className="relative w-full   rounded-lg shadow-lg overflow-hidden mx-auto">
+                                <div className="relative h-64 md:h-80">
+                                    <img src={img} alt="Card Image" className="w-full h-full object-cover" />
+                                    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex justify-center space-x-4">
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaFacebook size={30} className="text-black" />
+                                        </div>
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaTwitter size={30} className="text-black" />
+                                        </div>
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaPinterest size={30} className="text-black" />
+                                        </div>
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaInstagramSquare size={30} className="text-black" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div className="mt-4 text-center w-full max-w-sm md:max-w-md lg:max-w-lg">
+                                <h1 className="text-white text-xl font-semibold">Jenny Alexander</h1>
+                                <h3 className="text-white text-md">[ CEO, Digital Agency ]</h3>
+                            </div>
+                        </div>
+                        {/* card-2 */}
+                        <div className="flex flex-col items-center justify-center ">
+                            <div className="relative w-full   rounded-lg shadow-lg overflow-hidden mx-auto">
+                                <div className="relative h-64 md:h-80">
+                                    <img src={img} alt="Card Image" className="w-full h-full object-cover" />
+                                    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex justify-center space-x-4">
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaFacebook size={30} className="text-black" />
+                                        </div>
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaTwitter size={30} className="text-black" />
+                                        </div>
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaPinterest size={30} className="text-black" />
+                                        </div>
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaInstagramSquare size={30} className="text-black" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="mt-4 text-center w-full max-w-sm md:max-w-md lg:max-w-lg">
+                                <h1 className="text-white text-xl font-semibold">Jenny Alexander</h1>
+                                <h3 className="text-white text-md">[ CEO, Digital Agency ]</h3>
+                            </div>
+                        </div>
+                        {/* card-3 */}
+                        <div className="flex flex-col items-center justify-center ">
+                            <div className="relative w-full   rounded-lg shadow-lg overflow-hidden mx-auto">
+                                <div className="relative h-64 md:h-80">
+                                    <img src={img} alt="Card Image" className="w-full h-full object-cover" />
+                                    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex justify-center space-x-4">
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaFacebook size={30} className="text-black" />
+                                        </div>
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaTwitter size={30} className="text-black" />
+                                        </div>
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaPinterest size={30} className="text-black" />
+                                        </div>
+                                        <div className="bg-primary rounded-full p-2">
+                                            <FaInstagramSquare size={30} className="text-black" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                </div>
-                <div>
-                    <Marque />
+                            <div className="mt-4 text-center w-full max-w-sm md:max-w-md lg:max-w-lg">
+                                <h1 className="text-white text-xl font-semibold">Jenny Alexander</h1>
+                                <h3 className="text-white text-md">[ CEO, Digital Agency ]</h3>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </section>
         </div>
