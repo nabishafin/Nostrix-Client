@@ -14,22 +14,51 @@ const ContactUs = ({ bg, textColor, bginput, bgCircle }) => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-10'>
                     {/* Form Section */}
-                    <div className='mt-10'>
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                            <input type="text" placeholder="First Name *" className={`${bginput} p-2 rounded ${textColor}`} />
-                            <input type="text" placeholder="Last Name *" className={`${bginput} p-2 rounded ${textColor}`} />
-                            <input type="email" placeholder="Email *" className={`${bginput} p-2 rounded ${textColor} col-span-2 md:col-span-1`} />
-                            <input type="tel" placeholder="Phone Number *" className={`${bginput} p-2 rounded ${textColor} col-span-2 md:col-span-1`} />
-                            <input type="text" placeholder="Subject *" className={`${bginput} p-2 rounded ${textColor} col-span-2`} />
-                            <textarea placeholder="Message *" className={`${bginput} p-2 rounded ${textColor} col-span-2`} rows="4"></textarea>
+                    <div className="mt-10">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input
+                                type="text"
+                                placeholder="First Name *"
+                                className={`${bginput} p-3 rounded ${textColor} w-full`}
+                            />
+                            <input
+                                type="text"
+                                placeholder="Last Name *"
+                                className={`${bginput} p-3 rounded ${textColor} w-full`}
+                            />
+                            <input
+                                type="email"
+                                placeholder="Email *"
+                                className={`${bginput} p-3 rounded ${textColor} w-full`}
+                            />
+                            <input
+                                type="tel"
+                                placeholder="Phone Number *"
+                                className={`${bginput} p-3 rounded ${textColor} w-full`}
+                            />
+                            <input
+                                type="text"
+                                placeholder="Subject *"
+                                className={`${bginput} p-3 rounded ${textColor} w-full md:col-span-2`}
+                            />
+                            <textarea
+                                placeholder="Message *"
+                                className={`${bginput} p-3 rounded ${textColor} w-full md:col-span-2`}
+                                rows="4"
+                            ></textarea>
                         </div>
-                        <button className="hidden md:flex gap-2 items-center text-lg md:text-xl mt-3 pr-2 rounded-3xl bg-white w-auto">
-                            <p className={`text-lg md:text-xl ${textColor} px-3 py-2 rounded-3xl bg-primary`}> Send Message </p>
-                            <p>
+
+                        {/* Button section */}
+                        <div className="mt-4 flex justify-center md:justify-start">
+                            <button className="flex gap-2 items-center text-lg md:text-xl pr-2 rounded-3xl bg-white">
+                                <p className={`text-lg md:text-xl ${textColor} px-4 py-2 rounded-3xl bg-primary`}>
+                                    Send Message
+                                </p>
                                 <FaArrowRight size={30} className="bg-black p-2 rounded-full text-primary" />
-                            </p>
-                        </button>
+                            </button>
+                        </div>
                     </div>
+
 
                     {/* Address & Contact Section */}
                     <div className='bg-primary p-6 rounded mt-10'>

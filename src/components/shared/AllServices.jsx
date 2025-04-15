@@ -51,7 +51,7 @@ const AllServices = () => {
                         </p>
                     </div>
                     <div className="flex justify-center mt-6">
-                        <div className="w-full sm:w-11/12 md:w-8/12 lg:w-5/12 h-48 sm:h-64 md:h-80 m-0 mr-12">
+                        <div className="w-full  md:w-8/12 lg:w-5/12 h-48 sm:h-64 md:h-80 m-0 md:mr-12 mr-0">
                             <img
                                 className="w-full h-full object-cover rounded-lg shadow-lg"
                                 src="/src/assets/webdevelopment.jpg"
@@ -114,7 +114,7 @@ const AllServices = () => {
                         </p>
                     </div>
                     <div className="flex justify-center mt-6">
-                        <div className="w-full sm:w-11/12 md:w-8/12 lg:w-5/12 h-48 sm:h-64 md:h-80 m-0 mr-12">
+                        <div className="w-full  md:w-8/12 lg:w-5/12 h-48 sm:h-64 md:h-80 m-0 md:mr-12 mr-0">
                             <img
                                 className="w-full h-full object-cover rounded-lg shadow-lg"
                                 src="/src/assets/webdevelopment.jpg"
@@ -176,7 +176,7 @@ const AllServices = () => {
                         </p>
                     </div>
                     <div className="flex justify-center mt-6">
-                        <div className="w-full sm:w-11/12 md:w-8/12 lg:w-5/12 h-48 sm:h-64 md:h-80 m-0 mr-12">
+                        <div className="w-full  md:w-8/12 lg:w-5/12 h-48 sm:h-64 md:h-80 m-0 md:mr-12 mr-0">
                             <img
                                 className="w-full h-full object-cover rounded-lg shadow-lg"
                                 src="/src/assets/webdevelopment.jpg"
@@ -234,7 +234,7 @@ const AllServices = () => {
                         </p>
                     </div>
                     <div className="flex justify-center mt-6">
-                        <div className="w-full sm:w-11/12 md:w-8/12 lg:w-5/12 h-48 sm:h-64 md:h-80 m-0 mr-12">
+                        <div className="w-full  md:w-8/12 lg:w-5/12 h-48 sm:h-64 md:h-80 m-0 md:mr-12 mr-0">
                             <img
                                 className="w-full h-full object-cover rounded-lg shadow-lg"
                                 src="/src/assets/webdevelopment.jpg"
