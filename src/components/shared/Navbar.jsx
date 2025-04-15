@@ -56,7 +56,7 @@ const Navbar = () => {
             <li>
                 <Link
                     to="/aboutus"
-                    className={activeLink === '/about-us' ? 'text-primary' : 'text-white'}
+                    className={activeLink === '/aboutus' ? 'text-primary' : 'text-white'}
                     onClick={() => setActiveLink('/about-us')}
                 >
                     About Us
@@ -64,8 +64,8 @@ const Navbar = () => {
             </li>
             <li>
                 <Link
-                    to="/contact-us"
-                    className={activeLink === '/contact-us' ? 'text-primary' : 'text-white'}
+                    to="/Contact"
+                    className={activeLink === '/Contact' ? 'text-primary' : 'text-white'}
                     onClick={() => setActiveLink('/contact-us')}
                 >
                     Contact Us

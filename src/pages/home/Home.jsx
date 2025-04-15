@@ -21,7 +21,10 @@ const Home = () => {
             <Testimonials />
             <NewsBlogs />
             <Faq />
-            <ContactUs />
+            <ContactUs
+                bg={'bg-black'}
+                textColor={'text-white'}
+            />
         </div>
     );
 };

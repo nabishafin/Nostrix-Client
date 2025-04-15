@@ -1,37 +1,34 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaYoutube, FaArrowRight } from 'react-icons/fa';
 
-
-
-const ContactUs = () => {
+const ContactUs = ({ bg, textColor }) => {
     return (
-        <section className='bg-black mt-10 md:mt-20 relative '>
+        <section className={`${bg} mt-10 md:mt-20 relative `}>
             <div className='md:w-10/12 px-4 mx-auto py-20'>
                 <div className='flex items-center gap-2'>
                     <hr className='w-6 h-1 bg-primary border-0' />
-                    <h1 className='text-white font-semibold text-lg md:text-xl'>Contact Us</h1>
+                    <h1 className={`font-semibold text-lg md:text-xl ${textColor}`}>Contact Us</h1>
                 </div>
-                <h1 className='text-2xl md:text-3xl mt-1 text-white font-bold'>Join Us in Creating</h1>
+                <h1 className={`text-2xl md:text-3xl mt-1 ${textColor} font-bold`}>Join Us in Creating</h1>
                 <p className='text-3xl md:text-4xl font-bold text-primary'>Something Great</p>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-10'>
                     {/* Form Section */}
                     <div className='mt-10'>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                            <input type="text" placeholder="First Name *" className='bg-gray-800 p-2 rounded text-white' />
-                            <input type="text" placeholder="Last Name *" className='bg-gray-800 p-2 rounded text-white' />
-                            <input type="email" placeholder="Email *" className='bg-gray-800 p-2 rounded text-white col-span-2 md:col-span-1' />
-                            <input type="tel" placeholder="Phone Number *" className='bg-gray-800 p-2 rounded text-white col-span-2 md:col-span-1' />
-                            <input type="text" placeholder="Subject *" className='bg-gray-800 p-2 rounded text-white col-span-2' />
-                            <textarea placeholder="Message *" className='bg-gray-800 p-2 rounded text-white col-span-2' rows="4"></textarea>
+                            <input type="text" placeholder="First Name *" className={`bg-gray-800 p-2 rounded ${textColor}`} />
+                            <input type="text" placeholder="Last Name *" className={`bg-gray-800 p-2 rounded ${textColor}`} />
+                            <input type="email" placeholder="Email *" className={`bg-gray-800 p-2 rounded ${textColor} col-span-2 md:col-span-1`} />
+                            <input type="tel" placeholder="Phone Number *" className={`bg-gray-800 p-2 rounded ${textColor} col-span-2 md:col-span-1`} />
+                            <input type="text" placeholder="Subject *" className={`bg-gray-800 p-2 rounded ${textColor} col-span-2`} />
+                            <textarea placeholder="Message *" className={`bg-gray-800 p-2 rounded ${textColor} col-span-2`} rows="4"></textarea>
                         </div>
-                        <button className="hidden md:flex gap-2 items-center text-lg md:text-xl mt-3 text-white pr-2 rounded-3xl bg-white w-auto">
-                            <p className="text-lg md:text-xl text-white px-3 py-2 rounded-3xl bg-primary"> Send Message </p>
+                        <button className="hidden md:flex gap-2 items-center text-lg md:text-xl mt-3 pr-2 rounded-3xl bg-white w-auto">
+                            <p className={`text-lg md:text-xl ${textColor} px-3 py-2 rounded-3xl bg-primary`}> Send Message </p>
                             <p>
                                 <FaArrowRight size={30} className="bg-black p-2 rounded-full text-primary" />
                             </p>
                         </button>
-
                     </div>
 
                     {/* Address & Contact Section */}
@@ -68,7 +65,6 @@ const ContactUs = () => {
                 </div>
 
             </div>
-
         </section>
     );
 };
