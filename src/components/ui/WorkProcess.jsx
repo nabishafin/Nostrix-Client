@@ -7,15 +7,15 @@ import workpic3 from '../../assets/p-three.png';
 
 const WorkProcess = () => {
     return (
-        <div className='mt-10 w-10/12 mx-auto'>
+        <div className='mt-10 px-4 md:px-0 md:w-10/12 mx-auto'>
             <Heading
                 title={'Our Work Process'}
                 subtitle={'Our Working Process'}
             ></Heading>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-3 my-10'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-3 my-10 '>
                 {/* card-one */}
                 <motion.div
-                    className="card bg-base-100 shadow-sm"
+                    className="card bg-base-200 shadow-sm"
                     whileHover={{ scale: 1.05, y: -10 }} // Add hover animation
                     transition={{ duration: 0.3 }}
                 >
@@ -33,7 +33,7 @@ const WorkProcess = () => {
 
                 {/* card-two */}
                 <motion.div
-                    className="card bg-base-100 shadow-sm"
+                    className="card bg-base-200 shadow-sm"
                     whileHover={{ scale: 1.05, y: -10 }} // Add hover animation
                     transition={{ duration: 0.3 }}
                 >
@@ -51,7 +51,7 @@ const WorkProcess = () => {
 
                 {/* card-3 */}
                 <motion.div
-                    className="card bg-base-100 shadow-sm"
+                    className="card bg-base-200 shadow-sm"
                     whileHover={{ scale: 1.05, y: -10 }} // Add hover animation
                     transition={{ duration: 0.3 }}
                 >
