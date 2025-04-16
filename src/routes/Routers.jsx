@@ -9,6 +9,10 @@ import Blogs from "../pages/blogs/Blogs";
 import AboutPage from "../pages/about/AboutPage";
 import ContactUs from "../pages/contact/ContactPage";
 import ContactPage from "../pages/contact/ContactPage";
+import WebDevelopmentDetails from "../servicedetails/WebDevelopmentDetails";
+import UIUXDesignDetails from "../servicedetails/UIUXDesignDetails";
+import GraphicsDesignDetails from "../servicedetails/GraphicsDesignDetails";
+import DigitalMarketingDetails from "../servicedetails/DigitalMarketingDetails";
 
 
 
@@ -25,6 +29,22 @@ const router = createBrowserRouter([
             {
                 path: "/services",
                 element: < Services />,
+            },
+            {
+                path: "/services/web",
+                element: < WebDevelopmentDetails />,
+            },
+            {
+                path: "/services/uiux",
+                element: < UIUXDesignDetails />,
+            },
+            {
+                path: "/services/graphics",
+                element: < GraphicsDesignDetails />,
+            },
+            {
+                path: "/services/digital",
+                element: < DigitalMarketingDetails />,
             },
             {
                 path: "/projects",
