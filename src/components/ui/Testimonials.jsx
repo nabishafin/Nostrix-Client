@@ -1,7 +1,7 @@
 import React from 'react';
 import Heading from '../shared/Heading';
 import { FaStar } from 'react-icons/fa';
-import pic from '../../assets/profile-s.jfif';
+import pic from '../../assets/client-pic.webp';
 import semiclone from '../../assets/semi-clone.png'
 
 const Testimonials = () => {

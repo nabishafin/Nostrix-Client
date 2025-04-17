@@ -4,6 +4,7 @@ import Marque from '../shared/Marque';
 import ProjectCard from "../shared/ProjectCard";
 import pic1 from "../../assets/prodCast.jpg"
 import pic2 from "../../assets/singleProducts demo ui.webp"
+import { Link } from "react-router-dom";
 
 const WorkPortfolio = () => {
     const cardsData = [
@@ -40,12 +41,12 @@ const WorkPortfolio = () => {
                     <div className='flex justify-between items-center mt-6'>
                         <p className='text-3xl md:text-4xl font-bold text-primary'>Work Portfolio</p>
                         {/* The button is hidden on mobile and shown on medium screens and up */}
-                        <div className="hidden md:flex gap-2 items-center text-lg md:text-xl mt-1 text-white pr-2 rounded-3xl bg-white">
+                        <Link to={'/projects'} className="hidden md:flex gap-2 items-center text-lg md:text-xl mt-1 text-white pr-2 rounded-3xl bg-white">
                             <p className="text-lg md:text-xl text-white px-3 py-2 rounded-3xl bg-primary">Learn More</p>
                             <p>
                                 <FaArrowRight size={30} className="bg-black p-2 rounded-full text-primary" />
                             </p>
-                        </div>
+                        </Link>
                     </div>
 
                     {/* cards */}
