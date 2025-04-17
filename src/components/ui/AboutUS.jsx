@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaArrowRight, FaCheck } from 'react-icons/fa';
 import img from '../../assets/about_pic.jpg';
+import { Link } from 'react-router-dom';
 
 const AboutUS = () => {
     return (
@@ -49,12 +50,12 @@ const AboutUS = () => {
                     </div>
 
                     <div className="flex gap-16 text-black mt-5 items-center">
-                        <div className="flex gap-2 items-center text-xl text-white pr-2 rounded-3xl bg-white">
+                        <Link to={'/aboutus'} className="flex gap-2 items-center text-xl text-white pr-2 rounded-3xl bg-white">
                             <p className="text-xl text-white px-3 py-2 rounded-3xl bg-primary">Learn More</p>
                             <p>
                                 <FaArrowRight size={40} className="bg-black p-2 rounded-full text-primary" />
                             </p>
-                        </div>
+                        </Link>
 
                     </div>
                 </div>

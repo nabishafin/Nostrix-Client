@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import webImg from '../../assets/banner-one.jpg'
 import uiImg from '../../assets/blackwebpage demo.webp'
 import digitalImg from '../../assets/digital-marketing.png'
+import graphicsImg from '../../assets/graphics-01.jpg'
 
 
 const AllServices = () => {
@@ -189,7 +190,7 @@ const AllServices = () => {
                         <div className="w-full  md:w-8/12 lg:w-5/12 h-48 sm:h-64 md:h-80 m-0 md:mr-12 mr-0">
                             <img
                                 className="w-full h-full object-cover rounded-lg shadow-lg"
-                                src="/src/assets/webdevelopment.jpg"
+                                src={graphicsImg}
                                 alt="Web Development"
                             />
                         </div>
