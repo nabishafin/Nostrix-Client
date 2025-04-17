@@ -71,15 +71,15 @@ const Projects = () => {
                 {
                     datas.length > 3 ? (
                         <div onClick={handleBack} className='text-center mt-10'>
-                            <Button
-                                text={'See Previous'}
-                            />
+                            <button className="px-3 py-2 rounded-full bg-primary font-semibold text-black">
+                                See Previous
+                            </button>
                         </div>
                     ) : (
                         <div onClick={handleMoreData} className='text-center mt-10'>
-                            <Button
-                                text={'Load More Projects'}
-                            />
+                            <button className="px-3 py-2 rounded-full bg-primary font-semibold text-black">
+                                Loads More Projects
+                            </button>
                         </div>
                     )
                 }

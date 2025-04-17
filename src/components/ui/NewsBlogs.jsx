@@ -54,7 +54,7 @@ const NewsBlogs = () => {
                             title: 'Next.js vs React: What We Chose and Why',
                             desc: 'We break down the pros and cons of React and Next.js — and why one of them fits our workflow better for client projects.'
                         }].map((item, index) => (
-                            <div key={index} className="bg-black  text-white rounded-2xl py-4 px-3 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col justify-between h-[500px]">
+                            <div key={index} className="bg-black  text-white rounded-2xl py-4 px-2  cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col justify-between h-[500px]">
                                 <div>
                                     <div className="bg-gray-100 rounded-xl h-48 flex items-center justify-center overflow-hidden">
                                         <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
