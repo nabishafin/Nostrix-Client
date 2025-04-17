@@ -72,7 +72,7 @@ const Projects = () => {
                     datas.length > 3 ? (
                         <div onClick={handleBack} className='text-center mt-10'>
                             <Button
-                                text={'Back'}
+                                text={'See Previous'}
                             />
                         </div>
                     ) : (

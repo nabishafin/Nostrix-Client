@@ -23,7 +23,7 @@ const ProjectCard = ({ data, bgcolor, textColor, categorybg, border, borderColor
                     {data.image && (
                         <img
                             src={data.image}
-                            className="h-80 w-full object-cover rounded-lg"
+                            className="h-80 w-full object-cover rounded-lg content-center"
                             alt={data.title}
                         />
                     )}

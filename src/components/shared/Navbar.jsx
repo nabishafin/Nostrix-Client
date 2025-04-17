@@ -77,9 +77,9 @@ const Navbar = () => {
     return (
         <div className="bg-black py-3 sticky top-0 backdrop:blur-sm z-40">
             <div className="navbar bg-black sticky top-0 z-50 mx-auto w-10/12">
-                <div className="navbar-start">
+                <Link to={'/'} className="navbar-start">
                     <img className="h-9 md:h-10 pl-0" src={logo} alt="Logo" />
-                </div>
+                </Link>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-white font-semibold ">
                         {links}

@@ -12,7 +12,7 @@ const WorkProcess = () => {
                 title={'Our Work Process'}
                 subtitle={'Our Working Process'}
             ></Heading>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-5 my-10 '>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-5 my-16 '>
                 {/* card-one */}
                 <motion.div
                     className="card bg-base-200 shadow-sm"

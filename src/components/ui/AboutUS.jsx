@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaArrowRight, FaCheck } from 'react-icons/fa';
-import img from '../../assets/bp.jpg';
+import img from '../../assets/about_pic.jpg';
 
 const AboutUS = () => {
     return (
@@ -24,27 +24,27 @@ const AboutUS = () => {
                         <h1 className="text-white font-semibold text-xl">About Us</h1>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-bold text-white mt-2">
-                        We’re <span className="text-primary">Awards Winning</span>
+                        Crafting <span className="text-primary">Digital Experiences</span>
                     </h1>
                     <h1 className="text-3xl md:text-5xl font-bold text-white mt-2">
-                        Digital Agency
+                        That Make an Impact
                     </h1>
                     <p className="mt-5 text-base md:text-lg pr-0 md:pr-10">
-                        We proudly introduce ourselves as an award-winning digital agency with a passion for delivering top-quality services. Our team is made up of talented professionals who are experts in their fields. Want to learn more about what we do? Click the "Learn More" button to get all the details!
+                        We’re a team of creative minds and problem solvers who love turning ideas into powerful digital products. Whether it’s building a brand or developing a platform, we bring fresh perspectives and bold energy to everything we do.
                     </p>
 
                     <div className="mt-5">
                         <div className="flex items-center gap-2">
                             <p className="p-[5px] bg-primary rounded-full text-black"><FaCheck /></p>
-                            <p className="text-xl">Awards Winning Digital Agency</p>
+                            <p className="text-xl">Creative & Passionate Team</p>
                         </div>
                         <div className="flex items-center gap-2 my-2">
                             <p className="p-[5px] bg-primary rounded-full text-black"><FaCheck /></p>
-                            <p className="text-xl">Experience Team Members</p>
+                            <p className="text-xl">Driven by Innovation</p>
                         </div>
                         <div className="flex items-center gap-2 text-black">
                             <p className="p-[5px] bg-primary rounded-full"><FaCheck /></p>
-                            <p className="text-xl text-white">High Quality Services</p>
+                            <p className="text-xl text-white">Focused on Real Results</p>
                         </div>
                     </div>
 
@@ -55,9 +55,7 @@ const AboutUS = () => {
                                 <FaArrowRight size={40} className="bg-black p-2 rounded-full text-primary" />
                             </p>
                         </div>
-                        <div className="text-white hidden md:block">
-                            <p className="text-4xl dancing">Nabi Shafin</p>
-                        </div>
+
                     </div>
                 </div>
             </div>

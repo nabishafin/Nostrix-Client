@@ -2,8 +2,8 @@ import { FaArrowRight } from "react-icons/fa";
 import React from 'react';
 import Marque from '../shared/Marque';
 import ProjectCard from "../shared/ProjectCard";
-import pic1 from "../../assets/cooing page.jpg"
-import pic2 from "../../assets/bp.jpg"
+import pic1 from "../../assets/prodCast.jpg"
+import pic2 from "../../assets/singleProducts demo ui.webp"
 
 const WorkPortfolio = () => {
     const cardsData = [
