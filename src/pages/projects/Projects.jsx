@@ -3,7 +3,7 @@ import PageBanner from '../../components/shared/PageBanner';
 import Heading from '../../components/shared/Heading';
 import ProjectCard from '../../components/shared/ProjectCard';
 import Marque from '../../components/shared/Marque';
-import Button from '../../components/shared/Button';
+import Button from '../../components/shared/LearnMoreButton';
 import ContactUs from '../../components/ui/ContactUs';
 import Testimonials from '../../components/ui/Testimonials';
 

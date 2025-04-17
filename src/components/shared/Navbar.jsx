@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Button from './Button';
+import Button from './LearnMoreButton';
 import logo from '../../assets/logo.svg';
 
 const Navbar = () => {
@@ -122,7 +122,8 @@ const Navbar = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <Button text={"Let’s Talk"} />
+
+                            <button className='px-3 py-2 rounded-full bg-primary font-semibold text-black'>Let’s Talk</button>
                         </a>
                     </div>
                 </div>
