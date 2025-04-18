@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import webImg from '../../assets/banner-one.jpg'
 import uiImg from '../../assets/blackwebpage demo.webp'
 import digitalImg from '../../assets/digital-marketing.png'
-import graphicsImg from '../../assets/graphics-01.jpg'
+import graphicsImg from '../../assets/graphices-2.jpeg'
 
 
 const AllServices = () => {

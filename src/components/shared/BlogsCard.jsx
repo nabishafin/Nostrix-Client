@@ -5,7 +5,7 @@ const BlogsCard = ({ blog, bgColor, textColor }) => {
         <div>
             <div className={`${bgColor} ${textColor} rounded-2xl  cursor-pointer transform transition-transform duration-300 mb-10  px-2`}>
                 {/* Image Section */}
-                <div className="bg-gray-100 rounded-xl h-96 flex items-center justify-center overflow-hidden">
+                <div className="bg-gray-100 rounded-xl h-96 flex items-center justify-center overflow-hidden border-2">
                     <img src={blog.image} alt="Image description" className="w-full h-full object-cover" />
                 </div>
 
