@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaArrowRight, FaCheck } from 'react-icons/fa';
+import { FaCheck } from 'react-icons/fa';
 import img from '../../assets/about_pic.jpg';
 import { Link } from 'react-router-dom';
 import LearnMoreButton from '../shared/LearnMoreButton';

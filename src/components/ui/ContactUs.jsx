@@ -10,7 +10,7 @@ const ContactUs = ({ bg, textColor, bginput, bgCircle }) => {
                     <h1 className={`font-semibold text-lg md:text-xl ${textColor}`}>Contact Us</h1>
                 </div>
                 <h1 className={`text-2xl md:text-3xl mt-1 ${textColor} font-bold`}>Join Us in Creating</h1>
-                <p className='text-3xl md:text-4xl font-bold text-primary'>Something Great</p>
+                <p className='text-3xl md:text-4xl font-bold text-primary mt-2'>Something Great</p>
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-10'>
                     {/* Form Section */}

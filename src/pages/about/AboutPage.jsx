@@ -1,9 +1,10 @@
 import React from 'react';
 import PageBanner from '../../components/shared/PageBanner';
 import { FaArrowRight, FaCheck, FaFacebook, FaInstagram, FaInstagramSquare, FaPinterest, FaTwitter } from 'react-icons/fa';
-import img from '../../assets/bp.jpg';
+import profile1 from '../../assets/Shafin-profile.jpeg';
 import WorkProcess from '../../components/ui/WorkProcess';
 import Marque from '../../components/shared/Marque';
+import img from '../../assets/about_pic.jpg';
 
 const AboutPage = () => {
 
@@ -100,7 +101,7 @@ const AboutPage = () => {
                         <div className="flex flex-col items-center justify-center ">
                             <div className="relative w-full   rounded-lg shadow-lg overflow-hidden mx-auto">
                                 <div className="relative h-64 md:h-80">
-                                    <img src={img} alt="Card Image" className="w-full h-full object-cover" />
+                                    <img src={profile1} alt="Card Image" className="w-full h-full object-cover" />
                                     <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex justify-center space-x-4">
                                         <div className="bg-primary rounded-full p-2">
                                             <FaFacebook size={30} className="text-black" />
@@ -119,15 +120,15 @@ const AboutPage = () => {
                             </div>
 
                             <div className="mt-4 text-center w-full max-w-sm md:max-w-md lg:max-w-lg">
-                                <h1 className="text-white text-xl font-semibold">Jenny Alexander</h1>
-                                <h3 className="text-white text-md">[ CEO, Digital Agency ]</h3>
+                                <h1 className="text-white text-xl font-semibold">Nabi Shafin</h1>
+                                <h3 className="text-white text-md">[ CEO, Nostrix Creative ]</h3>
                             </div>
                         </div>
                         {/* card-2 */}
                         <div className="flex flex-col items-center justify-center ">
                             <div className="relative w-full   rounded-lg shadow-lg overflow-hidden mx-auto">
                                 <div className="relative h-64 md:h-80">
-                                    <img src={img} alt="Card Image" className="w-full h-full object-cover" />
+                                    <img src={''} alt="Card Image" className="w-full h-full object-cover" />
                                     <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex justify-center space-x-4">
                                         <div className="bg-primary rounded-full p-2">
                                             <FaFacebook size={30} className="text-black" />
@@ -153,7 +154,7 @@ const AboutPage = () => {
                         <div className="flex flex-col items-center justify-center ">
                             <div className="relative w-full   rounded-lg shadow-lg overflow-hidden mx-auto">
                                 <div className="relative h-64 md:h-80">
-                                    <img src={img} alt="Card Image" className="w-full h-full object-cover" />
+                                    <img src={''} alt="Card Image" className="w-full h-full object-cover" />
                                     <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 flex justify-center space-x-4">
                                         <div className="bg-primary rounded-full p-2">
                                             <FaFacebook size={30} className="text-black" />

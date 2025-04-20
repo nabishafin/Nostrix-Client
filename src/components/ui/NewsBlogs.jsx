@@ -20,7 +20,7 @@ const NewsBlogs = () => {
                         <h1 className='text-white font-semibold text-lg md:text-xl'>News & Blogs</h1>
                     </div>
                     <h1 className='text-2xl md:text-3xl mt-1 text-white font-bold'>Our Latest News & Blogs</h1>
-                    <div className='flex justify-between items-center mt-6'>
+                    <div className='flex justify-between items-center mt-2'>
                         <p className='text-3xl md:text-4xl font-bold text-primary'>News & Blogs</p>
                         <Link to={'/blogs'}>
                             <LearnMoreButton />

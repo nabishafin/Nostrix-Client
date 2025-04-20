@@ -39,7 +39,7 @@ const WorkPortfolio = () => {
                         <h1 className='text-white font-semibold text-lg md:text-xl'> Our Projects</h1>
                     </div>
                     <h1 className='text-2xl md:text-3xl mt-1 text-white font-bold'>Our Recent Work Portfolio</h1>
-                    <div className='flex justify-between items-center mt-6'>
+                    <div className='flex justify-between items-center mt-2'>
                         <p className='text-3xl md:text-4xl font-bold text-primary'>Work Portfolio</p>
                         {/* The button is hidden on mobile and shown on medium screens and up */}
                         <Link to={'/projects'} >
