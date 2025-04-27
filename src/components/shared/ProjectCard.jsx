@@ -83,7 +83,7 @@ const ProjectCard = ({ data, bgcolor, textColor, categorybg, border, borderColor
                 <div className="bg-gray-200 rounded-lg flex-shrink-0">
                     {data.image && (
                         <img
-                            src={data.image}
+                            src={data?.image || 'loading Img'}
                             className="h-48 md:h-60 w-full object-cover rounded-lg"
                             alt={data.title}
                         />
