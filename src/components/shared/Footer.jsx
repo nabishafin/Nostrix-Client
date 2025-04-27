@@ -2,6 +2,7 @@ import React from 'react';
 import { FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaGlobe, FaArrowRight } from 'react-icons/fa';
 import logo from '../../assets/logo.svg';
 import Marque from './Marque';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -48,12 +49,13 @@ const Footer = () => {
                         <div className='min-w-[250px] ml-0 md:ml-40'>
                             <h4 className="text-lg font-semibold mb-4 text-primary">Navigation</h4>
                             <ul className="space-y-2">
-                                <li><a href="#" className="text-gray-400 hover:text-white">Home</a></li>
-                                <li><a href="#" className="text-gray-400 hover:text-white">Services</a></li>
-                                <li><a href="#" className="text-gray-400 hover:text-white">About Us</a></li>
-                                <li><a href="#" className="text-gray-400 hover:text-white">Projects</a></li>
-                                <li><a href="#" className="text-gray-400 hover:text-white">Careers</a></li>
-                                <li><a href="#" className="text-gray-400 hover:text-white">FAQs</a></li>
+                                <li><Link to="/" className="text-gray-400 hover:text-white">Home</Link></li>
+                                <li><Link to="/services" className="text-gray-400 hover:text-white">Services</Link></li>
+                                <li><Link to="/aboutus" className="text-gray-400 hover:text-white">About Us</Link></li>
+                                <li><Link to="/projects" className="text-gray-400 hover:text-white">Projects</Link></li>
+                                {/* <li><Link to="/careers" className="text-gray-400 hover:text-white">Careers</Link></li>
+                                <li><Link to="/faqs" className="text-gray-400 hover:text-white">FAQs</Link></li> */}
+
                             </ul>
                         </div>
 

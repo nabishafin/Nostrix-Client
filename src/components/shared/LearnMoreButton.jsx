@@ -9,6 +9,7 @@ const LearnMoreButton = ({ text }) => {
                 <FaArrowRight size={30} className="bg-black p-2 rounded-full text-primary" />
             </p>
 
+
         </div>
     );
 };

@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from 'emailjs-com';
 import { FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaYoutube, FaArrowRight } from 'react-icons/fa';
-import hireusImg from '../../assets/HireUs png.png'
+import hireusImg from '../../assets/HireUs png.png';
+
 const ContactUs = ({ bg, textColor, bginput, bgCircle }) => {
+    const formRef = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm(
+            'service_ulc9cze',     // 🔁 Replace this
+            'template_eu3xc8l',    // 🔁 Replace this
+            formRef.current,
+            'JrivHisIqegdsO58N'      // 🔁 Replace this
+        ).then((result) => {
+            alert('Message sent successfully!');
+            console.log(result.text);
+            formRef.current.reset(); // Clear the form
+        }).catch((error) => {
+            alert('Something went wrong. Please try again.');
+            console.error(error);
+        });
+    };
+
     return (
-        <section className={`${bg} mt-10 md:mt-20 relative `}>
+        <section className={`${bg} mt-10 md:mt-20 relative`}>
             <div className='md:w-10/12 px-4 mx-auto py-20'>
                 <div className='flex items-center gap-2'>
                     <hr className='w-6 h-1 bg-primary border-0' />
@@ -14,51 +36,26 @@ const ContactUs = ({ bg, textColor, bginput, bgCircle }) => {
 
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-10'>
                     {/* Form Section */}
-                    <div className="mt-10">
+                    <form ref={formRef} onSubmit={sendEmail} className="mt-10">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input
-                                type="text"
-                                placeholder="First Name *"
-                                className={`${bginput} p-3 rounded ${textColor} w-full`}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Last Name *"
-                                className={`${bginput} p-3 rounded ${textColor} w-full`}
-                            />
-                            <input
-                                type="email"
-                                placeholder="Email *"
-                                className={`${bginput} p-3 rounded ${textColor} w-full`}
-                            />
-                            <input
-                                type="tel"
-                                placeholder="Phone Number *"
-                                className={`${bginput} p-3 rounded ${textColor} w-full`}
-                            />
-                            <input
-                                type="text"
-                                placeholder="Subject *"
-                                className={`${bginput} p-3 rounded ${textColor} w-full md:col-span-2`}
-                            />
-                            <textarea
-                                placeholder="Message *"
-                                className={`${bginput} p-3 rounded ${textColor} w-full md:col-span-2`}
-                                rows="4"
-                            ></textarea>
+                            <input name="first_name" type="text" placeholder="First Name *" className={`${bginput} p-3 rounded ${textColor} w-full`} required />
+                            <input name="last_name" type="text" placeholder="Last Name *" className={`${bginput} p-3 rounded ${textColor} w-full`} required />
+                            <input name="email" type="email" placeholder="Email *" className={`${bginput} p-3 rounded ${textColor} w-full`} required />
+                            <input name="phone" type="tel" placeholder="Phone Number *" className={`${bginput} p-3 rounded ${textColor} w-full`} />
+                            <input name="subject" type="text" placeholder="Subject *" className={`${bginput} p-3 rounded ${textColor} w-full md:col-span-2`} required />
+                            <textarea name="message" placeholder="Message *" className={`${bginput} p-3 rounded ${textColor} w-full md:col-span-2`} rows="4" required></textarea>
                         </div>
 
                         {/* Button section */}
                         <div className="mt-4 flex justify-center md:justify-start">
-                            <button className="flex gap-2 items-center text-lg md:text-xl pr-2 rounded-3xl bg-white">
+                            <button type="submit" className="flex gap-2 items-center text-lg md:text-xl pr-2 rounded-3xl bg-white">
                                 <p className={`text-lg md:text-xl ${textColor} px-4 py-2 rounded-3xl bg-primary`}>
                                     Send Message
                                 </p>
                                 <FaArrowRight size={30} className="bg-black p-2 rounded-full text-primary" />
                             </button>
                         </div>
-                    </div>
-
+                    </form>
 
                     {/* Address & Contact Section */}
                     <div className='bg-primary p-6 rounded mt-10'>
@@ -85,14 +82,11 @@ const ContactUs = ({ bg, textColor, bginput, bgCircle }) => {
 
                 {/* Circle Logo */}
                 <div className='hidden md:block absolute top-16 right-7'>
-                    {/* circle-1 */}
                     <div className='hidden md:block mr-8 w-[120px] h-[120px] md:w-[150px] md:h-[150px] rounded-full bg-primary absolute'></div>
-                    {/* circle-2 */}
                     <div className='hidden md:block z-1 relative md:ml-20 lg:mr-36' style={{ position: 'relative', width: '155px', height: '155px' }}>
                         <img className={`w-[155px] rotating-image ${bgCircle} backdrop-blur-2xl rounded-full`} src={hireusImg} alt="" />
                     </div>
                 </div>
-
             </div>
         </section>
     );
