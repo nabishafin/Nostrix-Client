@@ -21,7 +21,7 @@ const Banner = () => {
                     <div className='flex flex-col md:flex-row items-center'>
                         {/* Left Text Section */}
                         <div className='w-full md:w-6/12 text-center md:text-left'>
-                            <h1 className='text-4xl md:text-6xl text-white font-bold'>Where </h1>
+                            <h1 className='text-4xl md:text-6xl text-white font-bold'>Where Innovation Meets</h1>
                             <h2 className='text-4xl md:text-6xl text-primary font-semibold'> Digital Excellence</h2>
                         </div>
 
