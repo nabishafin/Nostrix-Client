@@ -62,7 +62,7 @@ const Blogs = () => {
             link: '#'
         },
         {
-            image: postimg1,
+            image: postimg2,
             category: 'Development',
             date: '18 April 2024',
             title: 'React vs Vue: Which One Should You Choose?',
