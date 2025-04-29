@@ -11,18 +11,17 @@ const OurServices = () => {
                     <h1 className="text-black font-semibold text-xl">Our Services</h1>
                 </div>
 
-                {/* Content Section */}
+
                 <div className="flex flex-col md:flex-row mt-5">
-                    {/* Left Side - Headings */}
+
                     <div className="w-full md:w-6/12 ">
                         <h2 className="text-3xl md:text-5xl font-bold ">Discover Our</h2>
                         <h2 className="text-3xl md:text-5xl font-bold">Digital Solutions</h2>
                     </div>
 
-                    {/* Vertical Divider - Hidden on small screens */}
                     <div className="hidden md:block w-px bg-gradient-to-r from-white via-primary to-white mx-4 my-4 md:my-0"></div>
 
-                    {/* Right Side - Description */}
+
                     <div className="w-full md:w-6/12 text-center md:text-left px-2 flex justify-center items-center mt-4 md:mt-0">
                         <p className='text-left'>
                             At <span className="text-primary">Nostrix Creative</span>, we specialize in website development, graphics design, UI/UX design, digital marketing, custom software, mobile apps, and branding. We transform ideas into impactful digital experiences to help your business thrive. Let’s create something extraordinary together!
@@ -30,7 +29,7 @@ const OurServices = () => {
                     </div>
                 </div>
             </div>
-            {/* Accordion section of Our all Services  */}
+
             <AllServices />
         </div>
     );
