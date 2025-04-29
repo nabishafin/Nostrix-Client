@@ -8,13 +8,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#20D374', // Custom primary color
-        secondary: '', // Custom secondary color
+        primary: '#20D374',
+        secondary: '',
       },
     },
   },
   plugins: [
     require('daisyui'),
   ],
+  daisyui: {
+    themes: ["light"],
+  },
 }
-
