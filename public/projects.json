@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "image": "../src/assets/fitness-img.png",
+        "image": "/src/assets/fitness-img.png",
         "tags": [
             "UI/UX",
             "Mobile",
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "image": "../src/assets/E-commerce Page img.jpg",
+        "image": "/src/assets/E-commerce Page img.jpg",
         "tags": [
             "Web",
             "Landing",
@@ -23,7 +23,7 @@
     },
     {
         "id": 3,
-        "image": "../src/assets/mobileapp ui.jpeg",
+        "image": "/src/assets/mobileapp ui.jpeg",
         "tags": [
             "App",
             "Wireframe",
@@ -34,7 +34,7 @@
     },
     {
         "id": 4,
-        "image": "../src/assets/portfolio-img.webp",
+        "image": "/src/assets/portfolio-img.webp",
         "tags": [
             "Web",
             "Portfolio",
@@ -45,7 +45,7 @@
     },
     {
         "id": 5,
-        "image": "../src/assets/money-managment-img.png",
+        "image": "/src/assets/money-managment-img.png",
         "tags": [
             "Mobile",
             "Utility",
@@ -56,7 +56,7 @@
     },
     {
         "id": 6,
-        "image": "../src/assets/Shopping Platform-img.png",
+        "image": "/src/assets/Shopping Platform-img.png",
         "tags": [
             "E-commerce",
             "UX",

@@ -8,6 +8,7 @@ import postimg2 from '../../assets/Building Your First Mobile App from Scratch.p
 import postimg3 from '../../assets/webdevelopment.jpg';
 import bg from '../../assets/blog-bg.jpg';
 
+
 const Blogs = () => {
     const categories = [
         'Mobile Application Development',
@@ -36,6 +37,9 @@ const Blogs = () => {
     ];
 
     const [blogs, setBlogs] = useState([]);
+
+
+
 
     useEffect(() => {
         fetch('blogs.json')

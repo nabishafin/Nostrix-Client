@@ -5,21 +5,72 @@ import ProjectCard from '../../components/shared/ProjectCard';
 import Marque from '../../components/shared/Marque';
 import ContactUs from '../../components/ui/ContactUs';
 import Testimonials from '../../components/ui/Testimonials';
+import fitnessImg from '../assets/fitness-img.png';
+import ecommerceImg from '../assets/E-commerce Page img.jpg';
+import mobileAppImg from '../assets/mobileapp ui.jpeg';
+import portfolioImg from '../assets/portfolio-img.webp';
+import taskManagerImg from '../assets/money-managment-img.png';
+import shoppingPlatformImg from '../assets/Shopping Platform-img.png';
+
+
 
 const Projects = () => {
+
+
+
+
     const [datas, setDatas] = useState([]);
     const [allProjects, setAllProjects] = useState([]); // Store full list
     const [showAll, setShowAll] = useState(false);
 
-    useEffect(() => {
-        fetch('projects.json')
-            .then(res => res.json())
-            .then(data => {
-                setAllProjects(data);            // Store full list once
-                setDatas(data.slice(0, 3));      // Show first 3 initially
-            })
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
+
+    const projects = [
+        {
+            id: 1,
+            image: fitnessImg,
+            tags: ['UI/UX', 'Mobile', 'Design'],
+            title: 'Fitness Tracker',
+            description: 'A mobile app for tracking daily fitness activities.'
+        },
+        {
+            id: 2,
+            image: ecommerceImg,
+            tags: ['Web', 'Landing', 'Visual'],
+            title: 'E-commerce Page',
+            description: 'A visually appealing landing page for an online store.'
+        },
+        {
+            id: 3,
+            image: mobileAppImg,
+            tags: ['App', 'Wireframe', 'Prototype'],
+            title: 'Social Media App',
+            description: 'Conceptual design and wireframes for a new social media app.'
+        },
+        {
+            id: 4,
+            image: portfolioImg,
+            tags: ['Web', 'Portfolio', 'Development'],
+            title: 'Portfolio Website',
+            description: 'A professional portfolio website to showcase skills and projects.'
+        },
+        {
+            id: 5,
+            image: taskManagerImg,
+            tags: ['Mobile', 'Utility', 'UI'],
+            title: 'Task Manager',
+            description: 'A simple and efficient app for managing daily tasks.'
+        },
+        {
+            id: 6,
+            image: shoppingPlatformImg,
+            tags: ['E-commerce', 'UX', 'Responsive'],
+            title: 'Shopping Platform',
+            description: 'A user-friendly e-commerce platform with responsive design.'
+        }
+    ];
+
+
+
 
     const handleMoreData = () => {
         const moreProjects = allProjects.slice(3); // Get remaining projects
