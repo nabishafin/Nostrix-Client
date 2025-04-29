@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PageBanner from '../../components/shared/PageBanner';
 import Heading from '../../components/shared/Heading';
 import BlogsCard from '../../components/shared/BlogsCard';
@@ -35,14 +35,52 @@ const Blogs = () => {
         },
     ];
 
-    const [blogs, setBlogs] = useState([]);
+    // Fake JSON data (simulating what would come from an API)
+    const fakeBlogsData = [
+        {
+            image: postimg1,
+            category: 'Design',
+            date: '01 January 2024',
+            title: 'Crafting User Interfaces That Work',
+            description: 'A quick dive into the best practices for designing simple and effective UI layouts.',
+            link: '#'
+        },
+        {
+            image: postimg2,
+            category: 'Teamwork',
+            date: '05 February 2024',
+            title: 'The Power of Collaboration in Remote Teams',
+            description: 'How remote teams can still be creative and productive using the right tools and mindset.',
+            link: '#'
+        },
+        {
+            image: postimg3,
+            category: 'Marketing',
+            date: '12 March 2024',
+            title: 'Simple SEO Hacks for Beginners',
+            description: 'Boost your visibility online with these easy and effective SEO strategies.',
+            link: '#'
+        },
+        {
+            image: postimg1,
+            category: 'Development',
+            date: '18 April 2024',
+            title: 'React vs Vue: Which One Should You Choose?',
+            description: 'A head-to-head comparison between two of the most popular frontend frameworks.',
+            link: '#'
+        },
+        {
+            image: postimg2,
+            category: 'Mobile Apps',
+            date: '25 May 2024',
+            title: 'Building Your First Mobile App from Scratch',
+            description: 'Everything you need to know to get started with mobile app development.',
+            link: '#'
+        }
+    ];
 
-    useEffect(() => {
-        fetch('blogs.json')
-            .then(res => res.json())
-            .then(data => setBlogs(data))
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
+    // Set the fake blogs data to the state
+    const [blogs, setBlogs] = useState(fakeBlogsData);
 
     return (
         <div>
