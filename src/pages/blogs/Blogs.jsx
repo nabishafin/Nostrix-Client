@@ -3,9 +3,11 @@ import PageBanner from '../../components/shared/PageBanner';
 import Heading from '../../components/shared/Heading';
 import BlogsCard from '../../components/shared/BlogsCard';
 import { FaSearch } from 'react-icons/fa';
-import postimg1 from '../../assets/Empathy img.jpg';
-import postimg2 from '../../assets/Building Your First Mobile App from Scratch.png';
-import postimg3 from '../../assets/webdevelopment.jpg';
+import postimg1 from '../../assets/blog-1-Crafting.webp';
+import postimg2 from '../../assets/blogimg-2-colabreation.jpg';
+import postimg3 from '../../assets/blog-3-boastinteam.webp';
+import postimg4 from '../../assets/React-vs vue.jpg';
+import postimg5 from '../../assets/Building Your First Mobile App from Scratch.png';
 import bg from '../../assets/blog-bg.jpg';
 
 const Blogs = () => {
@@ -62,7 +64,7 @@ const Blogs = () => {
             link: '#'
         },
         {
-            image: postimg2,
+            image: postimg4,
             category: 'Development',
             date: '18 April 2024',
             title: 'React vs Vue: Which One Should You Choose?',
@@ -70,7 +72,7 @@ const Blogs = () => {
             link: '#'
         },
         {
-            image: postimg2,
+            image: postimg5,
             category: 'Mobile Apps',
             date: '25 May 2024',
             title: 'Building Your First Mobile App from Scratch',
