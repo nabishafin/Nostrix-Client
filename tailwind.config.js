@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: false,
+  darkMode: false, // Tailwind dark mode off
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -13,10 +13,9 @@ export default {
       },
     },
   },
-  plugins: [
-    require('daisyui'),
-  ],
+  plugins: [require('daisyui')],
   daisyui: {
-    themes: ["light"],
+    themes: ["light"], // Only allow light
+    darkTheme: false,  // ✅ Disable dark mode behavior
   },
 }

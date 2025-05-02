@@ -22,3 +22,8 @@
         transform: rotate(360deg);
     }
 }
+
+
+:root {
+    color-scheme: light;
+}
