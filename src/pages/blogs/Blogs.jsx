@@ -37,11 +37,10 @@ const Blogs = () => {
         },
     ];
 
-    // Fake JSON data (simulating what would come from an API)
     const fakeBlogsData = [
         {
             image: postimg1,
-            category: 'Design',
+            category: 'UX/UI Design',
             date: '01 January 2024',
             title: 'Crafting User Interfaces That Work',
             description: 'A quick dive into the best practices for designing simple and effective UI layouts.',
@@ -49,7 +48,7 @@ const Blogs = () => {
         },
         {
             image: postimg2,
-            category: 'Teamwork',
+            category: 'Graphics Design',
             date: '05 February 2024',
             title: 'The Power of Collaboration in Remote Teams',
             description: 'How remote teams can still be creative and productive using the right tools and mindset.',
@@ -57,7 +56,7 @@ const Blogs = () => {
         },
         {
             image: postimg3,
-            category: 'Marketing',
+            category: 'Digital Marketing',
             date: '12 March 2024',
             title: 'Simple SEO Hacks for Beginners',
             description: 'Boost your visibility online with these easy and effective SEO strategies.',
@@ -65,7 +64,7 @@ const Blogs = () => {
         },
         {
             image: postimg4,
-            category: 'Development',
+            category: 'Website Development',
             date: '18 April 2024',
             title: 'React vs Vue: Which One Should You Choose?',
             description: 'A head-to-head comparison between two of the most popular frontend frameworks.',
@@ -73,7 +72,7 @@ const Blogs = () => {
         },
         {
             image: postimg5,
-            category: 'Mobile Apps',
+            category: 'Mobile Application Development',
             date: '25 May 2024',
             title: 'Building Your First Mobile App from Scratch',
             description: 'Everything you need to know to get started with mobile app development.',
@@ -81,32 +80,38 @@ const Blogs = () => {
         }
     ];
 
-    // Set the fake blogs data to the state
-    const [blogs, setBlogs] = useState(fakeBlogsData);
+    const [blogs] = useState(fakeBlogsData);
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState('');
+
+    const filteredBlogs = blogs.filter(blog => {
+        const matchesSearch =
+            blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            blog.category.toLowerCase().includes(searchTerm.toLowerCase());
+
+        const matchesCategory = selectedCategory
+            ? blog.category === selectedCategory
+            : true;
+
+        return matchesSearch && matchesCategory;
+    });
 
     return (
         <div>
             <PageBanner title="Blogs" subtitle="Blogs" />
             <div className="mt-20">
-                <Heading
-                    title="News & Blogs"
-                    subtitle="Our Latest News & Blogs"
-                />
+                <Heading title="News & Blogs" subtitle="Our Latest News & Blogs" />
             </div>
 
             <div className="md:w-10/12 w-full px-4 md:px-0 mx-auto gap-3 flex flex-col md:flex-row mt-10">
                 {/* Blog Content Section */}
                 <div className="md:w-9/12 w-full">
-                    {blogs.length > 0 ? (
-                        blogs.map((blog, index) => (
-                            <BlogsCard
-                                key={index}
-                                textColor="text-black"
-                                blog={blog}
-                            />
+                    {filteredBlogs.length > 0 ? (
+                        filteredBlogs.map((blog, index) => (
+                            <BlogsCard key={index} textColor="text-black" blog={blog} />
                         ))
                     ) : (
-                        <p>Loading blogs...</p>
+                        <p>No blogs found.</p>
                     )}
                 </div>
 
@@ -118,6 +123,8 @@ const Blogs = () => {
                         <input
                             type="text"
                             placeholder="Search"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
                             className="flex-grow outline-none text-2xl font-semibold"
                         />
                         <FaSearch size={30} className="text-gray-500" />
@@ -126,10 +133,19 @@ const Blogs = () => {
                     {/* Categories */}
                     <h1 className="text-3xl border-l-4 border-primary pl-3 font-bold mt-6">Popular Category</h1>
                     <ul className="space-y-2 mt-4">
+                        <li
+                            onClick={() => setSelectedCategory('')}
+                            className={`cursor-pointer p-3 rounded-md border-b border-gray-200 
+                            ${selectedCategory === '' ? 'bg-primary text-white' : 'bg-gray-100'}`}
+                        >
+                            All
+                        </li>
                         {categories.map((category, index) => (
                             <li
                                 key={index}
-                                className="bg-gray-100 p-3 rounded-md border-b border-gray-200"
+                                onClick={() => setSelectedCategory(category)}
+                                className={`cursor-pointer p-3 rounded-md border-b border-gray-200 
+                                ${selectedCategory === category ? 'bg-primary text-white' : 'bg-gray-100'}`}
                             >
                                 {category}
                             </li>
@@ -170,7 +186,7 @@ const Blogs = () => {
                                 Looking For <span className="text-primary">Trusted</span> <br />
                                 Digital Agency?
                             </h2>
-                            <button className="bg-primary text-white py-2 px-6 rounded-full font-semibold hover:bg-lime-600">
+                            <button className="bg-primary text-white py-2 px-6 rounded-full font-semibold hover:bg-black">
                                 Hire Us Now
                             </button>
                         </div>
