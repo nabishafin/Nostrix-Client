@@ -1,6 +1,5 @@
-/** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: 'class',
+  darkMode: false, // completely disable dark mode
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -9,11 +8,11 @@ export default {
     extend: {
       colors: {
         primary: '#20D374',
-        secondary: '',
       },
     },
   },
-  plugins: [
-    require('daisyui'),
-  ]
+  plugins: [require('daisyui')],
+  daisyui: {
+    themes: ["light"], // Force light theme in DaisyUI
+  },
 }
