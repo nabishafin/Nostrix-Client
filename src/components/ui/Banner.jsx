@@ -8,6 +8,7 @@ import hireusImg from '../../assets/HireUs png.png'
 const Banner = () => {
     const services = ['Website Development', 'UX/UI Design', 'Graphic Design', 'Digital Marketing', 'Mobile Development'];
 
+
     return (
         <section className='bg-black'>
             <div className='w-auto md:w-10/12 mx-auto px-4'>

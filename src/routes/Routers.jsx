@@ -16,11 +16,13 @@ import WebDevelopmentDetails from "../servicedetails/WebDevelopmentDetails";
 import UIUXDesignDetails from "../servicedetails/UIUXDesignDetails";
 import GraphicsDesignDetails from "../servicedetails/GraphicsDesignDetails";
 import DigitalMarketingDetails from "../servicedetails/DigitalMarketingDetails";
+import NotFound from "../components/shared/NotFound";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout />,
+        errorElement: <NotFound />,
         children: [
             { path: "/", element: <Home /> },
             { path: "/services", element: <Services /> },
