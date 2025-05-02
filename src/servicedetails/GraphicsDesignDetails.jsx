@@ -1,5 +1,8 @@
 import React from 'react';
 import PageBanner from '../components/shared/PageBanner';
+import heroimageUrl from '../assets/gd-banner.png'
+import image1 from '../assets/gd-1.avif'
+import image2 from '../assets/gd-2.jpg'
 
 const GraphicsDesignDetails = () => {
     return (
@@ -13,13 +16,17 @@ const GraphicsDesignDetails = () => {
             <div className='px-4 md:px-0 w-full md:w-10/12 mx-auto mt-20'>
                 <div>
                     {/* Hero Section */}
-                    <div className="relative rounded-lg bg-gray-200 h-48 md:h-64 lg:h-80 mb-8 flex justify-center items-center">
-                        <div className="absolute inset-0 flex justify-center items-center">
-                            <div className="w-10 h-10 rounded-full bg-gray-400 flex justify-center items-center text-gray-100">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
-                                    <path d="M2 6a2 2 0 012-2h6v2H4v12h16v-6h2v6a2 2 0 01-2 2H4a2 2 0 01-2-2V6zm14 0a2 2 0 012-2h4v4a2 2 0 01-2 2h-4V6zm2 0v2h2V6h-2zM8 12a2 2 0 110-4 2 2 0 010 4z" />
-                                </svg>
-                            </div>
+                    <div className="relative border-2 rounded-lg h-48 md:h-64 lg:h-[600px] mb-8">
+                        <div
+                            className="absolute inset-0 bg-black opacity-40 rounded-lg z-10"
+                        ></div>
+                        <div
+                            className="relative z-20 flex justify-center items-center h-full bg-center bg-no-repeat bg-cover rounded-lg"
+                            style={{
+                                backgroundImage: `url(${heroimageUrl})`,
+                            }}
+                        >
+                            {/* Your content goes here */}
                         </div>
                     </div>
 
@@ -60,8 +67,14 @@ const GraphicsDesignDetails = () => {
 
                     {/* Image Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                        <div className="rounded-lg bg-gray-200 h-48 md:h-64"></div>
-                        <div className="rounded-lg bg-gray-200 h-48 md:h-64"></div>
+                        <div
+                            className="rounded-lg bg-cover bg-no-repeat bg-center h-48 md:h-64"
+                            style={{ backgroundImage: `url(${image1})` }}
+                        ></div>
+                        <div
+                            className="rounded-lg bg-cover bg-no-repeat bg-center h-48 md:h-64"
+                            style={{ backgroundImage: `url(${image2})` }}
+                        ></div>
                     </div>
 
                     {/* Expertise Section */}

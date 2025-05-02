@@ -1,5 +1,8 @@
 import React from 'react';
 import PageBanner from '../components/shared/PageBanner';
+import heroimageUrl from '../assets/dm-1.jpg'
+import image1 from '../assets/dg-banner.jpg'
+import image2 from '../assets/dm-2.webp'
 
 const DigitalMarketingDetails = () => {
     return (
@@ -13,15 +16,18 @@ const DigitalMarketingDetails = () => {
             <div className='px-4 md:px-0 w-full md:w-10/12 mx-auto mt-20'>
                 <div>
                     {/* Hero Section */}
-                    <div className="relative rounded-lg bg-gray-200 h-48 md:h-64 lg:h-80 mb-8 overflow-hidden">
-                        <video
-                            className="w-full h-full object-cover"
-                            src="/path-to-your-video.mp4"
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                        />
+                    <div className="relative border-2 rounded-lg h-48 md:h-64 lg:h-[600px] mb-8">
+                        <div
+                            className="absolute inset-0 bg-black opacity-40 rounded-lg z-10"
+                        ></div>
+                        <div
+                            className="relative z-20 flex justify-center items-center h-full bg-center bg-no-repeat bg-cover rounded-lg"
+                            style={{
+                                backgroundImage: `url(${heroimageUrl})`,
+                            }}
+                        >
+                            {/* Your content goes here */}
+                        </div>
                     </div>
 
 
@@ -62,8 +68,14 @@ const DigitalMarketingDetails = () => {
 
                     {/* Image Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                        <div className="rounded-lg bg-gray-200 h-48 md:h-64"></div>
-                        <div className="rounded-lg bg-gray-200 h-48 md:h-64"></div>
+                        <div
+                            className="rounded-lg bg-cover bg-no-repeat bg-center h-48 md:h-64"
+                            style={{ backgroundImage: `url(${image1})` }}
+                        ></div>
+                        <div
+                            className="rounded-lg bg-cover bg-no-repeat bg-center h-48 md:h-64"
+                            style={{ backgroundImage: `url(${image2})` }}
+                        ></div>
                     </div>
 
                     {/* Expertise Section */}

@@ -1,6 +1,6 @@
 import React from 'react';
 import PageBanner from '../components/shared/PageBanner';
-import heroimageUrl from '../assets/web-detailsbanner.webp'
+import heroimageUrl from '../assets/web_cover.jpeg'
 import image1 from '../assets/Frontend-details-image.jpeg'
 import image2 from '../assets/backend details img.jpg'
 
@@ -17,14 +17,20 @@ const WebDevelopmentDetails = () => {
                 <div className="">
                     <div className="">
                         {/* Hero Section */}
-                        <div
-                            className="relative border-2 rounded-lg h-48 md:h-64 lg:h-96 mb-8 flex justify-center items-center bg-center bg-no-repeat"
-                            style={{
-                                backgroundImage: `url(${heroimageUrl})`,
-                                backgroundSize: '',
-                            }}
-                        >
+                        <div className="relative border-2 rounded-lg h-48 md:h-64 lg:h-[600px] mb-8">
+                            <div
+                                className="absolute inset-0 bg-black opacity-40 rounded-lg z-10"
+                            ></div>
+                            <div
+                                className="relative z-20 flex justify-center items-center h-full bg-center bg-no-repeat bg-cover rounded-lg"
+                                style={{
+                                    backgroundImage: `url(${heroimageUrl})`,
+                                }}
+                            >
+                                {/* Your content goes here */}
+                            </div>
                         </div>
+
 
 
 

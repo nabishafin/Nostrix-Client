@@ -1,5 +1,8 @@
 import React from 'react';
 import PageBanner from '../components/shared/PageBanner';
+import heroimageUrl from '../assets/uiux banner final.png'
+import image1 from '../assets/ui-1.png'
+import image2 from '../assets/ui-2.png'
 
 const UIUXDesignDetails = () => {
     return (
@@ -14,13 +17,17 @@ const UIUXDesignDetails = () => {
                 <div className="">
                     <div className="">
                         {/* Hero Section */}
-                        <div className="relative rounded-lg bg-gray-200 h-48 md:h-64 lg:h-80 mb-8 flex justify-center items-center">
-                            <div className="absolute inset-0 flex justify-center items-center">
-                                <div className="w-10 h-10 rounded-full bg-gray-400 flex justify-center items-center text-gray-100">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
-                                        <path d="M12 1.75a10.25 10.25 0 1 0 10.25 10.25A10.262 10.262 0 0 0 12 1.75Zm0 18.5a8.25 8.25 0 1 1 8.25-8.25 8.259 8.259 0 0 1-8.25 8.25Zm0-13a.75.75 0 0 0-.75.75v5.25a.75.75 0 0 0 .53.71l3 1a.75.75 0 0 0 .44-1.42L12.75 13V8A.75.75 0 0 0 12 7.25Z" />
-                                    </svg>
-                                </div>
+                        <div className="relative border-2 rounded-lg h-48 md:h-64 lg:h-[600px] mb-8">
+                            <div
+                                className="absolute inset-0 bg-black opacity-40 rounded-lg z-10"
+                            ></div>
+                            <div
+                                className="relative z-20 flex justify-center items-center h-full bg-center bg-no-repeat bg-cover rounded-lg"
+                                style={{
+                                    backgroundImage: `url(${heroimageUrl})`,
+                                }}
+                            >
+                                {/* Your content goes here */}
                             </div>
                         </div>
 
@@ -61,9 +68,16 @@ const UIUXDesignDetails = () => {
 
                         {/* Image/Video Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                            <div className="rounded-lg bg-gray-200 h-48 md:h-64"></div>
-                            <div className="rounded-lg bg-gray-200 h-48 md:h-64"></div>
+                            <div
+                                className="rounded-lg bg-cover bg-no-repeat bg-center h-48 md:h-64"
+                                style={{ backgroundImage: `url(${image1})` }}
+                            ></div>
+                            <div
+                                className="rounded-lg bg-cover bg-no-repeat bg-center h-48 md:h-64"
+                                style={{ backgroundImage: `url(${image2})` }}
+                            ></div>
                         </div>
+
 
                         {/* Our Expertise Heading and Text */}
                         <div className="mb-8">
