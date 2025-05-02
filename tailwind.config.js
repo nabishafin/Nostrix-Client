@@ -1,6 +1,6 @@
-// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: false, // disable Tailwind dark classes
+  darkMode: false,
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -9,27 +9,14 @@ export default {
     extend: {
       colors: {
         primary: '#20D374',
-        secondary: '#FACC15',
+        secondary: '',
       },
     },
   },
-  plugins: [require('daisyui')],
+  plugins: [
+    require('daisyui'),
+  ],
   daisyui: {
-    themes: [
-      {
-        mytheme: {
-          primary: "#20D374",
-          secondary: "#FACC15",
-          accent: "#37CDBE",
-          neutral: "#3D4451",
-          "base-100": "#FFFFFF", // Background color
-          info: "#3ABFF8",
-          success: "#36D399",
-          warning: "#FBBD23",
-          error: "#F87272",
-        },
-      },
-    ],
-    darkTheme: false,
+    themes: ["light"],
   },
 }
