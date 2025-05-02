@@ -3,7 +3,7 @@ import AllServices from '../shared/AllServices';
 
 const OurServices = () => {
     return (
-        <div className='mx-auto px-4  md:w-10/12 mt-6 '>
+        <div className='mx-auto px-4 md:px-0  md:w-10/12 mt-6  '>
             <div className=" ">
                 {/* Section Heading */}
                 <div className="flex items-center gap-2">

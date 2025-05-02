@@ -1,97 +1,70 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Button from './LearnMoreButton';
 import logo from '../../assets/logo.svg';
 
 const Navbar = () => {
-    // State to track the active link
     const [activeLink, setActiveLink] = useState('/');
-
-    // Get the current path from useLocation hook
     const location = useLocation();
 
-    // Set the active link based on the current path
-    React.useEffect(() => {
+    useEffect(() => {
         setActiveLink(location.pathname);
     }, [location]);
 
-    const links = (
-        <>
-            <li>
-                <Link
-                    to="/"
-                    className={activeLink === '/' ? 'text-primary' : 'text-white'}
-                    onClick={() => setActiveLink('/')}
-                >
-                    Home
-                </Link>
-            </li>
-            <li>
-                <Link
-                    to="/services"
-                    className={activeLink === '/services' ? 'text-primary' : 'text-white'}
-                    onClick={() => setActiveLink('/services')}
-                >
-                    Services
-                </Link>
-            </li>
-            <li>
-                <Link
-                    to="/projects"
-                    className={activeLink === '/projects' ? 'text-primary' : 'text-white'}
-                    onClick={() => setActiveLink('/projects')}
-                >
-                    Projects
-                </Link>
-            </li>
-            <li>
-                <Link
-                    to="/blogs"
-                    className={activeLink === '/blogs' ? 'text-primary' : 'text-white'}
-                    onClick={() => setActiveLink('/blogs')}
-                >
-                    Blogs
-                </Link>
-            </li>
-            <li>
-                <Link
-                    to="/aboutus"
-                    className={activeLink === '/aboutus' ? 'text-primary' : 'text-white'}
-                    onClick={() => setActiveLink('/about-us')}
-                >
-                    About Us
-                </Link>
-            </li>
-            <li>
-                <Link
-                    to="/Contact"
-                    className={activeLink === '/Contact' ? 'text-primary' : 'text-white'}
-                    onClick={() => setActiveLink('/contact-us')}
-                >
-                    Contact Us
-                </Link>
-            </li>
-        </>
-    );
+    const navItems = [
+        { name: 'Home', path: '/' },
+        { name: 'Services', path: '/services' },
+        { name: 'Projects', path: '/projects' },
+        { name: 'Blogs', path: '/blogs' },
+        { name: 'About Us', path: '/aboutus' },
+        { name: 'Contact Us', path: '/Contact' }
+    ];
+
+    const links = navItems.map((item) => (
+        <li key={item.path}>
+            <Link
+                to={item.path}
+                className={`block px-3 py-2 rounded-md font-semibold ${activeLink === item.path ? 'bg-black text-primary' : 'text-white'
+                    }`}
+                onClick={() => setActiveLink(item.path)}
+            >
+                {item.name}
+            </Link>
+        </li>
+    ));
 
     return (
-        <div className="bg-black py-3 sticky top-0 backdrop:blur-sm z-40">
-            <div className="navbar bg-black sticky top-0 z-50 mx-auto w-10/12">
+        <div className="bg-black py-3 sticky top-0 backdrop-blur-sm z-40">
+            <div className="navbar bg-black mx-auto w-12/12 md:w-10/12 px-4 md:px-0">
                 <Link to={'/'} className="navbar-start">
-                    <img className="h-9 md:h-10 pl-0" src={logo} alt="Logo" />
+                    <img className="h-9 md:h-10" src={logo} alt="Logo" />
                 </Link>
+
+                {/* Desktop Menu */}
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1 text-white font-semibold ">
-                        {links}
+                    <ul className="menu menu-horizontal px-1 space-x-2">
+                        {navItems.map((item) => (
+                            <li key={item.path}>
+                                <Link
+                                    to={item.path}
+                                    className={`font-semibold ${activeLink === item.path ? 'text-primary' : 'text-white'
+                                        }`}
+                                    onClick={() => setActiveLink(item.path)}
+                                >
+                                    {item.name}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
-                <div className="navbar-end pr-0 md:pr-3">
-                    <div className="block md:hidden">
+
+                {/* Mobile Menu */}
+                <div className="navbar-end">
+                    <div className="block lg:hidden">
                         <div className="dropdown dropdown-end">
                             <div
                                 tabIndex={0}
                                 role="button"
-                                className="btn btn-ghost lg:hidden text-white bg-primary -mr-7"
+                                className="btn btn-ghost text-white bg-primary"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -110,20 +83,23 @@ const Navbar = () => {
                             </div>
                             <ul
                                 tabIndex={0}
-                                className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow text-primary bg-gray-900"
+                                className="dropdown-content menu rounded-box z-[1] w-52 p-2 shadow bg-primary"
                             >
                                 {links}
                             </ul>
                         </div>
                     </div>
-                    <div className="hidden md:block">
+
+                    {/* Let’s Talk Button */}
+                    <div className="hidden md:block ml-3">
                         <a
                             href="https://wa.me/8801758056337?text=Hi%20there%2C%20I%20would%20like%20to%20talk%20to%20you"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-
-                            <button className='px-3 py-2 rounded-full bg-primary font-semibold text-black'>Let’s Talk</button>
+                            <button className="px-4 py-2 rounded-full bg-primary font-semibold text-black hover:bg-lime-600">
+                                Let’s Talk
+                            </button>
                         </a>
                     </div>
                 </div>

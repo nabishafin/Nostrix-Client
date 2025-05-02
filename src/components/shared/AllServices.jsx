@@ -11,7 +11,7 @@ const AllServices = () => {
     return (
         <div>
             {/* Service 1 - Website Development */}
-            <div className="collapse bg-base-200 border-base-300 sm:px-4 mt-10 rounded-2xl py-4 mx-auto border">
+            <div className="collapse bg-base-200 border-base-300 px-4  mt-10 rounded-2xl py-4 mx-auto border">
                 <input type="checkbox" name="my-accordion-1" />
                 <div className="collapse-title font-semibold">
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-10 justify-between">
