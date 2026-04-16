@@ -108,7 +108,7 @@ const Blogs = () => {
                 <div className="md:w-9/12 w-full">
                     {filteredBlogs.length > 0 ? (
                         filteredBlogs.map((blog, index) => (
-                            <BlogsCard key={index} textColor="text-black" blog={blog} />
+                            <BlogsCard key={index} id={index + 1} textColor="text-black" blog={blog} />
                         ))
                     ) : (
                         <p>No blogs found.</p>

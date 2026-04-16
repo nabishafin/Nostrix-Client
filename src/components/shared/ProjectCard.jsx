@@ -62,6 +62,7 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const ProjectCard = ({ data, bgcolor, textColor, categorybg, border, borderColor }) => {
     const cardVariants = {
@@ -70,17 +71,18 @@ const ProjectCard = ({ data, bgcolor, textColor, categorybg, border, borderColor
     };
 
     return (
-        <motion.div
-            variants={cardVariants}
-            initial="initial"
-            whileHover="hover"
-            className="h-full" // Ensure motion div takes full height
-        >
-            <div
-                className={`${textColor} border-gray-700 rounded-lg p-4 ${bgcolor} border ${border} ${borderColor} h-full flex flex-col`}
+        <Link to={`/projects/${data?.id || 1}`} state={{ data }} className="h-full block">
+            <motion.div
+                variants={cardVariants}
+                initial="initial"
+                whileHover="hover"
+                className="h-full" // Ensure motion div takes full height
             >
-                {/* Image section - fixed height */}
-                <div className="bg-gray-200 rounded-lg flex-shrink-0">
+                <div
+                    className={`${textColor} border-gray-700 rounded-lg p-4 ${bgcolor} border ${border} ${borderColor} h-full flex flex-col cursor-pointer`}
+                >
+                    {/* Image section - fixed height */}
+                    <div className="bg-gray-200 rounded-lg flex-shrink-0">
                     {data.image && (
                         <img
                             src={data?.image || 'loading Img'}
@@ -110,13 +112,14 @@ const ProjectCard = ({ data, bgcolor, textColor, categorybg, border, borderColor
 
                     {/* Button at bottom */}
                     <div className="flex justify-end mt-4">
-                        <button className="btn btn-circle bg-green-500 border-none transform rotate-[-40deg] hover:bg-green-600">
+                        <div className="btn btn-circle bg-green-500 border-none transform rotate-[-40deg] hover:bg-green-600">
                             <FaArrowRight />
-                        </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </motion.div>
+                </div>
+            </motion.div>
+        </Link>
     );
 };
 

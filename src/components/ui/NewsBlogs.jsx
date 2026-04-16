@@ -54,9 +54,10 @@ const NewsBlogs = () => {
                             title: 'Next.js vs React: What We Chose and Why',
                             desc: 'We break down the pros and cons of React and Next.js — and why one of them fits our workflow better for client projects.'
                         }].map((item, index) => (
-                            <div key={index} className="bg-black  text-white rounded-2xl py-4 px-2  cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col justify-between h-[500px]">
-                                <div>
-                                    <div className="bg-gray-100 rounded-xl h-48 flex items-center justify-center overflow-hidden">
+                            <Link to={`/blogs/${index + 1}`} state={{ blog: item }} key={index} className="block h-[500px]">
+                                <div className="bg-black  text-white rounded-2xl py-4 px-2  cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col justify-between h-full">
+                                    <div>
+                                        <div className="bg-gray-100 rounded-xl h-48 flex items-center justify-center overflow-hidden">
                                         <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
                                     </div>
                                     <div className="mt-4 flex gap-6 items-center">
@@ -66,8 +67,9 @@ const NewsBlogs = () => {
                                     <h2 className="text-xl font-semibold mt-4">{item.title}</h2>
                                     <p className="text-sm mt-2">{item.desc}</p>
                                 </div>
-                                <a href="#" className="text-primary mb-10  block">Read More</a>
+                                <div className="text-primary mb-10 block font-bold">Read More</div>
                             </div>
+                            </Link>
                         ))}
                     </div>
                 </div>

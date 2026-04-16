@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
 import { FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaYoutube, FaArrowRight } from 'react-icons/fa';
 import hireusImg from '../../assets/HireUs png.png';
+import toast from 'react-hot-toast';
 
 const ContactUs = ({ bg, textColor, bginput, bgCircle }) => {
     const formRef = useRef();
@@ -15,11 +16,11 @@ const ContactUs = ({ bg, textColor, bginput, bgCircle }) => {
             formRef.current,
             'JrivHisIqegdsO58N'      // 🔁 Replace this
         ).then((result) => {
-            alert('Message sent successfully!');
+            toast.success('Message sent successfully!');
             console.log(result.text);
             formRef.current.reset(); // Clear the form
         }).catch((error) => {
-            alert('Something went wrong. Please try again.');
+            toast.error('Something went wrong. Please try again.');
             console.error(error);
         });
     };
