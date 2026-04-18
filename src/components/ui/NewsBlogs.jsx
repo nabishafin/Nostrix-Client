@@ -1,13 +1,53 @@
 import React from 'react';
 import Marque from '../shared/Marque';
-import pic1 from "../../assets/blogimg-1-desining.webp";
-import pic2 from "../../assets/blogimg-2-colabreation.jpg";
-import pic3 from "../../assets/blog-3-boastinteam.webp";
-import pic4 from "../../assets/blogimg-4 next js vs react.jpeg";
 import LearnMoreButton from "../shared/LearnMoreButton";
 import { Link } from "react-router-dom";
+import { useGetBlogsQuery } from "../../redux/features/blogs/blogsApi";
 
 const NewsBlogs = () => {
+    const { data: blogsData = [], isLoading } = useGetBlogsQuery();
+
+    // Default sample blogs if database is empty
+    const defaultBlogs = [
+        {
+            _id: 'sample-b1',
+            title: 'Exploring Modern Web Trends',
+            category: 'Tech',
+            date: 'May 10, 2024',
+            image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
+            description: 'Stay ahead of the curve by learning about the latest trends in modern web development.'
+        },
+        {
+            _id: 'sample-b2',
+            title: 'Design Thinking for Success',
+            category: 'Design',
+            date: 'May 12, 2024',
+            image: 'https://images.unsplash.com/photo-1558655146-d09347e92766',
+            description: 'How a user-centric design approach can transform your product and business strategy.'
+        },
+        {
+            _id: 'sample-b3',
+            title: 'Maximizing SEO in 2024',
+            category: 'Marketing',
+            date: 'May 14, 2024',
+            image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
+            description: 'Learn the key SEO strategies to rank higher and drive more organic traffic this year.'
+        },
+        {
+            _id: 'sample-b4',
+            title: 'Building Scalable Apps',
+            category: 'Development',
+            date: 'May 16, 2024',
+            image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
+            description: 'A deep dive into building applications that grow with your user base seamlessly.'
+        }
+    ];
+
+    if (isLoading) return <div className="flex justify-center p-10"><span className="loading loading-spinner text-[#20D374]"></span></div>;
+
+    // Use fetched data if available, otherwise use defaults
+    const dataToShow = blogsData.length > 0 ? blogsData.slice(0, 4) : defaultBlogs;
+
     return (
         <div>
             <section className='bg-black md:p-0'>
@@ -28,47 +68,28 @@ const NewsBlogs = () => {
                     </div>
 
                     <div className='grid grid-cols-1 md:grid-cols-4 gap-8 mt-8'>
-                        {/* card template */}
-                        {[{
-                            img: pic1,
-                            tag: 'UI/UX Design',
-                            date: '10 April 2024',
-                            title: 'Designing Intuitive Mobile Experiences in 2024',
-                            desc: 'Explore how user-centered design is reshaping app engagement and user satisfaction in today\'s fast-moving tech world.'
-                        }, {
-                            img: pic2,
-                            tag: 'Team Culture',
-                            date: '15 April 2024',
-                            title: 'Inside Our Team: How Collaboration Drives Innovation',
-                            desc: 'Get a peek behind the scenes at how our team works together  to build creative solutions  and tackle digital challenges.'
-                        }, {
-                            img: pic3,
-                            tag: 'Marketing',
-                            date: '18 April 2024',
-                            title: 'Boosting App Visibility: Growth Tactics That Work',
-                            desc: 'Discover the strategies we use to amplify app downloads and keep users coming back through performance-driven marketing.'
-                        }, {
-                            img: pic4,
-                            tag: 'Development',
-                            date: '21 April 2024',
-                            title: 'Next.js vs React: What We Chose and Why',
-                            desc: 'We break down the pros and cons of React and Next.js — and why one of them fits our workflow better for client projects.'
-                        }].map((item, index) => (
-                            <Link to={`/blogs/${index + 1}`} state={{ blog: item }} key={index} className="block h-[500px]">
-                                <div className="bg-black  text-white rounded-2xl py-4 px-2  cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col justify-between h-full">
+                        {dataToShow.map((item) => (
+                            <Link to={`/blogs/${item._id}`} state={{ blog: item }} key={item._id} className="block h-[500px]">
+                                <div className="bg-black text-white rounded-2xl py-4 px-2 cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105 flex flex-col justify-between h-full">
                                     <div>
                                         <div className="bg-gray-100 rounded-xl h-48 flex items-center justify-center overflow-hidden">
-                                        <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
+                                            <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                                        </div>
+                                        <div className="mt-4 flex gap-6 items-center">
+                                            <span className="text-xs p-1 border-l-2 border-r-2 rounded-lg backdrop-blur-3xl shadow-lg border-primary bg-slate-950">
+                                                {item.category}
+                                            </span>
+                                            <span className="text-xs p-1 border-l-2 border-r-2 rounded-lg backdrop-blur-3xl shadow-lg border-primary bg-slate-950">
+                                                {item.date}
+                                            </span>
+                                        </div>
+                                        <h2 className="text-xl font-semibold mt-4 line-clamp-2">{item.title}</h2>
+                                        <p className="text-sm mt-2 line-clamp-3">{item.description || item.desc}</p>
                                     </div>
-                                    <div className="mt-4 flex gap-6 items-center">
-                                        <span className="text-xs p-1 border-l-2 border-r-2 rounded-lg backdrop-blur-3xl shadow-lg border-primary bg-slate-950">{item.tag}</span>
-                                        <span className="text-xs p-1 border-l-2 border-r-2 rounded-lg backdrop-blur-3xl shadow-lg border-primary bg-slate-950">{item.date}</span>
+                                    <div className="text-primary mb-10 block font-bold transition-all hover:translate-x-1">
+                                        Read More
                                     </div>
-                                    <h2 className="text-xl font-semibold mt-4">{item.title}</h2>
-                                    <p className="text-sm mt-2">{item.desc}</p>
                                 </div>
-                                <div className="text-primary mb-10 block font-bold">Read More</div>
-                            </div>
                             </Link>
                         ))}
                     </div>

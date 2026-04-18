@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../../redux/slices/authSlice';
+import { useLogoutMutation } from '../../redux/features/auth/authApi';
+import toast from 'react-hot-toast';
 import logo from '../../assets/logo.svg';
 
 const Navbar = () => {
     const [activeLink, setActiveLink] = useState('/');
     const location = useLocation();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const { user, isAuthenticated } = useSelector((state) => state.auth);
+    const [logoutApi] = useLogoutMutation();
 
     useEffect(() => {
         setActiveLink(location.pathname);
@@ -18,6 +26,11 @@ const Navbar = () => {
         { name: 'About Us', path: '/aboutus' },
         { name: 'Contact Us', path: '/Contact' }
     ];
+
+    // Dynamic dashboard link based on role
+    if (user && user.role === 'admin') {
+        navItems.splice(5, 0, { name: 'Admin Dashboard', path: '/admin/dashboard' });
+    }
 
     const links = navItems.map((item) => (
         <li key={item.path}>
@@ -86,18 +99,51 @@ const Navbar = () => {
                                 className="dropdown-content menu rounded-box z-[1] w-52 p-2 shadow bg-primary"
                             >
                                 {links}
+                                <li className="mt-2">
+                                    <Link
+                                        to="/login"
+                                        className="block text-center px-4 py-2 rounded-md font-bold bg-black text-primary"
+                                        onClick={() => setActiveLink('/login')}
+                                    >
+                                        Login
+                                    </Link>
+                                </li>
                             </ul>
                         </div>
                     </div>
 
-                    {/* Let’s Talk Button */}
-                    <div className="hidden md:block ml-3">
+                    {/* Buttons: Auth & Contact */}
+                    <div className="hidden md:flex items-center space-x-3 ml-3">
+                        {isAuthenticated ? (
+                            <button 
+                                onClick={async () => {
+                                    try {
+                                        await logoutApi().unwrap();
+                                        dispatch(logout());
+                                        toast.success('Logged out successfully');
+                                        navigate('/login');
+                                    } catch (err) {
+                                        dispatch(logout()); // Clear locally anyway
+                                        navigate('/login');
+                                    }
+                                }}
+                                className="px-5 py-2 rounded-full border-2 border-red-500 font-semibold text-white hover:bg-red-500 hover:text-black transition-all"
+                            >
+                                Logout
+                            </button>
+                        ) : (
+                            <Link to="/login">
+                                <button className="px-5 py-2 rounded-full border-2 border-primary font-semibold text-white hover:bg-primary hover:text-black transition-all">
+                                    Login
+                                </button>
+                            </Link>
+                        )}
                         <a
                             href="https://wa.me/8801758056337?text=Hi%20there%2C%20I%20would%20like%20to%20talk%20to%20you"
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <button className="px-4 py-2 rounded-full bg-primary font-semibold text-black hover:bg-lime-600">
+                            <button className="px-5 py-2 rounded-full bg-primary font-semibold text-black hover:bg-lime-600 transition-all border-2 border-primary">
                                 Let’s Talk
                             </button>
                         </a>

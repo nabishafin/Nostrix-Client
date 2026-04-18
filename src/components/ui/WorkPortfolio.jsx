@@ -7,31 +7,37 @@ import pic2 from "../../assets/singleProducts demo ui.webp"
 import { Link } from "react-router-dom";
 import LearnMoreButton from "../shared/LearnMoreButton";
 
+import { useGetProjectsQuery } from "../../redux/features/projects/projectsApi";
+
 const WorkPortfolio = () => {
-    const cardsData = [
+    const { data: projectData = [], isLoading } = useGetProjectsQuery();
+
+    // Default sample projects if database is empty
+    const defaultProjects = [
         {
-            id: 1,
-            image: pic1, // You can add the image URL here
-            tags: ["UI / UX Design", "App Design", "Wireframe"],
-            title: "Podcast - Podcast",
-            description: "Mobile App Solution",
+            _id: 'sample-1',
+            title: 'Project Title',
+            category: 'Web Development',
+            image: pic1,
+            description: 'A sample project description showing how we craft digital excellence.'
         },
         {
-            id: 2,
+            _id: 'sample-2',
+            title: 'Creative Solution',
+            category: 'UI/UX Design',
             image: pic2,
-            tags: ["Web Development", "Frontend", "React"],
-            title: "Website Development",
-            description: "E-commerce Web Solution",
-        },
-        // Add more objects as needed
+            description: 'Another sample project showcasing our design and development capabilities.'
+        }
     ];
+
+    if (isLoading) return <div className="flex justify-center p-10"><span className="loading loading-spinner text-[#20D374]"></span></div>;
+
+    // Use fetched data if available, otherwise use defaults
+    const cardsData = projectData.length > 0 ? projectData.slice(0, 2) : defaultProjects;
 
     return (
 
         <section >
-            <div>
-                <Marque />
-            </div>
             <div className='bg-black p-4 md:p-0'>
                 <div className='w-full md:w-10/12 mx-auto py-12 md:py-20'>
                     <div className='flex items-center gap-2'>
@@ -52,7 +58,7 @@ const WorkPortfolio = () => {
                         {
                             cardsData.map(data =>
                                 <ProjectCard
-                                    key={data.id}
+                                    key={data._id}
                                     data={data}
                                     bgcolor={'bg-black'}
                                     textColor="text-white"

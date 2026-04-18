@@ -4,45 +4,25 @@ import { FaStarOfLife } from 'react-icons/fa';
 
 const Marque = () => {
     return (
-        <div>
-            <div className=' bg-primary py-4 font-bold '>
-                <Marquee>
-                    <p className='text-black mx-10'>Website Design</p>
-                    <div>
-                        <FaStarOfLife />
-                    </div>
-                    <p className='text-black mx-10'>UX/UI Design</p>
-                    <div>
-                        <FaStarOfLife />
-                    </div>
-                    <p className='text-black mx-10'>Mobile Application Development</p>
-                    <div>
-                        <FaStarOfLife />
-                    </div>
-                    <p className='text-black mx-10'>Digital Marketing</p>
-                    <div>
-                        <FaStarOfLife />
-                    </div>
-                    <p className='text-black mx-10'>Website Design</p>
-                    <div>
-                        <FaStarOfLife />
-                    </div>
-                    <p className='text-black mx-10'>UX/UI Design</p>
-                    <div>
-                        <FaStarOfLife />
-                    </div>
-                    <p className='text-black mx-10'>Mobile Application Development</p>
-                    <div>
-                        <FaStarOfLife />
-                    </div>
-                    <p className='text-black mx-10'>Digital Marketing</p>
-                    <div>
-                        <FaStarOfLife />
-                    </div>
-                </Marquee>
-            </div>
+        <div className='bg-[#20D374] py-5 overflow-hidden border-y border-black/5'>
+            <Marquee speed={50} gradient={false} pauseOnHover={true}>
+                <div className='flex items-center space-x-12 whitespace-nowrap px-4 font-bold text-[#111827] uppercase tracking-wider text-sm md:text-base'>
+                    <span>Website Design</span>
+                    <FaStarOfLife className="text-[10px]" />
+                    <span>UX/UI Design</span>
+                    <FaStarOfLife className="text-[10px]" />
+                    <span>Mobile Application Development</span>
+                    <FaStarOfLife className="text-[10px]" />
+                    <span>Digital Marketing</span>
+                    <FaStarOfLife className="text-[10px]" />
+                    <span>Graphics Design</span>
+                    <FaStarOfLife className="text-[10px]" />
+                    <span>Custom Software</span>
+                    <FaStarOfLife className="text-[10px]" />
+                </div>
+            </Marquee>
         </div>
     );
 };
 
-export default Marque;
+export default Marque;

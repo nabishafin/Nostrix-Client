@@ -71,7 +71,7 @@ const ProjectCard = ({ data, bgcolor, textColor, categorybg, border, borderColor
     };
 
     return (
-        <Link to={`/projects/${data?.id || 1}`} state={{ data }} className="h-full block">
+        <Link to={`/projects/${data?._id}`} state={{ data }} className="h-full block">
             <motion.div
                 variants={cardVariants}
                 initial="initial"

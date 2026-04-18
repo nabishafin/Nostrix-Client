@@ -6,7 +6,7 @@ import LearnMoreButton from '../shared/LearnMoreButton';
 
 const AboutUS = () => {
     return (
-        <section className="py-10 bg-black mt-16 text-white">
+        <section className="py-20 bg-black text-white">
             <div className="md:w-10/12 px-4 md:px-0 mx-auto flex flex-col md:flex-row py-10 gap-6 items-center justify-center">
                 {/* Image Section */}
                 <div className="w-full md:w-6/12 border-2 border-black overflow-hidden">
