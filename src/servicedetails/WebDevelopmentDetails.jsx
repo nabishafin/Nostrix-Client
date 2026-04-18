@@ -27,37 +27,33 @@ const WebDevelopmentDetails = () => {
                                     backgroundImage: `url(${heroimageUrl})`,
                                 }}
                             >
-                                {/* Your content goes here */}
                             </div>
                         </div>
 
-
-
-
-                        {/* Web Development Overview */}
+                        {/* Overview */}
                         <div className="mb-8">
                             <h2 className="text-2xl font-semibold text-gray-800 mb-2">Web Development Services</h2>
                             <div className="flex items-center mb-4">
                                 <div className="w-6 h-6 rounded-full bg-green-500 mr-2 flex justify-center items-center text-white text-xs">W</div>
                                 <p className="text-gray-600 text-sm">
-                                    We provide full-stack web development services that help businesses establish a strong digital presence. From stunning landing pages to complex web applications, our team builds fast, secure, and responsive websites that deliver results.
+                                    We specialize in building robust, scalable, and high-performance web applications using the latest technologies. Our team ensures that your site is fast, secure, and user-friendly.
                                 </p>
                             </div>
                         </div>
 
-                        {/* Services Include Section */}
+                        {/* Services Include section */}
                         <div className="mb-8">
                             <h3 className="text-xl font-semibold text-gray-800 mb-4">Services Include:</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                                 {[
-                                    "Custom Website Design",
-                                    "Responsive Web Development",
-                                    "E-commerce Solutions",
+                                    "Custom Web App Development",
+                                    "E-commerce Website Solutions",
                                     "Content Management Systems (CMS)",
-                                    "Frontend Development (React, Vue)",
-                                    "Backend Development (Node.js, PHP, Python)",
+                                    "Progressive Web Apps (PWA)",
                                     "API Integration & Development",
+                                    "Website Maintenance & Support",
                                     "Performance Optimization",
+                                    "Responsive Web Design",
                                 ].map((item, index) => (
                                     <div key={index} className="flex items-center text-gray-700">
                                         <svg className="w-5 h-5 bg-primary p-[1px] rounded-full  text-black mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,7 +65,7 @@ const WebDevelopmentDetails = () => {
                             </div>
                         </div>
 
-                        {/* Image/Video Grid */}
+                        {/* Img Grid */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                             <div
                                 className="rounded-lg bg-contain bg-no-repeat bg-center h-48 md:h-64"
@@ -81,21 +77,20 @@ const WebDevelopmentDetails = () => {
                             ></div>
                         </div>
 
-                        {/* Our Expertise Heading and Text */}
                         <div className="mb-8">
-                            <h3 className="text-xl font-semibold text-gray-800 mb-4">Our Expertise in Web Development</h3>
+                            <h3 className="text-xl font-semibold text-gray-800 mb-4">Our Technology Stack</h3>
                             <p className="text-gray-600 text-sm">
-                                Our developers specialize in modern web technologies including React, Next.js, Tailwind CSS, and Node.js. We follow best practices in UI/UX design, write clean scalable code, and ensure every website we build is SEO-friendly, mobile-optimized, and user-centric.
+                                We utilize modern frameworks and libraries such as React, Node.js, and MongoDB to build dynamic and responsive websites that meet your business goals.
                             </p>
                         </div>
 
-                        {/* Expertise Cards */}
+                        {/* Feature Cards */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                             {[
-                                { num: "01", title: "Frontend Development", desc: "Crafting interactive and modern interfaces using React and Tailwind CSS." },
-                                { num: "02", title: "Backend Development", desc: "Building powerful server-side logic with Node.js, Express, and databases." },
-                                { num: "03", title: "CMS & E-commerce", desc: "Developing websites using WordPress, Shopify, or custom admin dashboards." },
-                                { num: "04", title: "Web App Development", desc: "Creating full-featured web applications tailored to your business needs." },
+                                { num: "01", title: "Scalable", desc: "Build for growth with our scalable web solutions." },
+                                { num: "02", title: "Secure", desc: "Keep your data safe with our robust security features." },
+                                { num: "03", title: "Responsive", desc: "Reach your audience on any device with responsive design." },
+                                { num: "04", title: "Performant", desc: "Ensure your site loads fast with optimized performance." },
                             ].map((item, idx) => (
                                 <div key={idx} className="bg-white rounded-md shadow-md p-4">
                                     <div className="bg-green-100 text-green-500 rounded-full w-8 h-8 flex items-center justify-center mb-2">
@@ -107,15 +102,14 @@ const WebDevelopmentDetails = () => {
                             ))}
                         </div>
 
-                        {/* Services Benefits Section */}
                         <div>
-                            <h3 className="text-xl font-semibold text-gray-800 mb-4">Service Benefits:</h3>
+                            <h3 className="text-xl font-semibold text-gray-800 mb-4">Benefits:</h3>
                             <ul className="list-none space-y-2">
                                 {[
-                                    "Enhanced online presence to attract more customers.",
-                                    "Mobile-first design for better user experience.",
-                                    "SEO-friendly code and structure to rank higher on search engines.",
-                                    "Custom features tailored to your business goals.",
+                                    "Increased online presence and brand visibility.",
+                                    "Improved user experience and customer engagement.",
+                                    "Higher conversion rates and business growth.",
+                                    "Secure and reliable website performance.",
                                 ].map((item, i) => (
                                     <li key={i} className="flex items-center text-gray-700 text-sm">
                                         <svg className="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

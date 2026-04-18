@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PageBanner from '../../components/shared/PageBanner';
 import Heading from '../../components/shared/Heading';
 import BlogsCard from '../../components/shared/BlogsCard';
 import { FaSearch } from 'react-icons/fa';
-import postimg1 from '../../assets/blog-1-Crafting.webp';
-import postimg2 from '../../assets/blogimg-2-colabreation.jpg';
-import postimg3 from '../../assets/blog-3-boastinteam.webp';
-import postimg4 from '../../assets/React-vs vue.jpg';
-import postimg5 from '../../assets/Building Your First Mobile App from Scratch.png';
+import { useGetBlogsQuery } from '../../redux/features/blogs/blogsApi';
 import bg from '../../assets/blog-bg.jpg';
 
 const Blogs = () => {
+    const { data: blogsData = [], isLoading, isError } = useGetBlogsQuery();
+
     const categories = [
         'Mobile Application Development',
         'Website Development',
@@ -19,82 +17,39 @@ const Blogs = () => {
         'Digital Marketing',
     ];
 
-    const posts = [
-        {
-            title: 'Empathy in Design: Putting Users First in UX/UI',
-            date: '15 April 2024',
-            image: postimg1,
-        },
-        {
-            title: 'Beyond Functionality: The Importance of Design in Modern Apps',
-            date: '14 April 2024',
-            image: postimg2,
-        },
-        {
-            title: 'Responsive Design: The Key to Modern Website Development',
-            date: '15 April 2024',
-            image: postimg3,
-        },
-    ];
+    // Mock recent posts for now, or could fetch from blogsData
+    const posts = blogsData.slice(0, 3).map(blog => ({
+        title: blog.title,
+        date: blog.date,
+        image: blog.image
+    }));
 
-    const fakeBlogsData = [
-        {
-            image: postimg1,
-            category: 'UX/UI Design',
-            date: '01 January 2024',
-            title: 'Crafting User Interfaces That Work',
-            description: 'A quick dive into the best practices for designing simple and effective UI layouts.',
-            link: '#'
-        },
-        {
-            image: postimg2,
-            category: 'Graphics Design',
-            date: '05 February 2024',
-            title: 'The Power of Collaboration in Remote Teams',
-            description: 'How remote teams can still be creative and productive using the right tools and mindset.',
-            link: '#'
-        },
-        {
-            image: postimg3,
-            category: 'Digital Marketing',
-            date: '12 March 2024',
-            title: 'Simple SEO Hacks for Beginners',
-            description: 'Boost your visibility online with these easy and effective SEO strategies.',
-            link: '#'
-        },
-        {
-            image: postimg4,
-            category: 'Website Development',
-            date: '18 April 2024',
-            title: 'React vs Vue: Which One Should You Choose?',
-            description: 'A head-to-head comparison between two of the most popular frontend frameworks.',
-            link: '#'
-        },
-        {
-            image: postimg5,
-            category: 'Mobile Application Development',
-            date: '25 May 2024',
-            title: 'Building Your First Mobile App from Scratch',
-            description: 'Everything you need to know to get started with mobile app development.',
-            link: '#'
-        }
-    ];
-
-    const [blogs] = useState(fakeBlogsData);
     const [searchTerm, setSearchTerm] = useState('');
     const [selectedCategory, setSelectedCategory] = useState('');
+    const [filteredBlogs, setFilteredBlogs] = useState([]);
 
-    const filteredBlogs = blogs.filter(blog => {
-        const matchesSearch =
-            blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            blog.category.toLowerCase().includes(searchTerm.toLowerCase());
+    useEffect(() => {
+        const filtered = blogsData.filter(blog => {
+            const matchesSearch =
+                blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                blog.category.toLowerCase().includes(searchTerm.toLowerCase());
 
-        const matchesCategory = selectedCategory
-            ? blog.category === selectedCategory
-            : true;
+            const matchesCategory = selectedCategory
+                ? blog.category === selectedCategory
+                : true;
 
-        return matchesSearch && matchesCategory;
-    });
+            return matchesSearch && matchesCategory;
+        });
+        setFilteredBlogs(filtered);
+    }, [blogsData, searchTerm, selectedCategory]);
+
+    if (isLoading) {
+        return (
+            <div className="flex justify-center items-center h-screen bg-black">
+                <span className="loading loading-spinner loading-lg text-primary"></span>
+            </div>
+        );
+    }
 
     return (
         <div>

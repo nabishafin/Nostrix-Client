@@ -36,7 +36,7 @@ const FaqAccordion = () => {
     };
 
     return (
-        <section className='mt-10'>
+        <section className='mt-10 mb-10 md:mb-20'>
             <Heading
                 title={"FAQs"}
                 subtitle={'Questions? Look here.'}

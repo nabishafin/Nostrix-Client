@@ -2,23 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    :root {
+        --primary-green: #20D374;
+        --deep-dark: #080808;
+        --glass-bg: rgba(255, 255, 255, 0.03);
+        --glass-border: rgba(255, 255, 255, 0.08);
+    }
+
+    body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+}
+
+@layer components {
+    .glass-card {
+        @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-[2rem];
+    }
+
+    .glass-input {
+        @apply bg-black/40 border border-white/10 rounded-2xl focus:border-[#20D374] focus:ring-1 focus:ring-[#20D374] transition-all outline-none;
+    }
+
+    .btn-premium {
+        @apply bg-[#20D374] text-black font-black uppercase tracking-tight py-4 px-8 rounded-2xl hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(32,211,116,0.2)];
+    }
+
+    .neon-text {
+        text-shadow: 0 0 10px rgba(32, 211, 116, 0.4);
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #080808;
+}
+::-webkit-scrollbar-thumb {
+    background: #1a1a1a;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #20D374;
+}
+
 .dancing {
     font-family: "Dancing Script", cursive;
     font-optical-sizing: auto;
-
 }
 
 .rotating-image {
     animation: rotate360 5s linear infinite;
-    /* 5 seconds for a full rotation */
 }
 
 @keyframes rotate360 {
-    0% {
-        transform: rotate(0deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
-    100% {
-        transform: rotate(360deg);
-    }
+/* Modal Glow */
+.modal-glow {
+    box-shadow: 0 0 100px rgba(32, 211, 116, 0.05);
 }

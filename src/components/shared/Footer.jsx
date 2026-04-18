@@ -2,11 +2,17 @@ import React from 'react';
 import { FaFacebook, FaTwitter, FaPinterest, FaInstagram, FaGlobe, FaArrowRight } from 'react-icons/fa';
 import logo from '../../assets/logo.svg';
 import Marque from './Marque';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+    const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
+
+    if (isAuthPage) return null;
+
     return (
-        <section className='mt-10 md:mt-40'>
+        <section className={`${isHomePage ? 'mt-10 md:mt-40' : ''} bg-black`}>
             <div>
                 <Marque />
             </div>

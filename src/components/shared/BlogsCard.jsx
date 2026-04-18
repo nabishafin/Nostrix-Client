@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const BlogsCard = ({ blog, bgColor, textColor, id }) => {
     return (
-        <Link to={`/blogs/${blog.id || id || 1}`} state={{ blog }} className="block">
+        <Link to={`/blogs/${blog._id}`} state={{ blog }} className="block">
             <div className={`${bgColor} ${textColor} rounded-2xl  cursor-pointer transform transition-transform duration-300 mb-10  px-2`}>
                 {/* Image Section */}
                 <div className="bg-gray-100 rounded-xl h-96 flex items-center justify-center overflow-hidden border-2">

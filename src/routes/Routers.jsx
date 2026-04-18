@@ -1,7 +1,8 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
 // Layout
 import MainLayout from "../layout/MainLayout";
+import AdminLayout from "../layout/AdminLayout";
 
 // Pages
 import Home from "../pages/home/Home";
@@ -12,6 +13,17 @@ import Blogs from "../pages/blogs/Blogs";
 import BlogDetails from "../pages/blogs/BlogDetails";
 import AboutPage from "../pages/about/AboutPage";
 import ContactPage from "../pages/contact/ContactPage";
+
+// Auth Pages
+import LoginPage from "../pages/auth/LoginPage";
+import RegisterPage from "../pages/auth/RegisterPage";
+
+// Dashboard
+import AdminDashboardHome from "../pages/dashboard/AdminDashboardHome";
+import ManageUsers from "../pages/dashboard/ManageUsers";
+import ManageBlogs from "../pages/dashboard/ManageBlogs";
+import ManageProjects from "../pages/dashboard/ManageProjects";
+import AdminRoute from "../components/shared/AdminRoute";
 
 // Service Details
 import WebDevelopmentDetails from "../servicedetails/WebDevelopmentDetails";
@@ -38,6 +50,19 @@ const router = createBrowserRouter([
             { path: "/blogs/:id", element: <BlogDetails /> },
             { path: "/aboutus", element: <AboutPage /> },
             { path: "/contact", element: <ContactPage /> },
+            { path: "/login", element: <LoginPage /> },
+            { path: "/register", element: <RegisterPage /> },
+        ],
+    },
+    {
+        path: "/admin",
+        element: <AdminRoute><AdminLayout /></AdminRoute>,
+        children: [
+            { path: "", element: <Navigate to="/admin/dashboard" replace /> },
+            { path: "dashboard", element: <AdminDashboardHome /> },
+            { path: "users", element: <ManageUsers /> },
+            { path: "blogs", element: <ManageBlogs /> },
+            { path: "projects", element: <ManageProjects /> },
         ],
     },
 ]);
