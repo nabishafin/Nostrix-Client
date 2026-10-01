@@ -29,7 +29,7 @@
 //                     )}
 //                 </div>
 //                 <div className="flex flex-wrap gap-1 mt-4">
-//                     {data.tags.map((tag, index) => (
+//                     {(data.tags || []).map((tag, index) => (
 //                         <div
 //                             key={index}
 //                             className={`px-2 py-1 text-xs border-l-2 border-r-2 text-center rounded-3xl shadow-lg border-primary ${categorybg}`}
@@ -94,7 +94,7 @@ const ProjectCard = ({ data, bgcolor, textColor, categorybg, border, borderColor
 
                 {/* Tags section */}
                 <div className="flex flex-wrap gap-1 mt-4 flex-shrink-0">
-                    {data.tags.map((tag, index) => (
+                    {(data.tags || []).map((tag, index) => (
                         <div
                             key={index}
                             className={`px-2 py-1 text-xs border-l-2 border-r-2 text-center rounded-3xl shadow-lg border-primary ${categorybg}`}

@@ -29,7 +29,10 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions);
 
   // If we get a 401 Unauthorized, try to refresh the token
-  if (result?.error && result.error.status === 401) {
+  const url = typeof args === "string" ? args : args?.url;
+  const isAuthAttempt = url === "/auth/login" || url === "/auth/register";
+
+  if (result?.error && result.error.status === 401 && !isAuthAttempt) {
     const refreshToken = localStorage.getItem("refreshToken");
 
     if (refreshToken) {
@@ -87,7 +90,7 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
         api.dispatch(logout());
         localStorage.removeItem("token");
         localStorage.removeItem("refreshToken");
-        window.location.href = "/auth/signin"; // Redirect to login
+        window.location.href = "/login"; // Redirect to login
         return { error: { status: 401, data: "Session expired" } };
       }
     } else {
@@ -95,7 +98,7 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
       api.dispatch(logout());
       localStorage.removeItem("token");
       localStorage.removeItem("refreshToken");
-      window.location.href = "/auth/signin"; // Redirect to login
+      window.location.href = "/login"; // Redirect to login
       return { error: { status: 401, data: "No refresh token" } };
     }
   }

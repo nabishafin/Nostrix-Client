@@ -64,7 +64,7 @@ const Banner = () => {
 
                         {/* Bottom Section (Review Button) */}
                         <div className=''>
-                            <div className="absolute bottom-7 left-[50%] md:left-[37%] transform translate-x-[-50%] bg-green-500 rounded-full  flex items-center" style={{ border: '1px solid transparent ', padding: '4px', margin: '4px', border: '6px solid black' }}>
+                            <div className="absolute bottom-7 left-[50%] md:left-[37%] transform translate-x-[-50%] bg-green-500 rounded-full  flex items-center" style={{ padding: '4px', margin: '4px', border: '6px solid black' }}>
                                 <div className="avatar-group -space-x-6">
                                     <div className="avatar-group -space-x-6">
                                         <div className="avatar">

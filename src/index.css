@@ -10,6 +10,11 @@
         --glass-border: rgba(255, 255, 255, 0.08);
     }
 
+    :root[data-theme="light"] {
+        --color-primary: #20D374;
+        --color-primary-content: #000000;
+    }
+
     body {
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
     }

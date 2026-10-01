@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { useGetProjectsQuery, useDeleteProjectMutation, useCreateProjectMutation, useUpdateProjectMutation } from '../../redux/features/projects/projectsApi';
 import toast from 'react-hot-toast';
+import ImageUpload from '../../components/shared/ImageUpload';
+
+const inputCls = 'input input-bordered input-sm h-10 w-full bg-black text-white border-white/10 rounded-md focus:border-primary';
+const areaCls = 'textarea textarea-bordered w-full bg-black text-white border-white/10 rounded-md focus:border-primary';
+const labelCls = 'mb-1 block text-xs font-medium text-gray-400';
+const sectionCls = 'text-xs font-semibold text-gray-500 uppercase tracking-wider border-b border-white/10 pb-2';
 
 const ManageProjects = () => {
     const { data: projects = [], isLoading } = useGetProjectsQuery();
@@ -17,7 +23,7 @@ const ManageProjects = () => {
             try {
                 await deleteProject(id).unwrap();
                 toast.success('Project Removed');
-            } catch (err) {
+            } catch {
                 toast.error('Deletion Failed');
             }
         }
@@ -27,12 +33,12 @@ const ManageProjects = () => {
         e.preventDefault();
         const rawFormData = new FormData(e.target);
         const finalFormData = new FormData();
-        
+
         finalFormData.append('title', rawFormData.get('title'));
         finalFormData.append('category', rawFormData.get('category'));
         finalFormData.append('liveLink', rawFormData.get('liveLink'));
         finalFormData.append('description', rawFormData.get('description'));
-        
+
         const imageFile = rawFormData.get('image');
         if (imageFile && imageFile.size > 0) {
             finalFormData.append('image', imageFile);
@@ -77,165 +83,141 @@ const ManageProjects = () => {
         setIsModalOpen(true);
     };
 
-    if (isLoading) return <div className="flex justify-center p-20"><span className="loading loading-spinner text-[#20D374]"></span></div>;
+    if (isLoading) return <div className="flex justify-center p-16"><span className="loading loading-spinner text-primary"></span></div>;
 
     return (
-        <div className="p-6 md:p-10 space-y-10 bg-[#FAF9F6] min-h-screen">
-            {/* Sync Header with Blog Style */}
-            <div className="flex flex-col md:flex-row justify-between items-center bg-white p-8 rounded-2xl shadow-sm border border-gray-200 gap-6">
+        <div className="space-y-4">
+            <div className="flex items-end justify-between gap-4">
                 <div>
-                    <h2 className="text-3xl font-bold text-[#111827]">Project Index</h2>
-                    <p className="text-gray-500 text-sm mt-1">Manage your professional case studies and digital deliverables</p>
+                    <h1 className="text-xl font-bold text-white">Projects</h1>
+                    <p className="text-gray-500 mt-1">Manage your portfolio case studies.</p>
                 </div>
-                <button 
-                    onClick={() => openModal('add')} 
-                    className="btn bg-[#20D374] hover:bg-[#1bb865] text-white border-none normal-case px-8"
-                >
-                    + Add New Project
+                <button onClick={() => openModal('add')} className="btn btn-sm h-9 bg-primary hover:bg-primary/80 text-black border-none rounded-md">
+                    + New project
                 </button>
             </div>
 
-            {/* Table View Matching Blog Style */}
-            <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                <div className="overflow-x-auto">
-                    <table className="table w-full">
-                        <thead className="bg-[#FAF9F6] text-[#4B5563] font-bold uppercase text-[11px] tracking-wider">
-                            <tr>
-                                <th className="py-5 px-6">Project Assets</th>
-                                <th>Category & Client</th>
-                                <th>Operational Progress</th>
-                                <th className="text-right px-8">Actions</th>
+            <div className="bg-[#111] border border-white/10 rounded-lg overflow-x-auto">
+                <table className="table w-full">
+                    <thead>
+                        <tr className="text-xs uppercase tracking-wider text-gray-500 border-white/10">
+                            <th>Project</th>
+                            <th>Category / Client</th>
+                            <th>Tags</th>
+                            <th className="text-right">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {projects.length === 0 && (
+                            <tr><td colSpan={4} className="text-center text-gray-500 py-8">No projects yet</td></tr>
+                        )}
+                        {projects.map((project) => (
+                            <tr key={project._id} className="border-white/5 hover:bg-white/[0.03]">
+                                <td>
+                                    <div className="flex items-center gap-3">
+                                        {project.image
+                                            ? <img src={project.image} alt={project.title} className="w-10 h-10 rounded object-cover shrink-0" />
+                                            : <div className="w-10 h-10 rounded bg-white/5 shrink-0" />}
+                                        <p className="font-medium text-white truncate max-w-xs">{project.title}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p className="text-primary text-xs font-semibold">{project.category || 'Case Study'}</p>
+                                    <p className="text-xs text-gray-500">{project.clientInfo?.name || '-'}</p>
+                                </td>
+                                <td className="text-xs text-gray-500">
+                                    {project.tags?.slice(0, 3).map((tag) => `#${tag}`).join(' ')}
+                                </td>
+                                <td className="text-right whitespace-nowrap">
+                                    <button onClick={() => openModal('edit', project)} className="btn btn-ghost btn-xs text-primary">Edit</button>
+                                    <button onClick={() => handleDelete(project._id)} className="btn btn-ghost btn-xs text-red-400">Delete</button>
+                                </td>
                             </tr>
-                        </thead>
-                        <tbody className="divide-y divide-gray-100">
-                            {projects.map((project) => (
-                                <tr key={project._id} className="hover:bg-gray-50/50 transition-colors">
-                                    <td className="py-5 px-6">
-                                        <div className="flex items-center gap-4">
-                                            <div className="avatar">
-                                                <div className="w-12 h-12 rounded-xl">
-                                                    {project.image && <img src={project.image} alt={project.title} />}
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="font-bold text-[#111827]">{project.title}</div>
-                                                <div className="text-xs text-gray-400">ID: {project._id.slice(-6).toUpperCase()}</div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div className="space-y-1">
-                                            <span className="px-2 py-0.5 bg-green-50 text-[#20D374] text-[9px] font-bold uppercase rounded">{project.category || 'Case Study'}</span>
-                                            <div className="text-xs text-gray-500 font-medium">{project.clientInfo?.name || "Global Partner"}</div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div className="flex flex-wrap gap-1">
-                                            {project.tags?.slice(0, 3).map((tag, i) => (
-                                                <span key={i} className="text-[10px] text-gray-400">#{tag}</span>
-                                            ))}
-                                        </div>
-                                    </td>
-                                    <td className="text-right px-8 space-x-3">
-                                        <button onClick={() => openModal('edit', project)} className="btn btn-ghost btn-xs text-[#20D374] normal-case font-bold">Configure</button>
-                                        <button onClick={() => handleDelete(project._id)} className="btn btn-ghost btn-xs text-red-500 normal-case font-bold">Remove</button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
+                        ))}
+                    </tbody>
+                </table>
             </div>
 
-            {/* Modal - Already Consistent Vertical Layout */}
             {isModalOpen && (
                 <div className="modal modal-open">
-                    <div className="modal-box bg-white max-w-4xl p-0 overflow-hidden rounded-2xl shadow-2xl border border-gray-200">
-                        <div className="p-6 border-b flex justify-between items-center bg-[#FAF9F6]">
-                            <h3 className="text-xl font-bold text-[#111827]">
-                                {modalMode === 'add' ? 'New Project Deployment' : 'Edit Project Config'}
-                            </h3>
-                            <button onClick={() => setIsModalOpen(false)} className="btn btn-ghost btn-sm btn-circle text-[#111827]">✕</button>
+                    <div className="modal-box bg-[#111] border border-white/10 rounded-lg max-w-3xl p-0 text-gray-200">
+                        <div className="px-5 py-3 border-b border-white/10 flex justify-between items-center">
+                            <h3 className="font-semibold text-white">{modalMode === 'add' ? 'New project' : 'Edit project'}</h3>
+                            <button onClick={() => setIsModalOpen(false)} className="btn btn-ghost btn-sm btn-square text-gray-400">✕</button>
                         </div>
 
-                        <form onSubmit={handleSubmit} className="p-8 space-y-8 max-h-[75vh] overflow-y-auto">
-                            
-                            <div className="space-y-6">
-                                <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest border-b pb-3">Basic Information</h4>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="form-control w-full">
-                                        <label className="mb-2 block text-xs font-bold text-[#4B5563] uppercase">Project Title</label>
-                                        <input name="title" required defaultValue={currentData?.title} className="input input-bordered w-full bg-white text-[#111827] border-gray-300 focus:border-[#20D374]" placeholder="Internal Name" />
+                        <form onSubmit={handleSubmit} className="p-5 space-y-5 max-h-[75vh] overflow-y-auto">
+                            <div className="space-y-3">
+                                <h4 className={sectionCls}>Basic information</h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className={labelCls}>Title</label>
+                                        <input name="title" required defaultValue={currentData?.title} className={inputCls} />
                                     </div>
-                                    <div className="form-control w-full">
-                                        <label className="mb-2 block text-xs font-bold text-[#4B5563] uppercase">Category</label>
-                                        <input name="category" defaultValue={currentData?.category} className="input input-bordered w-full bg-white text-[#111827] border-gray-300 focus:border-[#20D374]" placeholder="e.g. Web Development" />
+                                    <div>
+                                        <label className={labelCls}>Category</label>
+                                        <input name="category" defaultValue={currentData?.category} className={inputCls} placeholder="e.g. Web Development" />
                                     </div>
-                                </div>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="form-control w-full">
-                                        <label className="mb-2 block text-xs font-bold text-[#4B5563] uppercase">Live URL</label>
-                                        <input name="liveLink" required defaultValue={currentData?.liveLink} className="input input-bordered w-full bg-white text-[#111827] border-gray-300 focus:border-[#20D374]" placeholder="https://" />
+                                    <div>
+                                        <label className={labelCls}>Live URL</label>
+                                        <input name="liveLink" required defaultValue={currentData?.liveLink} className={inputCls} placeholder="https://" />
                                     </div>
-                                    <div className="form-control w-full">
-                                        <label className="mb-2 block text-xs font-bold text-[#4B5563] uppercase">Tags (comma separated)</label>
-                                        <input name="tags_input" defaultValue={currentData?.tags?.join(', ')} className="input input-bordered w-full bg-white text-[#111827] border-gray-300 focus:border-[#20D374]" placeholder="React, Figma" />
+                                    <div>
+                                        <label className={labelCls}>Tags (comma separated)</label>
+                                        <input name="tags_input" defaultValue={currentData?.tags?.join(', ')} className={inputCls} placeholder="React, Figma" />
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="space-y-6">
-                                <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest border-b pb-3">Client Details</h4>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="form-control w-full">
-                                        <label className="mb-2 block text-xs font-bold text-[#4B5563] uppercase">Client Name</label>
-                                        <input name="clientName" required defaultValue={currentData?.clientInfo?.name} className="input input-bordered w-full bg-white text-[#111827] border-gray-300 focus:border-[#20D374]" placeholder="Acme Corp" />
+                            <div className="space-y-3">
+                                <h4 className={sectionCls}>Client</h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className={labelCls}>Client name</label>
+                                        <input name="clientName" required defaultValue={currentData?.clientInfo?.name} className={inputCls} />
                                     </div>
-                                    <div className="form-control w-full">
-                                        <label className="mb-2 block text-xs font-bold text-[#4B5563] uppercase">Timeline</label>
-                                        <input name="duration" required defaultValue={currentData?.clientInfo?.duration} className="input input-bordered w-full bg-white text-[#111827] border-gray-300 focus:border-[#20D374]" placeholder="3 Months" />
+                                    <div>
+                                        <label className={labelCls}>Timeline</label>
+                                        <input name="duration" required defaultValue={currentData?.clientInfo?.duration} className={inputCls} placeholder="3 Months" />
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="space-y-6">
-                                <h4 className="text-sm font-bold text-gray-400 uppercase tracking-widest border-b pb-3">Project Narrative</h4>
-                                <div className="form-control w-full">
-                                    <label className="mb-2 block text-xs font-bold text-[#4B5563] uppercase">Main Description</label>
-                                    <textarea name="description" required defaultValue={currentData?.description} className="textarea textarea-bordered h-24 w-full bg-white text-[#111827] border-gray-300 focus:border-[#20D374]" placeholder="Brief project summary"></textarea>
+                            <div className="space-y-3">
+                                <h4 className={sectionCls}>Case study</h4>
+                                <div>
+                                    <label className={labelCls}>Description</label>
+                                    <textarea name="description" required defaultValue={currentData?.description} className={`${areaCls} h-20`}></textarea>
                                 </div>
-                                
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="form-control w-full">
-                                        <label className="mb-2 block text-xs font-bold text-red-500 uppercase">The Challenge</label>
-                                        <textarea name="challenge" required defaultValue={currentData?.caseStudy?.challenge} className="textarea textarea-bordered h-32 w-full bg-white text-[#111827] border-red-200 focus:border-red-500" placeholder="Problems solved"></textarea>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label className={labelCls}>Challenge</label>
+                                        <textarea name="challenge" required defaultValue={currentData?.caseStudy?.challenge} className={`${areaCls} h-28`}></textarea>
                                     </div>
-                                    <div className="form-control w-full">
-                                        <label className="mb-2 block text-xs font-bold text-[#20D374] uppercase">The Solution</label>
-                                        <textarea name="solution" required defaultValue={currentData?.caseStudy?.solution} className="textarea textarea-bordered h-32 w-full bg-white text-[#111827] border-green-200 focus:border-[#20D374]" placeholder="Implementation details"></textarea>
+                                    <div>
+                                        <label className={labelCls}>Solution</label>
+                                        <textarea name="solution" required defaultValue={currentData?.caseStudy?.solution} className={`${areaCls} h-28`}></textarea>
                                     </div>
                                 </div>
-
-                                <div className="form-control w-full">
-                                    <label className="mb-2 block text-xs font-bold text-[#4B5563] uppercase">Result Impact</label>
-                                    <textarea name="resultImpact" required defaultValue={currentData?.caseStudy?.resultImpact} className="textarea textarea-bordered h-24 w-full bg-white text-[#111827] border-gray-300 focus:border-[#20D374]" placeholder="Outcome and feedback"></textarea>
+                                <div>
+                                    <label className={labelCls}>Result / impact</label>
+                                    <textarea name="resultImpact" required defaultValue={currentData?.caseStudy?.resultImpact} className={`${areaCls} h-20`}></textarea>
                                 </div>
-                                
-                                <div className="form-control w-full">
-                                    <label className="mb-2 block text-xs font-bold text-[#4B5563] uppercase">Key Features (One per line)</label>
-                                    <textarea name="keyFeatures" defaultValue={currentData?.caseStudy?.keyFeatures?.join('\n')} className="textarea textarea-bordered h-32 w-full bg-white text-[#111827] border-gray-300 font-mono text-sm" placeholder="AI Integration&#10;Mobile Responsive"></textarea>
+                                <div>
+                                    <label className={labelCls}>Key features (one per line)</label>
+                                    <textarea name="keyFeatures" defaultValue={currentData?.caseStudy?.keyFeatures?.join('\n')} className={`${areaCls} h-24 font-mono text-xs`}></textarea>
                                 </div>
                             </div>
 
-                            <div className="form-control w-full p-6 border-2 border-dashed border-gray-200 rounded-xl bg-[#FAF9F6]">
-                                <label className="mb-2 block text-xs font-bold text-[#4B5563] uppercase">Project Display Asset</label>
-                                <input type="file" name="image" className="file-input file-input-bordered w-full bg-white text-[#111827]" />
+                            <div>
+                                <label className={labelCls}>Project image</label>
+                                <ImageUpload name="image" currentUrl={currentData?.image} />
                             </div>
 
-                            <div className="flex justify-end gap-3 pt-6 border-t mt-4">
-                                <button type="button" onClick={() => setIsModalOpen(false)} className="btn btn-ghost normal-case text-[#4B5563]">Cancel</button>
-                                <button type="submit" className="btn bg-[#20D374] hover:bg-[#1bb865] text-white border-none normal-case px-12">
-                                    {modalMode === 'add' ? 'Confirm Addition' : 'Save Changes'}
+                            <div className="flex justify-end gap-2 pt-4 border-t border-white/10">
+                                <button type="button" onClick={() => setIsModalOpen(false)} className="btn btn-ghost btn-sm text-gray-400">Cancel</button>
+                                <button type="submit" className="btn btn-sm bg-primary hover:bg-primary/80 text-black border-none rounded-md px-6">
+                                    {modalMode === 'add' ? 'Add project' : 'Save'}
                                 </button>
                             </div>
                         </form>
