@@ -85,7 +85,7 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
         } else {
           throw new Error("Refresh failed - no data returned");
         }
-      } catch (error) { // eslint-disable-line no-unused-vars
+      } catch {
         // Refresh failed, logout user
         api.dispatch(logout());
         localStorage.removeItem("token");
@@ -109,7 +109,7 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
 export const baseApi = createApi({
   reducerPath: "baseApi",
   baseQuery: baseQueryWithReauth,
-  tagTypes: ["auth", "dashboardStats", "admin-users", "earnings-overview", "Faqs", "payments", "projects", "blogs", "testimonials", "contact"],
+  tagTypes: ["auth", "dashboardStats", "admin-users", "earnings-overview", "Faqs", "payments", "projects", "blogs", "testimonials", "contact", "skills", "team", "analytics"],
   endpoints: () => ({}),
   // Global configuration for refetch behavior
   keepUnusedDataFor: 0, // Don't keep unused data in cache

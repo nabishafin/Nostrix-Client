@@ -1,10 +1,12 @@
 import React from 'react';
 import ContactUs from '../../components/ui/ContactUs';
 import PageBanner from '../../components/shared/PageBanner';
+import Seo from '../../components/shared/Seo';
 
 const ContactPage = () => {
     return (
         <section>
+            <Seo title="Contact" description="Get in touch with Nostrix to start your next project." />
             <PageBanner
                 title={'Contact Us'}
                 subtitle={'Contact Us'}

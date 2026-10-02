@@ -88,7 +88,7 @@ const LoginPage = () => {
                             required
                         />
                         <div className="text-right mt-2">
-                            <Link to="#" className="text-sm text-gray-400 hover:text-primary transition">Forgot Password?</Link>
+                            <Link to="/forgot-password" className="text-sm text-gray-400 hover:text-primary transition">Forgot Password?</Link>
                         </div>
                     </div>
                     

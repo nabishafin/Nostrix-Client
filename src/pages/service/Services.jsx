@@ -6,10 +6,12 @@ import AllServices from '../../components/shared/AllServices';
 import ContactUs from '../../components/ui/ContactUs';
 import Testimonials from '../../components/ui/Testimonials';
 import PageBanner from '../../components/shared/PageBanner';
+import Seo from '../../components/shared/Seo';
 
 const Services = () => {
     return (
         <section>
+            <Seo title="Services" description="Web development, UI/UX design, graphics design and digital marketing services." />
             <div>
 
                 <PageBanner

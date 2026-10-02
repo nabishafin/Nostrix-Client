@@ -23,6 +23,13 @@ import AdminDashboardHome from "../pages/dashboard/AdminDashboardHome";
 import ManageUsers from "../pages/dashboard/ManageUsers";
 import ManageBlogs from "../pages/dashboard/ManageBlogs";
 import ManageProjects from "../pages/dashboard/ManageProjects";
+import ManageTestimonials from "../pages/dashboard/ManageTestimonials";
+import ManageMessages from "../pages/dashboard/ManageMessages";
+import ManageSkills from "../pages/dashboard/ManageSkills";
+import ManageTeam from "../pages/dashboard/ManageTeam";
+import ResumePage from "../pages/resume/ResumePage";
+import ForgotPasswordPage from "../pages/auth/ForgotPasswordPage";
+import ResetPasswordPage from "../pages/auth/ResetPasswordPage";
 import AdminRoute from "../components/shared/AdminRoute";
 
 // Service Details
@@ -52,6 +59,9 @@ const router = createBrowserRouter([
             { path: "/contact", element: <ContactPage /> },
             { path: "/login", element: <LoginPage /> },
             { path: "/register", element: <RegisterPage /> },
+            { path: "/forgot-password", element: <ForgotPasswordPage /> },
+            { path: "/reset-password", element: <ResetPasswordPage /> },
+            { path: "/resume", element: <ResumePage /> },
         ],
     },
     {
@@ -63,6 +73,10 @@ const router = createBrowserRouter([
             { path: "users", element: <ManageUsers /> },
             { path: "blogs", element: <ManageBlogs /> },
             { path: "projects", element: <ManageProjects /> },
+            { path: "testimonials", element: <ManageTestimonials /> },
+            { path: "messages", element: <ManageMessages /> },
+            { path: "skills", element: <ManageSkills /> },
+            { path: "team", element: <ManageTeam /> },
         ],
     },
 ]);

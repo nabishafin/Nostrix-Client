@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
 import { useLocation, useParams, Link } from 'react-router-dom';
 import PageBanner from '../../components/shared/PageBanner';
+import Seo from '../../components/shared/Seo';
 import { FaCalendarAlt, FaUser, FaTags, FaArrowLeft } from 'react-icons/fa';
 import { useGetSingleBlogQuery } from '../../redux/features/blogs/blogsApi';
 
@@ -7,7 +9,22 @@ const BlogDetails = () => {
     const { id } = useParams();
     const location = useLocation();
     const { data: apiData, isLoading, isError } = useGetSingleBlogQuery(id);
-    const blog = apiData || location.state?.data;
+    const blog = apiData || location.state?.blog || location.state?.data;
+    const [progress, setProgress] = useState(0);
+
+    // Reading progress bar at the top of the page
+    useEffect(() => {
+        const onScroll = () => {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            setProgress(max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0);
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, []);
+
+    const words = (blog?.content || '').trim().split(/\s+/).filter(Boolean).length;
+    const readMinutes = Math.max(1, Math.round(words / 200));
 
     if (isLoading) return <div className="flex justify-center items-center h-screen bg-[#FAF9F6]"><span className="loading loading-bars text-[#20D374] loading-lg"></span></div>;
 
@@ -23,6 +40,8 @@ const BlogDetails = () => {
 
     return (
         <section className="bg-[#FAF9F6] text-[#111827] pb-24 selection:bg-[#20D374] selection:text-white">
+            <Seo title={blog.title} description={blog.description} image={blog.image} />
+            <div className="fixed top-0 left-0 h-1 bg-[#20D374] z-[60]" style={{ width: `${progress}%` }} />
             <PageBanner title="Expert Insights" subtitle={blog.title} />
 
             <div className="px-4 md:px-0 w-full md:w-10/12 mx-auto mt-20">
@@ -92,7 +111,7 @@ const BlogDetails = () => {
                                         </div>
                                         <div>
                                             <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Published On</p>
-                                            <p className="text-sm font-bold text-[#111827]">{blog.date}</p>
+                                            <p className="text-sm font-bold text-[#111827]">{blog.date} · {readMinutes} min read</p>
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-5">

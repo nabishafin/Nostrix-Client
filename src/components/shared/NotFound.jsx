@@ -1,5 +1,4 @@
 // src/pages/NotFound.jsx
-import { div } from 'framer-motion/client';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';

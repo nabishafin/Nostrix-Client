@@ -67,6 +67,17 @@
     100% { transform: rotate(360deg); }
 }
 
+/* Print (Resume -> Save as PDF): hide site chrome */
+@media print {
+    .no-print,
+    .lenis-hidden {
+        display: none !important;
+    }
+    body {
+        background: #fff !important;
+    }
+}
+
 /* Modal Glow */
 .modal-glow {
     box-shadow: 0 0 100px rgba(32, 211, 116, 0.05);

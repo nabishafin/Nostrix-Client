@@ -1,8 +1,5 @@
 import baseApi from "../../api/baseApi";
-import {
-  setResetEmail,
-  clearResetEmail,
-} from "../../slices/forgotPasswordSlice";
+import { clearResetEmail } from "../../slices/forgotPasswordSlice";
 
 export const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -153,7 +150,6 @@ export const {
   useVerifyEmailMutation,
   useResetPasswordMutation,
   useChangePasswordMutation,
-  useGetUserByTokenQuery,
   useUpdateUserMutation,
   useRegisterMutation,
   useRecoverPasswordMutation,

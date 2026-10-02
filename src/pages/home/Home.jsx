@@ -8,19 +8,24 @@ import Testimonials from '../../components/ui/Testimonials';
 import NewsBlogs from '../../components/ui/NewsBlogs';
 import Faq from '../../components/ui/Faq';
 import ContactUs from '../../components/ui/ContactUs';
+import Reveal from '../../components/shared/Reveal';
+import Seo from '../../components/shared/Seo';
 
 
 const Home = () => {
     return (
         <div className=''>
+            <Seo
+                description="Nostrix Creative is a digital agency crafting websites, UI/UX, graphics and marketing that make an impact."
+            />
             <Banner />
-            <OurServices />
-            <AboutUS />
-            <WorkProcess />
+            <Reveal><OurServices /></Reveal>
+            <Reveal><AboutUS /></Reveal>
+            <Reveal><WorkProcess /></Reveal>
             <WorkPortfolio />
-            <Testimonials />
+            <Reveal><Testimonials /></Reveal>
             <NewsBlogs />
-            <Faq />
+            <Reveal><Faq /></Reveal>
             <ContactUs
                 bg={'bg-black'}
                 textColor={'text-white'}

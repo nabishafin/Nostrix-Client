@@ -7,12 +7,12 @@ import { Link, useLocation } from 'react-router-dom';
 const Footer = () => {
     const location = useLocation();
     const isHomePage = location.pathname === '/';
-    const isAuthPage = location.pathname === '/login' || location.pathname === '/register';
+    const isAuthPage = ['/login', '/register', '/forgot-password', '/reset-password'].includes(location.pathname);
 
     if (isAuthPage) return null;
 
     return (
-        <section className={`${isHomePage ? 'mt-10 md:mt-40' : ''} bg-black`}>
+        <section className={`no-print ${isHomePage ? 'mt-10 md:mt-40' : ''} bg-black`}>
             <div>
                 <Marque />
             </div>

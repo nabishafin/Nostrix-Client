@@ -5,9 +5,10 @@ import BlogsCard from '../../components/shared/BlogsCard';
 import { FaSearch } from 'react-icons/fa';
 import { useGetBlogsQuery } from '../../redux/features/blogs/blogsApi';
 import bg from '../../assets/blog-bg.jpg';
+import Seo from '../../components/shared/Seo';
 
 const Blogs = () => {
-    const { data: blogsData = [], isLoading, isError } = useGetBlogsQuery();
+    const { data: blogsData = [], isLoading } = useGetBlogsQuery();
 
     const categories = [
         'Mobile Application Development',
@@ -53,6 +54,7 @@ const Blogs = () => {
 
     return (
         <div>
+            <Seo title="Blogs" description="News, tutorials and insights from the Nostrix team." />
             <PageBanner title="Blogs" subtitle="Blogs" />
             <div className="mt-20">
                 <Heading title="News & Blogs" subtitle="Our Latest News & Blogs" />

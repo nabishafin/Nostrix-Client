@@ -6,7 +6,35 @@ export const testimonialsApi = baseApi.injectEndpoints({
       query: () => "/testimonials",
       providesTags: ["testimonials"],
     }),
+    createTestimonial: builder.mutation({
+      query: (data) => ({
+        url: "/testimonials",
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["testimonials"],
+    }),
+    updateTestimonial: builder.mutation({
+      query: ({ id, data }) => ({
+        url: `/testimonials/${id}`,
+        method: "PUT",
+        body: data,
+      }),
+      invalidatesTags: ["testimonials"],
+    }),
+    deleteTestimonial: builder.mutation({
+      query: (id) => ({
+        url: `/testimonials/${id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["testimonials"],
+    }),
   }),
 });
 
-export const { useGetTestimonialsQuery } = testimonialsApi;
+export const {
+  useGetTestimonialsQuery,
+  useCreateTestimonialMutation,
+  useUpdateTestimonialMutation,
+  useDeleteTestimonialMutation,
+} = testimonialsApi;

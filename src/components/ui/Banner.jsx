@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import Marque from '../shared/Marque';
+import CountUp from '../shared/CountUp';
 import star from '../../assets/star.png'
 import BannerImg from '../../assets/office.avif'
 import hireusImg from '../../assets/HireUs png.png'
@@ -7,6 +10,19 @@ import hireusImg from '../../assets/HireUs png.png'
 
 const Banner = () => {
     const services = ['Website Development', 'UX/UI Design', 'Graphic Design', 'Digital Marketing', 'Mobile Development'];
+    const heroRef = useRef(null);
+    const pillsRef = useRef(null);
+
+    // Hero entrance: headline lines slide up, then service pills pop in
+    useGSAP(() => {
+        const mm = gsap.matchMedia();
+        mm.add('(prefers-reduced-motion: no-preference)', () => {
+            const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+            tl.from(heroRef.current.children, { y: 60, opacity: 0, duration: 0.9, stagger: 0.18 })
+              .from(pillsRef.current.children, { y: 20, opacity: 0, scale: 0.9, duration: 0.5, stagger: 0.08 }, '-=0.4');
+        });
+        return () => mm.revert();
+    });
 
 
     return (
@@ -21,7 +37,7 @@ const Banner = () => {
                     </div>
                     <div className='flex flex-col md:flex-row items-center'>
                         {/* Left Text Section */}
-                        <div className='w-full md:w-6/12 text-center md:text-left'>
+                        <div ref={heroRef} className='w-full md:w-6/12 text-center md:text-left'>
                             <h1 className='text-4xl md:text-6xl text-white font-bold'>Where Innovation Meets</h1>
                             <h2 className='text-4xl md:text-6xl text-primary font-semibold'> Digital Excellence</h2>
                         </div>
@@ -41,7 +57,7 @@ const Banner = () => {
 
                 {/* Services Section */}
                 <div className='mt-10 text-white flex flex-col md:flex-row'>
-                    <div className='w-full md:w-6/12 grid grid-cols-1 md:grid-cols-3 gap-2 pr-0 md:pr-2'>
+                    <div ref={pillsRef} className='w-full md:w-6/12 grid grid-cols-1 md:grid-cols-3 gap-2 pr-0 md:pr-2'>
                         {services.map((service) => (
                             <p className='p-2 border-l-2 border-r-2 text-center rounded-3xl backdrop-blur-3xl opacity-70 shadow-lg border-primary bg-slate-950' key={service}>
                                 {service}
@@ -99,11 +115,11 @@ const Banner = () => {
                     </div>
                     {/* Stats section */}
                     <div className="bg-green-400 rounded-lg px-4 py-12 text-black w-full md:w-3/12">
-                        <div className="text-2xl font-semibold ">850+</div>
+                        <div className="text-2xl font-semibold "><CountUp end={850} suffix="+" /></div>
                         <div className="text-sm">Projects Completed</div>
-                        <div className="mt-4 text-2xl font-semibold">18+</div>
+                        <div className="mt-4 text-2xl font-semibold"><CountUp end={18} suffix="+" /></div>
                         <div className="text-sm">Years of Experience</div>
-                        <div className="mt-4 text-2xl font-semibold">500+</div>
+                        <div className="mt-4 text-2xl font-semibold"><CountUp end={500} suffix="+" /></div>
                         <div className="text-sm">Happy Customers</div>
                     </div>
                 </div>

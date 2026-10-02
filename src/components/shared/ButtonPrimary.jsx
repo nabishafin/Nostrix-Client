@@ -2,7 +2,7 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 
-const ButtonPrimary = ({ text, handleClick }) => {
+const ButtonPrimary = ({ text }) => {
     return (
         <div>
             <button className="z-50 md:flex gap-2 items-center text-lg md:text-xl mt-1 text-white pr-2 rounded-3xl bg-white">

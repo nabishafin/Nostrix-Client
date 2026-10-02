@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 /**
  * Log a warning and show a toast!
  */
-export const rtkQueryErrorLogger = (api) => (next) => (action) => {
+export const rtkQueryErrorLogger = (_api) => (next) => (action) => {
     // RTK Query uses `isRejectedWithValue` middleware for handled errors
     if (isRejectedWithValue(action)) {
         // Check if it's an API rejection

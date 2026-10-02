@@ -23,7 +23,12 @@ export default [
     rules: {
       ...js.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      // Without eslint-plugin-react, JSX usage (<Icon />, <motion.div />) is invisible to this rule
+      'no-unused-vars': ['error', {
+        varsIgnorePattern: '^([A-Z_]|motion$)',
+        argsIgnorePattern: '^[A-Z_]',
+        caughtErrors: 'none',
+      }],
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },

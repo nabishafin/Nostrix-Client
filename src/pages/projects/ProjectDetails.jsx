@@ -1,5 +1,6 @@
 import { useLocation, useParams, Link } from 'react-router-dom';
 import PageBanner from '../../components/shared/PageBanner';
+import Seo from '../../components/shared/Seo';
 import { FaCheckCircle, FaCalendarAlt, FaUserTie, FaLaptopCode, FaExternalLinkAlt } from 'react-icons/fa';
 import { useGetSingleProjectQuery } from '../../redux/features/projects/projectsApi';
 
@@ -23,6 +24,7 @@ const ProjectDetails = () => {
 
     return (
         <section className="bg-[#FAF9F6] text-[#111827] pb-20 selection:bg-[#20D374] selection:text-white">
+            <Seo title={data.title} description={data.description} image={data.image} />
             <PageBanner title="Project Details" subtitle={data.title} />
 
             <div className="px-4 md:px-0 w-full md:w-10/12 mx-auto mt-20">

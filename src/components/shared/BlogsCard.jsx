@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BlogsCard = ({ blog, bgColor, textColor, id }) => {
+const BlogsCard = ({ blog, bgColor, textColor }) => {
     return (
         <Link to={`/blogs/${blog._id}`} state={{ blog }} className="block">
             <div className={`${bgColor} ${textColor} rounded-2xl  cursor-pointer transform transition-transform duration-300 mb-10  px-2`}>

@@ -24,7 +24,8 @@ const Navbar = () => {
         { name: 'Projects', path: '/projects' },
         { name: 'Blogs', path: '/blogs' },
         { name: 'About Us', path: '/aboutus' },
-        { name: 'Contact Us', path: '/Contact' }
+        { name: 'Resume', path: '/resume' },
+        { name: 'Contact Us', path: '/contact' }
     ];
 
     // Dynamic dashboard link based on role
@@ -46,7 +47,7 @@ const Navbar = () => {
     ));
 
     return (
-        <div className="bg-black py-3 sticky top-0 backdrop-blur-sm z-40">
+        <div className="no-print bg-black py-3 sticky top-0 backdrop-blur-sm z-40">
             <div className="navbar bg-black mx-auto w-12/12 md:w-10/12 px-4 md:px-0">
                 <Link to={'/'} className="navbar-start">
                     <img className="h-9 md:h-10" src={logo} alt="Logo" />
@@ -114,6 +115,13 @@ const Navbar = () => {
 
                     {/* Buttons: Auth & Contact */}
                     <div className="hidden md:flex items-center space-x-3 ml-3">
+                        <button
+                            onClick={() => window.dispatchEvent(new Event('open-command-palette'))}
+                            className="hidden xl:flex items-center gap-2 px-3 py-2 rounded-full border border-white/20 text-gray-400 hover:text-white hover:border-primary transition-all text-sm"
+                            aria-label="Open search"
+                        >
+                            Search <kbd className="text-[10px] border border-white/20 rounded px-1">Ctrl K</kbd>
+                        </button>
                         {isAuthenticated ? (
                             <button 
                                 onClick={async () => {

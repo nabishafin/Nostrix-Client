@@ -1,18 +1,38 @@
 import React from 'react';
 import PageBanner from '../../components/shared/PageBanner';
-import { FaArrowRight, FaCheck, FaFacebook, FaInstagramSquare, FaPinterest, FaTwitter } from 'react-icons/fa';
+import { FaArrowRight, FaCheck, FaFacebook, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import profile1 from '../../assets/Shafin-Profile.png';
 import profile2 from '../../assets/client-pic.webp';
 import profile3 from '../../assets/mahadi-profile.jpeg';
 import WorkProcess from '../../components/ui/WorkProcess';
 import Marque from '../../components/shared/Marque';
 import img from '../../assets/about_pic.jpg';
+import SkillBars from '../../components/ui/SkillBars';
+import Reveal from '../../components/shared/Reveal';
+import Seo from '../../components/shared/Seo';
+import { useGetTeamQuery } from '../../redux/features/content/contentApi';
+
+// Shown until team members are added from the admin panel
+const defaultTeam = [
+    { name: 'Mahamodon Nabi Shafin', role: 'Web Developer', title: '[ CEO, Nostrix Creative ]', image: profile1 },
+    { name: 'Tareq Mahmud', role: 'UI/UX Designer', title: '[ CEO, Nostrix Creative ]', image: profile2 },
+    { name: 'Mahadi Hasan', role: 'Graphics Designer', title: '[ CEO, Nostrix Creative ]', image: profile3 },
+];
+
+const SOCIALS = [
+    { key: 'facebook', Icon: FaFacebook },
+    { key: 'twitter', Icon: FaTwitter },
+    { key: 'linkedin', Icon: FaLinkedin },
+    { key: 'github', Icon: FaGithub },
+];
 
 const AboutPage = () => {
-
+    const { data: apiTeam = [] } = useGetTeamQuery();
+    const team = apiTeam.length ? apiTeam : defaultTeam;
 
     return (
         <div>
+            <Seo title="About Us" description="Meet the team behind Nostrix Creative and the skills we bring to every project." />
             <PageBanner title={'About Us'} subtitle={'About Us'} />
             {/* ........................ */}
             <section className="py-10 mt-16 text-black">
@@ -75,6 +95,7 @@ const AboutPage = () => {
             </section>
             {/* ..................... */}
             <WorkProcess />
+            <SkillBars />
             {/* .......................... */}
             <div>
                 <Marque />
@@ -100,27 +121,9 @@ const AboutPage = () => {
                     {/* Card section */}
 
                     {/* Card section */}
-                    <div className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-10'>
-                        {/* Card Template */}
-                        {[{
-                            name: 'Mahamodon Nabi Shafin',
-                            role: 'Web Developer',
-                            ceo: '[ CEO, Nostrix Creative ]',
-                            image: profile1
-                        }, {
-                            name: 'Tareq Mahmud',
-                            role: 'UI/UX Designer',
-                            ceo: '[ CEO, Nostrix Creative ]',
-                            image: profile2
-                        },
-                        {
-                            name: 'Mahadi Hasan',
-                            role: 'Graphics Designer',
-                            ceo: '[ CEO, Nostrix Creative ]',
-                            image: profile3
-                        }
-                        ].map((member, idx) => (
-                            <div key={idx} className="flex flex-col items-center justify-center p-4 border border-gray-900 rounded-xl bg-black">
+                    <Reveal stagger={0.15} y={40} className='grid grid-cols-1 md:grid-cols-3 gap-4 mt-10'>
+                        {team.map((member, idx) => (
+                            <div key={member._id || idx} className="flex flex-col items-center justify-center p-4 border border-gray-900 rounded-xl bg-black">
                                 {/* Image with social icons */}
                                 <div className="relative w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl rounded-lg shadow-lg overflow-hidden">
                                     <div className="relative w-full h-96 overflow-hidden">
@@ -131,18 +134,18 @@ const AboutPage = () => {
                                         />
                                         {/* Social Media Icons */}
                                         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex justify-center space-x-4">
-                                            <div className="bg-primary rounded-full p-2">
-                                                <FaFacebook className="text-black text-xl sm:text-2xl md:text-3xl" />
-                                            </div>
-                                            <div className="bg-primary rounded-full p-2">
-                                                <FaTwitter className="text-black text-xl sm:text-2xl md:text-3xl" />
-                                            </div>
-                                            <div className="bg-primary rounded-full p-2">
-                                                <FaPinterest className="text-black text-xl sm:text-2xl md:text-3xl" />
-                                            </div>
-                                            <div className="bg-primary rounded-full p-2">
-                                                <FaInstagramSquare className="text-black text-xl sm:text-2xl md:text-3xl" />
-                                            </div>
+                                            {SOCIALS.filter(({ key }) => member.socials?.[key]).map(({ key, Icon }) => (
+                                                <a
+                                                    key={key}
+                                                    href={member.socials[key]}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    aria-label={key}
+                                                    className="bg-primary rounded-full p-2 hover:scale-110 transition-transform"
+                                                >
+                                                    <Icon className="text-black text-xl sm:text-2xl md:text-3xl" />
+                                                </a>
+                                            ))}
                                         </div>
                                     </div>
                                 </div>
@@ -151,11 +154,11 @@ const AboutPage = () => {
                                 <div className="mt-6 text-center w-full max-w-sm sm:max-w-md md:max-w-lg">
                                     <h1 className="text-white text-2xl font-semibold">{member.name}</h1>
                                     <h3 className="text-white text-lg mt-1">{member.role}</h3>
-                                    <h3 className="text-primary text-md mt-1">{member.ceo}</h3>
+                                    <h3 className="text-primary text-md mt-1">{member.title}</h3>
                                 </div>
                             </div>
                         ))}
-                    </div>
+                    </Reveal>
 
 
 
